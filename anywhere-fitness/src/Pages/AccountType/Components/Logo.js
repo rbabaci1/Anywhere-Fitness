@@ -20,7 +20,7 @@ const LogoContainer = styled.div`
     color: #fff;
 
     span {
-      color: red;
+      color: #ca1f3d;
     }
   }
 `;
