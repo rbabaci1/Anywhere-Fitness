@@ -5,6 +5,10 @@ import Header from './Header';
 import clientImage from '../../Images/clientImage.png';
 import instructorImage from '../../Images/instructorImage.png';
 
+const MainContent = styled.div`
+  display: flex;
+`;
+
 export default function AccountTypeHome() {
   return (
     <div>
@@ -13,12 +17,12 @@ export default function AccountTypeHome() {
       <div>
         <div>
           <h2>Client</h2>
-          <img src={clientImage} alt=''></img>
+          <img src={clientImage} alt='client athlete'></img>
         </div>
 
         <div>
           <h2>Instructor</h2>
-          <img src={instructorImage} alt=''></img>
+          <img src={instructorImage} alt='instructor athlete'></img>
         </div>
       </div>
     </div>
