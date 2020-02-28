@@ -14,7 +14,6 @@ function App() {
       {/*Class Page / schedule /// reserve button is on schedule next to the class
       and the about class button is a feature we will add specifically for the web app*/}
       {/*Invite a friend*/}
-      <h1>Test</h1>
     </div>
   );
 }
