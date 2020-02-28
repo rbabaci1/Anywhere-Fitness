@@ -27,12 +27,12 @@ const LogoContainer = styled.div`
 
 export default function Logo() {
   return (
-    <div>
+    <LogoContainer>
       <h1>
         Anywhere
         <br />
         <span>Fitness</span>
       </h1>
-    </div>
+    </LogoContainer>
   );
 }
