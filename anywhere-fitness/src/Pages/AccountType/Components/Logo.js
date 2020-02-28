@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 const LogoContainer = styled.div`
   h1 {
-    font-family: Ubuntu;
     font-style: normal;
     font-weight: bold;
     font-size: 34px;

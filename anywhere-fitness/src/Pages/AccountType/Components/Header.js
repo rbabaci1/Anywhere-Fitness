@@ -8,7 +8,6 @@ const Description = styled.div`
   justify-content: center;
 
   h3 {
-    font-family: Ubuntu;
     font-style: normal;
     width: 343px;
     font-weight: 500;
