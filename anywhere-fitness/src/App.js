@@ -1,10 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       {/*Login/Signup Page*/}
       {/*Choose account type page*/}
       {/*User home page*/}
