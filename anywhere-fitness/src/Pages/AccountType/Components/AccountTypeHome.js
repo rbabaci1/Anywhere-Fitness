@@ -8,7 +8,7 @@ import InstructorType from './InstructorType';
 const MainContent = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin: 50px;
+  margin-top: 50px;
 `;
 
 export default function AccountTypeHome() {
