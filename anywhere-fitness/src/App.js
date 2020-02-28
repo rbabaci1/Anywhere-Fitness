@@ -5,20 +5,12 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*Login/Signup Page*/}
+      {/*Choose account type page*/}
+      {/*User home page*/}
+      {/*Class Page / schedule /// reserve button is on schedule next to the class
+      and the about class button is a feature we will add specifically for the web app*/}
+      {/*Invite a friend*/}
     </div>
   );
 }
