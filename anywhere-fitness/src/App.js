@@ -1,10 +1,13 @@
 import React from 'react';
 
 import './App.css';
+import AccountTypeHome from './Pages/AccountType/Components/AccountTypeHome';
 
 function App() {
   return (
     <div className='App'>
+      <AccountTypeHome />
+
       {/*Login/Signup Page*/}
       {/*Choose account type page*/}
       {/*User home page*/}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Logo from './Logo';
 
-export default function Home() {
+export default function AccountTypeHome() {
   return (
     <div>
       <Logo />
