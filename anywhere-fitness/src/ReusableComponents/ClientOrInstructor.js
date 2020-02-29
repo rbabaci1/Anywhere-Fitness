@@ -22,25 +22,29 @@ const SelectedContainer = styled.div`
 `;
 
 export default function ClientOrInstructor({ type }) {
-  return type === 'client' ? (
+  return (
     <SelectedContainer>
       <Header />
-      <Client />
-      <p>
-        As a client, you will be able to search and sign up for fitness classes
-        based on location, skill level, and preferred work out type.
-      </p>
-      <Button textContent='Continue' />
-    </SelectedContainer>
-  ) : (
-    <SelectedContainer>
-      <Header />
-      <Instructor />
-      <p>
-        As an instructor you will be able to manage and post location of your
-        fitness classes for others to join, manage ClientOrInstructor
-        attendance, and receive payment for classes.
-      </p>
+
+      {type === 'client' ? (
+        <div>
+          <Client />
+          <p>
+            As a client, you will be able to search and sign up for fitness
+            classes based on location, skill level, and preferred work out type.
+          </p>
+        </div>
+      ) : (
+        <div>
+          <Instructor />
+          <p>
+            As an instructor you will be able to manage and post the location of
+            your fitness classes for others to join, manage clients attendance,
+            and receive payment for classes.
+          </p>
+        </div>
+      )}
+
       <Button textContent='Continue' />
     </SelectedContainer>
   );
