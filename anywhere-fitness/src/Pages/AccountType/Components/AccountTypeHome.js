@@ -22,7 +22,9 @@ export default function AccountTypeHome() {
           <ClientType />
         </Link>
 
-        <InstructorType />
+        <Link to='/instructorSelect'>
+          <InstructorType />
+        </Link>
       </MainContent>
     </div>
   );
