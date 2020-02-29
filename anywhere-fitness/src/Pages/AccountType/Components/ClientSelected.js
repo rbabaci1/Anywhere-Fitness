@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import ClientType from './ClientType';
+import Button from '../../../ReusableComponents/Button';
 
 const ClientSelectDiv = styled.div`
   display: flex;
@@ -16,19 +17,6 @@ const ClientSelectDiv = styled.div`
     line-height: 20px;
     text-align: center;
     letter-spacing: 0.36px;
-  }
-  button {
-    font-family: Ubuntu;
-    background: #ca1f3d;
-    font-size: 22px;
-    color: #f7f7f7;
-    border-radius: 100px;
-    margin-top: 30px;
-    border: none;
-    font-weight: bold;
-    line-height: 25px;
-    padding: 8px 28px;
-    cursor: pointer;
   }
 `;
 
@@ -44,7 +32,7 @@ export default function ClientSelected() {
           classes based on location, skill level, and preferred work out type.
         </p>
 
-        <button>Continue</button>
+        <Button textContent='Continue' />
       </ClientSelectDiv>
     </div>
   );
