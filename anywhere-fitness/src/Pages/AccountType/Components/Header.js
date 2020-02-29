@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from './Logo';
+import Logo from '../../../ReusableComponents/Logo';
 import styled from 'styled-components';
 
 const Description = styled.div`
