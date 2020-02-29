@@ -7,6 +7,7 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 import AccountType from './Pages/AccountType/Components/AccountType';
 import ClientSelected from './Pages/AccountType/Components/ClientSelected';
 import InstructorSelected from './Pages/AccountType/Components/InstructorSelected';
+import LoginPage from './Pages/LoginPage/LoginPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
       <Route path='/client' component={ClientSelected} />
       <Route path='/instructor' component={InstructorSelected} />
+      <Route path='/login' component={LoginPage} />
     </div>
   );
 }

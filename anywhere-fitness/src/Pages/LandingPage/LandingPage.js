@@ -34,8 +34,9 @@ const LandingPageContainer = styled.div`
     color: #f7f7f7;
     margin-top: 70px;
     text-align: center;
+    letter-spacing: 0.36px;
 
-    span {
+    a {
       color: #ca1f3d;
     }
   }
@@ -54,7 +55,7 @@ export default function LandingPage() {
       </Link>
 
       <p>
-        Already have an account? <span>Log In.</span>
+        Already have an account? <Link to='/login'>Log In.</Link>
       </p>
     </LandingPageContainer>
   );
