@@ -17,6 +17,19 @@ const ClientSelectDiv = styled.div`
     text-align: center;
     letter-spacing: 0.36px;
   }
+  button {
+    font-family: Ubuntu;
+    background: #ca1f3d;
+    font-size: 22px;
+    color: #f7f7f7;
+    border-radius: 100px;
+    margin-top: 30px;
+    border: none;
+    font-weight: bold;
+    line-height: 25px;
+    padding: 8px 28px;
+    cursor: pointer;
+  }
 `;
 
 export default function ClientSelected() {
@@ -30,6 +43,8 @@ export default function ClientSelected() {
           As a client, you will be able to search and sign up for fitness
           classes based on location, skill level, and preferred work out type.
         </p>
+
+        <button>Continue</button>
       </ClientSelectDiv>
     </div>
   );
