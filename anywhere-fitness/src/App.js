@@ -3,11 +3,12 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 import AccountTypeHome from './Pages/AccountType/Components/AccountTypeHome';
+import ClientSelected from './Pages/AccountType/Components/ClientSelected';
 
 function App() {
   return (
     <div className='App'>
-      <AccountTypeHome />
+      {/* <AccountTypeHome /> */}
 
       {/*Login/Signup Page*/}
       {/*Choose account type page*/}
@@ -15,6 +16,8 @@ function App() {
       {/*Class Page / schedule /// reserve button is on schedule next to the class
       and the about class button is a feature we will add specifically for the web app*/}
       {/*Invite a friend*/}
+      <Route exact path='/' component={AccountTypeHome} />
+      <Route path='/clientSelect' component={ClientSelected} />
     </div>
   );
 }
