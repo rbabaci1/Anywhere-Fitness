@@ -73,6 +73,7 @@ export default function LoginPage() {
       password: ''
     }
   });
+  const [inputTouched, setInputTouched] = useState(false);
 
   const handleChange = event => {
     const { value, name } = event.target;
@@ -81,7 +82,9 @@ export default function LoginPage() {
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
     if (name === 'email') {
-      formErrors.email = emailRegex.test(value) ? '' : 'Invalid Email address';
+      formErrors.email = emailRegex.test(value)
+        ? ''
+        : 'Please, Enter a valid email address.';
     } else {
       formErrors.password = passwordRegex.test(value)
         ? ''
@@ -106,6 +109,7 @@ export default function LoginPage() {
         }
       });
     } else {
+      // Render the Error message to the User
       console.log(formData.formErrors);
       console.log('something wrong');
     }
