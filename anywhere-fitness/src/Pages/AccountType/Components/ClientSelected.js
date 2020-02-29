@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Header from './Header';
+import Header from '../../../ReusableComponents/Header';
 import ClientType from './ClientType';
 import Button from '../../../ReusableComponents/Button';
 

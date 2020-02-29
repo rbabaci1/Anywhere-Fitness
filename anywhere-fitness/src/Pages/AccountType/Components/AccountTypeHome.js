@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, Route } from 'react-router-dom';
 
-import Header from './Header';
+import Header from '../../../ReusableComponents/Header';
 import ClientType from './ClientType';
 import InstructorType from './InstructorType';
 
