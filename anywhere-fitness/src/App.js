@@ -9,7 +9,6 @@ import InstructorSelected from './Pages/AccountType/Components/InstructorSelecte
 
 function App() {
   return (
-    <div className="App">
       {/*Login/Signup/Landing Page*/}
 
     <div className='App'>
