@@ -22,6 +22,19 @@ const LandingPageContainer = styled.div`
     letter-spacing: 0.36px;
     text-align: center;
   }
+  p {
+    font-size: 11px;
+    line-height: 13px;
+    width: 174px;
+    font-style: normal;
+    color: #f7f7f7;
+    margin-top: 50px;
+    text-align: center;
+
+    span {
+      color: #ca1f3d;
+    }
+  }
 `;
 
 export default function LandingPage() {
@@ -31,6 +44,12 @@ export default function LandingPage() {
 
       <img src={landingPageImage} alt='Athletes working out.' />
       <h4>Attend classes that are run by local instructors, anywhere!</h4>
+
+      <Button textContent='Join Now!' />
+
+      <p>
+        Already have an account? <span>Log In.</span>
+      </p>
     </LandingPageContainer>
   );
 }
