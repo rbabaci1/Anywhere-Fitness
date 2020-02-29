@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link, Route } from 'react-router-dom';
 
 import Header from '../../../ReusableComponents/Header';
-import ClientType from './ClientType';
-import InstructorType from './InstructorType';
+import Client from './Client';
+import Instructor from './Instructor';
 
 const MainContent = styled.div`
   display: flex;
@@ -22,11 +22,11 @@ export default function AccountType() {
 
       <MainContent>
         <Link to='/client'>
-          <ClientType />
+          <Client />
         </Link>
 
         <Link to='/instructor'>
-          <InstructorType />
+          <Instructor />
         </Link>
       </MainContent>
     </div>

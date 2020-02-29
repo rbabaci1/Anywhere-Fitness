@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Header from '../../../ReusableComponents/Header';
-import ClientType from './ClientType';
+import ClientType from './Client';
 import Button from '../../../ReusableComponents/Button';
 
 const ClientSelectDiv = styled.div`

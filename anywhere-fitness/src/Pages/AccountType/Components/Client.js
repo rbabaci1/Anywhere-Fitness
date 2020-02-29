@@ -18,7 +18,7 @@ const ClientContainer = styled.div`
   }
 `;
 
-export default function ClientType() {
+export default function Client() {
   return (
     <ClientContainer>
       <h2>Client</h2>
