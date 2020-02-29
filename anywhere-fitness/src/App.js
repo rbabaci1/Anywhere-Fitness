@@ -5,8 +5,8 @@ import './App.css';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import AccountType from './Pages/AccountType/Components/AccountType';
-import ClientType from './Pages/AccountType/Components/ClientType';
-import InstructorType from './Pages/AccountType/Components/InstructorType';
+import ClientSelected from './Pages/AccountType/Components/ClientSelected';
+import InstructorSelected from './Pages/AccountType/Components/InstructorSelected';
 
 function App() {
   return (
@@ -24,6 +24,9 @@ function App() {
       {/*Invite a friend*/}
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/accountType' component={AccountType} />
+
+      <Route path='/client' component={ClientSelected} />
+      <Route path='/instructor' component={InstructorSelected} />
     </div>
   );
 }
