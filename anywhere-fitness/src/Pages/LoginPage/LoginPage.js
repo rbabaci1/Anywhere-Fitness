@@ -20,6 +20,15 @@ const LoginContainer = styled.div`
 `;
 
 export default function LoginPage() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    formErrors: {
+      email: '',
+      password: ''
+    }
+  });
+
   const handleChange = event => {
     return null;
   };
