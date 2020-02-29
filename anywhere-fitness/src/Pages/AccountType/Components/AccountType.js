@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Header from '../../../ReusableComponents/Header';
 import Client from './Client';
