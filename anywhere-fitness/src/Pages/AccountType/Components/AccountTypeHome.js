@@ -5,6 +5,7 @@ import { Link, Route } from 'react-router-dom';
 import Header from './Header';
 import ClientType from './ClientType';
 import InstructorType from './InstructorType';
+import ClientSelected from './ClientSelected';
 
 const MainContent = styled.div`
   display: flex;
