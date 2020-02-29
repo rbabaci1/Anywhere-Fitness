@@ -15,7 +15,7 @@ const MainContent = styled.div`
   }
 `;
 
-export default function AccountTypeHome() {
+export default function AccountType() {
   return (
     <div>
       <Header />

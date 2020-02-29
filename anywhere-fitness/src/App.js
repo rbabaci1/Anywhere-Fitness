@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
-import AccountTypeHome from './Pages/AccountType/Components/AccountTypeHome';
+import AccountType from './Pages/AccountType/Components/AccountType';
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
       and the about class button is a feature we will add specifically for the web app*/}
       {/*Invite a friend*/}
       <Route exact path='/' component={LandingPage} />
-      <Route path='/accountType' component={AccountTypeHome} />
+      <Route path='/accountType' component={AccountType} />
     </div>
   );
 }
