@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 
+import LandingPage from './Pages/LandingPage/LandingPage';
 import AccountTypeHome from './Pages/AccountType/Components/AccountTypeHome';
 import ClientSelected from './Pages/AccountType/Components/ClientSelected';
 import InstructorSelected from './Pages/AccountType/Components/InstructorSelected';
