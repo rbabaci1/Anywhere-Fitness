@@ -17,6 +17,38 @@ const LoginContainer = styled.div`
     letter-spacing: 0.36px;
     color: #f7f7f7;
   }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    margin-top: 30px;
+    label {
+      display: flex;
+      flex-direction: column;
+      color: #f7f7f7;
+      font-size: 17px;
+      font-weight: normal;
+      line-height: 20px;
+      letter-spacing: 0.36px;
+      margin-bottom: 10px;
+
+      input {
+        border-radius: 3px;
+        box-sizing: border-box;
+        border: 2px solid #787777;
+        padding: 10px 6px;
+        font-size: 17px;
+        background: inherit;
+        color: #f7f7f7;
+        font-family: Ubuntu;
+      }
+    }
+    div {
+      margin-top: 150px;
+      text-align: center;
+    }
+  }
 `;
 
 export default function LoginPage() {
@@ -34,6 +66,7 @@ export default function LoginPage() {
   };
 
   const handleSubmit = event => {
+    event.preventDefault();
     return null;
   };
 
@@ -43,7 +76,7 @@ export default function LoginPage() {
 
       <p>Log in by providing the information below</p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
         <label>
           Email
           <input
@@ -63,9 +96,11 @@ export default function LoginPage() {
             placeholder='Enter password'
           />
         </label>
-      </form>
 
-      <Button textContent='Log in' />
+        <div>
+          <Button textContent='Log in' />
+        </div>
+      </form>
     </LoginContainer>
   );
 }
