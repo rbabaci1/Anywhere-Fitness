@@ -33,13 +33,17 @@ export default function LoginPage() {
     return null;
   };
 
+  const handleSubmit = event => {
+    return null;
+  };
+
   return (
     <LoginContainer>
       <Logo />
 
       <p>Log in by providing the information below</p>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Email
           <input
