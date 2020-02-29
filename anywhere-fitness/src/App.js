@@ -21,6 +21,7 @@ function App() {
       <Route exact path='/' component={AccountTypeHome} />
 
       <Route path='/clientSelect' component={ClientSelected} />
+      <Route path='/instructorSelect' component={InstructorSelected} />
     </div>
   );
 }
