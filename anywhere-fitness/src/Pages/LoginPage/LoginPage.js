@@ -31,7 +31,7 @@ const LoginContainer = styled.div`
       font-weight: normal;
       line-height: 20px;
       letter-spacing: 0.36px;
-      margin-bottom: 10px;
+      margin-bottom: 13px;
 
       input {
         border-radius: 3px;
@@ -42,6 +42,9 @@ const LoginContainer = styled.div`
         background: inherit;
         color: #f7f7f7;
         font-family: Ubuntu;
+      }
+      span {
+        margin-top: 5px;
       }
     }
     div {
@@ -55,7 +58,7 @@ const formValid = (formErrors, email, password) => {
   let isValid = true;
 
   if (email.length === 0 || password.length === 0) {
-    return false;
+    isValid = false;
   }
   Object.values(formErrors).forEach(
     value => value.length > 0 && (isValid = false)
@@ -69,26 +72,21 @@ export default function LoginPage() {
     email: '',
     password: '',
     formErrors: {
-      email: '',
-      password: ''
+      email: ''
     }
   });
+  console.log(formData.formErrors);
   const [inputTouched, setInputTouched] = useState(false);
 
   const handleChange = event => {
     const { value, name } = event.target;
     const formErrors = formData.formErrors;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (name === 'email') {
-      formErrors.email = emailRegex.test(value)
+      formErrors.email = regex.test(value)
         ? ''
         : 'Please, Enter a valid email address.';
-    } else {
-      formErrors.password = passwordRegex.test(value)
-        ? ''
-        : 'Must Contain 8 Characters, 1 Uppercase, 1 Lowercase, 1 Number and 1 special case Character.';
     }
 
     setFormData({ ...formData, [name]: value });
@@ -104,14 +102,20 @@ export default function LoginPage() {
         email: '',
         password: '',
         formErrors: {
-          email: '',
-          password: ''
+          email: ''
         }
       });
+      setInputTouched(false);
     } else {
       // Render the Error message to the User
-      console.log(formData.formErrors);
-      console.log('something wrong');
+
+      if (formData.email.length === 0) {
+        setFormData({
+          ...formData,
+          formErrors: { email: 'Please, enter your email address.' }
+        });
+      }
+      setInputTouched(true);
     }
   };
 
@@ -130,8 +134,13 @@ export default function LoginPage() {
             value={formData.email}
             onChange={handleChange}
             placeholder='Enter email'
-            required
           />
+          {/* Error message for email validation */}
+          {formData.formErrors.email.length > 0 && inputTouched && (
+            <span style={{ color: '#da4010' }}>
+              {formData.formErrors.email}
+            </span>
+          )}
         </label>
 
         <label>
@@ -142,8 +151,13 @@ export default function LoginPage() {
             value={formData.password}
             onChange={handleChange}
             placeholder='Enter password'
-            required
           />
+          {/* Error message for password validation */}
+          {formData.password.length === 0 && inputTouched && (
+            <span style={{ color: '#da4010' }}>
+              Please, enter your password.
+            </span>
+          )}
         </label>
 
         <div>
