@@ -5,7 +5,6 @@ import instructorImage from '../../Images/instructorImage.png';
 
 const InstructorContainer = styled.div`
   text-align: center;
-  margin-top: 40px;
 
   h2 {
     font-style: normal;
@@ -15,7 +14,7 @@ const InstructorContainer = styled.div`
     text-align: center;
     letter-spacing: 0.36px;
     color: #f7f7f7;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
   }
 `;
 
