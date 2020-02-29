@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import landingPageImage from '../Images/landingPageImage.png';
+import Button from '../../ReusableComponents/Button';
 
 const LandingPageContainer = styled.div`
   display: flex;
@@ -29,7 +30,6 @@ export default function LandingPage() {
       <Logo />
 
       <img src={landingPageImage} alt='Athletes working out.' />
-
       <h4>Attend classes that are run by local instructors, anywhere!</h4>
     </LandingPageContainer>
   );
