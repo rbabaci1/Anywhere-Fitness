@@ -7,7 +7,6 @@ export default function ClientSelected() {
   return (
     <div>
       <Header />
-
       <ClientType />
     </div>
   );

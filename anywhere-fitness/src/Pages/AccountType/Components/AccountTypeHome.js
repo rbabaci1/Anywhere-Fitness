@@ -9,7 +9,6 @@ import InstructorType from './InstructorType';
 const MainContent = styled.div`
   display: flex;
   justify-content: space-evenly;
-  margin-top: 40px;
 
   a {
     text-decoration: none;

@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import clientImage from '../../Images/clientImage.png';
 
 const ClientContainer = styled.div`
+  text-align: center;
+  margin-top: 40px;
+
   h2 {
     font-style: normal;
     font-weight: bold;
