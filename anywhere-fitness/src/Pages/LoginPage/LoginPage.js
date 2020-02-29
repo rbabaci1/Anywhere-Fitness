@@ -52,7 +52,7 @@ const LoginContainer = styled.div`
 `;
 
 const formValid = formErrors => {
-  const valid = true;
+  let valid = true;
 
   Object.values(formErrors).forEach(
     value => value.length > 0 && (valid = false)
@@ -70,10 +70,28 @@ export default function LoginPage() {
       password: ''
     }
   });
+  console.log(formData.formErrors);
 
   const handleChange = event => {
     const { value, name } = event.target;
     const formErrors = formData.formErrors;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    switch (name) {
+      case 'email':
+        formErrors.email = emailRegex.test(value)
+          ? ''
+          : 'Invalid Email address';
+        break;
+      case 'password':
+        formErrors.password = passwordRegex.test(value)
+          ? ''
+          : 'Must Contain 8 Characters, 1 Uppercase, 1 Lowercase, 1 Number and 1 special case Character.';
+        break;
+      default:
+        break;
+    }
 
     setFormData({ ...formData, [name]: value });
   };
@@ -85,7 +103,7 @@ export default function LoginPage() {
       console.log(`submitting email: ${formData.email}`);
       console.log(`submitting Password: ${formData.password}`);
     } else {
-      console.log('Form Error');
+      console.log(formData.formErrors);
     }
 
     setFormData({
@@ -113,6 +131,7 @@ export default function LoginPage() {
             value={formData.email}
             onChange={handleChange}
             placeholder='Enter email'
+            required
           />
         </label>
 
@@ -124,6 +143,7 @@ export default function LoginPage() {
             value={formData.password}
             onChange={handleChange}
             placeholder='Enter password'
+            required
           />
         </label>
 
