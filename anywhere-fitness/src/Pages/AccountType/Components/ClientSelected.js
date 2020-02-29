@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './Header';
 
 export default function ClientSelected() {
   return (
     <div>
-      <h1>Client</h1>
+      <Header />
     </div>
   );
 }
