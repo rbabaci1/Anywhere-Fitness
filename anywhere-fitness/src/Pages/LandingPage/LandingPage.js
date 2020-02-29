@@ -12,7 +12,7 @@ const LandingPageContainer = styled.div`
   align-items: center;
 
   img {
-    width: 100%;
+    max-width: 800px;
   }
   h4 {
     width: 343px;
@@ -23,13 +23,16 @@ const LandingPageContainer = styled.div`
     letter-spacing: 0.36px;
     text-align: center;
   }
+  button {
+    margin-top: 80px;
+  }
   p {
     font-size: 11px;
     line-height: 13px;
     width: 174px;
     font-style: normal;
     color: #f7f7f7;
-    margin-top: 50px;
+    margin-top: 70px;
     text-align: center;
 
     span {
