@@ -73,6 +73,7 @@ export default function LoginPage() {
 
   const handleChange = event => {
     const { value, name } = event.target;
+    const formErrors = formData.formErrors;
 
     setFormData({ ...formData, [name]: value });
   };
