@@ -40,6 +40,16 @@ export default function LoginPage() {
             placeholder='Enter email'
           />
         </label>
+
+        <label>
+          Password
+          <input
+            type='password'
+            name='password'
+            onChange={handleChange}
+            placeholder='Enter password'
+          />
+        </label>
       </form>
 
       <Button textContent='Log in' />
