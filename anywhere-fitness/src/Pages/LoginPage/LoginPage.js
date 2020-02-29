@@ -51,14 +51,17 @@ const LoginContainer = styled.div`
   }
 `;
 
-const formValid = formErrors => {
-  let valid = true;
+const formValid = (formErrors, email, password) => {
+  let isValid = true;
 
+  if (email.length === 0 || password.length === 0) {
+    return false;
+  }
   Object.values(formErrors).forEach(
-    value => value.length > 0 && (valid = false)
+    value => value.length > 0 && (isValid = false)
   );
 
-  return valid;
+  return isValid;
 };
 
 export default function LoginPage() {
@@ -70,7 +73,6 @@ export default function LoginPage() {
       password: ''
     }
   });
-  console.log(formData.formErrors);
 
   const handleChange = event => {
     const { value, name } = event.target;
@@ -78,19 +80,12 @@ export default function LoginPage() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-    switch (name) {
-      case 'email':
-        formErrors.email = emailRegex.test(value)
-          ? ''
-          : 'Invalid Email address';
-        break;
-      case 'password':
-        formErrors.password = passwordRegex.test(value)
-          ? ''
-          : 'Must Contain 8 Characters, 1 Uppercase, 1 Lowercase, 1 Number and 1 special case Character.';
-        break;
-      default:
-        break;
+    if (name === 'email') {
+      formErrors.email = emailRegex.test(value) ? '' : 'Invalid Email address';
+    } else {
+      formErrors.password = passwordRegex.test(value)
+        ? ''
+        : 'Must Contain 8 Characters, 1 Uppercase, 1 Lowercase, 1 Number and 1 special case Character.';
     }
 
     setFormData({ ...formData, [name]: value });
@@ -99,21 +94,21 @@ export default function LoginPage() {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (formValid(formData.formErrors)) {
-      console.log(`submitting email: ${formData.email}`);
-      console.log(`submitting Password: ${formData.password}`);
+    if (formValid(formData.formErrors, formData.email, formData.password)) {
+      // Submit the Data to Login
+
+      setFormData({
+        email: '',
+        password: '',
+        formErrors: {
+          email: '',
+          password: ''
+        }
+      });
     } else {
       console.log(formData.formErrors);
+      console.log('something wrong');
     }
-
-    setFormData({
-      email: '',
-      password: '',
-      formErrors: {
-        email: '',
-        password: ''
-      }
-    });
   };
 
   return (
