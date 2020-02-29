@@ -5,6 +5,8 @@ import './App.css';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import AccountType from './Pages/AccountType/Components/AccountType';
+import ClientType from './Pages/AccountType/Components/ClientType';
+import InstructorType from './Pages/AccountType/Components/InstructorType';
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
       and the about class button is a feature we will add specifically for the web app*/}
       {/*Invite a friend*/}
       <Route exact path='/' component={LandingPage} />
-      <Route path='/accountType' component={AccountType} />
+      <Route exact path='/accountType' component={AccountType} />
     </div>
   );
 }
