@@ -10,6 +10,10 @@ const MainContent = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 40px;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default function AccountTypeHome() {
