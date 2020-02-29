@@ -51,6 +51,16 @@ const LoginContainer = styled.div`
   }
 `;
 
+const formValid = formErrors => {
+  const valid = true;
+
+  Object.values(formErrors).forEach(
+    value => value.length > 0 && (valid = false)
+  );
+
+  return valid;
+};
+
 export default function LoginPage() {
   const [formData, setFormData] = useState({
     email: '',
@@ -62,12 +72,29 @@ export default function LoginPage() {
   });
 
   const handleChange = event => {
-    return null;
+    const { value, name } = event.target;
+
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = event => {
     event.preventDefault();
-    return null;
+
+    if (formValid(formData.formErrors)) {
+      console.log(`submitting email: ${formData.email}`);
+      console.log(`submitting Password: ${formData.password}`);
+    } else {
+      console.log('Form Error');
+    }
+
+    setFormData({
+      email: '',
+      password: '',
+      formErrors: {
+        email: '',
+        password: ''
+      }
+    });
   };
 
   return (
@@ -82,6 +109,7 @@ export default function LoginPage() {
           <input
             type='email'
             name='email'
+            value={formData.email}
             onChange={handleChange}
             placeholder='Enter email'
           />
@@ -92,13 +120,14 @@ export default function LoginPage() {
           <input
             type='password'
             name='password'
+            value={formData.password}
             onChange={handleChange}
             placeholder='Enter password'
           />
         </label>
 
         <div>
-          <Button textContent='Log in' />
+          <Button textContent='Log in' type='submit' />
         </div>
       </form>
     </LoginContainer>
