@@ -11,8 +11,9 @@ const ButtonComponent = styled.button`
   border: none;
   font-weight: bold;
   line-height: 25px;
-  padding: 8px 28px;
+  padding: 9px 0;
   cursor: pointer;
+  width: 163px;
 `;
 
 export default function Button({ textContent }) {

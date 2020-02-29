@@ -20,11 +20,29 @@ const LoginContainer = styled.div`
 `;
 
 export default function LoginPage() {
+  const handleChange = event => {
+    return null;
+  };
+
   return (
     <LoginContainer>
       <Logo />
 
       <p>Log in by providing the information below</p>
+
+      <form>
+        <label>
+          Email
+          <input
+            type='email'
+            name='email'
+            onChange={handleChange}
+            placeholder='Enter email'
+          />
+        </label>
+      </form>
+
+      <Button textContent='Log in' />
     </LoginContainer>
   );
 }
