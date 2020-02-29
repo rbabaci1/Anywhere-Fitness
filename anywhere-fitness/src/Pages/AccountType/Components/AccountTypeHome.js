@@ -21,11 +21,11 @@ export default function AccountTypeHome() {
       <Header />
 
       <MainContent>
-        <Link to='/clientSelect'>
+        <Link to='/client'>
           <ClientType />
         </Link>
 
-        <Link to='/instructorSelect'>
+        <Link to='/instructor'>
           <InstructorType />
         </Link>
       </MainContent>

@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom';
 import Logo from '../../ReusableComponents/Logo';
 import landingPageImage from '../Images/landingPageImage.png';
 import Button from '../../ReusableComponents/Button';
+import AccountTypeHome from '../AccountType/Components/AccountTypeHome';
 
 const LandingPageContainer = styled.div`
   display: flex;
@@ -46,7 +47,9 @@ export default function LandingPage() {
       <img src={landingPageImage} alt='Athletes working out.' />
       <h4>Attend classes that are run by local instructors, anywhere!</h4>
 
-      <Button textContent='Join Now!' />
+      <Link>
+        <Button textContent='Join Now!' />
+      </Link>
 
       <p>
         Already have an account? <span>Log In.</span>
