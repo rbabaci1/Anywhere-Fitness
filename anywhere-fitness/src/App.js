@@ -14,10 +14,10 @@ function App() {
     <div className='App'>
       <Route exact path='/' component={LandingPage} />
       <Route exact path='/accountType' component={AccountType} />
+      <Route path='/login' component={LoginPage} />
 
       <Route path='/client' component={ClientSelected} />
       <Route path='/instructor' component={InstructorSelected} />
-      <Route path='/login' component={LoginPage} />
     </div>
   );
 }

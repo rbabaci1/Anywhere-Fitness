@@ -38,7 +38,10 @@ export default function ClientOrInstructor({ type }) {
             As a client, you will be able to search and sign up for fitness
             classes based on location, skill level, and preferred work out type.
           </p>
-          <Button textContent='Continue' />
+
+          <Link to='/client/signUp'>
+            <Button textContent='Continue' />
+          </Link>
         </div>
       ) : (
         <div>
@@ -48,7 +51,10 @@ export default function ClientOrInstructor({ type }) {
             your fitness classes for others to join, manage clients attendance,
             and receive payment for classes.
           </p>
-          <Button textContent='Continue' />
+
+          <Link to='/instructor/signUp'>
+            <Button textContent='Continue' />
+          </Link>
         </div>
       )}
     </SelectedContainer>
