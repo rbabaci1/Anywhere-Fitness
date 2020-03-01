@@ -1,8 +1,8 @@
 import React from 'react';
 import ClientOrInstructor from '../../../ReusableComponents/ClientOrInstructor';
 
-export default function UserType(props) {
-  const { typeName } = props.match.params;
+export default function UserType({ match }) {
+  const { typeName } = match.params;
 
   return (
     <div>
