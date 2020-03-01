@@ -63,8 +63,7 @@ const FormContainer = styled.div`
   }
 `;
 
-function SignUpPage(props) {
-  // console.log(props);
+function SignUpForm(props) {
   return (
     <FormContainer>
       <Logo />
@@ -128,4 +127,4 @@ export default withFormik({
     }
     resetForm();
   }
-})(SignUpPage);
+})(SignUpForm);
