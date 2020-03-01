@@ -21,6 +21,7 @@ function App() {
 
       {/* <Route exact path='/client' component={ClientSelected} />
       <Route exact path='/instructor' component={InstructorSelected} /> */}
+      <Route path='/:typeName' component={UserType} />
 
       <Route path='/client/signUp' component={ClientSignUp} />
       <Route path='/instructor/signUp' component={InstructorSignUp} />
