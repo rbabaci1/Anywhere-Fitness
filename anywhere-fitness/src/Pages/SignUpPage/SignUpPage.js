@@ -27,7 +27,9 @@ function SignUpPage({ match }) {
           <Field type='password' name='password' placeholder='Enter password' />
         </label>
 
-        <div></div>
+        <div>
+          <Button textContent='Sign up!' />
+        </div>
       </Form>
     </div>
   );
