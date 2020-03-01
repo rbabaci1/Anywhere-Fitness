@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import ExtraInfoForm from './ExtraInfoForm';
 
 import { showPassword } from '../../functionsLibrary/library';
 
@@ -120,8 +121,8 @@ export default withFormik({
       // ask for extra info and then submit the data to the database
     } else {
       // Post the data to the database
-      let extra = { age: 25, test: 'hello' };
-      values = { ...values, ...extra };
+      // let extra = { age: 25, test: 'hello' };
+      // values = { ...values, ...extra };
       console.log(values);
       // return 'submitted';
     }
