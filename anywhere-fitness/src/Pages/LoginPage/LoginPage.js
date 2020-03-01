@@ -3,65 +3,20 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import FormDefaultStyle from '../../ReusableComponents/FormDefaultStyle';
+import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
 
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
 
-// const LoginContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-
-//   p {
-//     width: 344px;
-//     font-size: 20px;
-//     line-height: 23px;
-//     text-align: center;
-//     letter-spacing: 0.36px;
-//     color: #f7f7f7;
-//   }
-
-//   form {
-//     display: flex;
-//     flex-direction: column;
-//     width: 330px;
-//     margin-top: 30px;
-
-//     label {
-//       display: flex;
-//       flex-direction: column;
-//       color: #f7f7f7;
-//       font-size: 17px;
-//       font-weight: normal;
-//       line-height: 20px;
-//       letter-spacing: 0.36px;
-//       margin-bottom: 13px;
-
-//       input {
-//         border-radius: 3px;
-//         box-sizing: border-box;
-//         border: 2px solid #787777;
-//         padding: 10px 6px;
-//         font-size: 17px;
-//         background: inherit;
-//         color: #f7f7f7;
-//         font-family: Ubuntu;
-//       }
-//       span {
-//         margin-top: 5px;
-//       }
-//       .show-password {
-//         margin: 10px 0 0 0;
-//         font-size: 11px;
-//         flex-direction: row;
-//       }
-//     }
-//     button {
-//       margin-top: 100px;
-//       align-self: center;
-//     }
-//   }
-// `;
+const LoginFormContainer = styled(FormDefaultStyle)`
+  p {
+    font-size: 20px;
+  }
+  .show-password {
+    margin: 10px 0 0 0;
+    font-size: 11px;
+    flex-direction: row;
+  }
+`;
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -119,7 +74,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
+    <LoginFormContainer>
       <Logo />
 
       <p>Log in by providing the information below</p>
@@ -168,6 +123,6 @@ export default function LoginPage() {
 
         <Button textContent='Log in' type='submit' />
       </form>
-    </div>
+    </LoginFormContainer>
   );
 }
