@@ -89,6 +89,7 @@ export default function LoginPage() {
     }
   });
   const [inputTouched, setInputTouched] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = event => {
     const { value, name } = event.target;
