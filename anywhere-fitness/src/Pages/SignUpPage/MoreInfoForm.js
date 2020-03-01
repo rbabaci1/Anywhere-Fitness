@@ -54,11 +54,15 @@ const FormContainer = styled.div`
         color: #f7f7f7;
       }
     }
+    button {
+      align-self: center;
+      margin-top: 100px;
+    }
   }
 `;
 
 function MoreInfoForm(props) {
-  console.log(props);
+  console.log(props.location);
   return (
     <FormContainer>
       <Logo />
@@ -87,6 +91,8 @@ function MoreInfoForm(props) {
             <option value={false}>No</option>
           </Field>
         </label>
+
+        <Button textContent='Continue' type='submit' />
       </Form>
     </FormContainer>
   );

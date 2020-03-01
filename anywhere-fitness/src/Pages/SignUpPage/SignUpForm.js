@@ -61,7 +61,7 @@ const FormContainer = styled.div`
       text-align: center;
     }
     button {
-      margin-top: 150px;
+      margin-top: 100px;
       align-self: center;
     }
   }
@@ -104,7 +104,14 @@ function SignUpForm({ values, match }) {
         </label>
 
         {typeName === 'instructor' ? (
-          <Link to='/accountType/instructor/signUp/MoreInfo'>
+          <Link
+            to={{
+              pathname: '/accountType/instructor/signUp/MoreInfo',
+              state: {
+                values: values
+              }
+            }}
+          >
             <Button textContent='Sign up!' type='button' />
           </Link>
         ) : (
