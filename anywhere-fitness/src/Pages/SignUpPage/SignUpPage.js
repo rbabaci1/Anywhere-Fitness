@@ -4,7 +4,7 @@ import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
-export default function SignUp({ match }) {
+function SignUpPage({ match }) {
   const { typeName } = match.params;
 
   return (
@@ -13,3 +13,5 @@ export default function SignUp({ match }) {
     </div>
   );
 }
+
+export default withFormik({})(SignUpPage);
