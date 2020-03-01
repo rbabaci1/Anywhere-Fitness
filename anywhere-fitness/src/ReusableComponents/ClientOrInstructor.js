@@ -39,7 +39,7 @@ export default function ClientOrInstructor({ type }) {
             classes based on location, skill level, and preferred work out type.
           </p>
 
-          <Link to='/client/signUp'>
+          <Link to='/accountType/client/signUp'>
             <Button textContent='Continue' />
           </Link>
         </div>
@@ -52,7 +52,7 @@ export default function ClientOrInstructor({ type }) {
             and receive payment for classes.
           </p>
 
-          <Link to='/instructor/signUp'>
+          <Link to='/accountType/instructor/signUp'>
             <Button textContent='Continue' />
           </Link>
         </div>
