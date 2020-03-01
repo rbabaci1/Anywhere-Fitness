@@ -7,6 +7,8 @@ import axios from 'axios';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
+import { showPassword } from '../../functionsLibrary/library';
+
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
