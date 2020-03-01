@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
+import { formIsValid, showPassword } from '../../functionsLibrary/library';
+
 const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -59,27 +61,6 @@ const LoginContainer = styled.div`
   }
 `;
 
-const formValid = (formErrors, email, password) => {
-  let isValid = true;
-
-  if (email.length === 0 || password.length === 0) {
-    isValid = false;
-  }
-  Object.values(formErrors).forEach(
-    value => value.length > 0 && (isValid = false)
-  );
-
-  return isValid;
-};
-
-const showPassword = () => {
-  const password = document.getElementById('password');
-
-  password.type === 'password'
-    ? (password.type = 'text')
-    : (password.type = 'password');
-};
-
 export default function LoginPage() {
   const [formData, setFormData] = useState({
     email: '',
@@ -110,7 +91,7 @@ export default function LoginPage() {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (formValid(formData.formErrors, formData.email, formData.password)) {
+    if (formIsValid(formData.formErrors, formData.email, formData.password)) {
       // Submit the Data to Login
 
       setFormData({
