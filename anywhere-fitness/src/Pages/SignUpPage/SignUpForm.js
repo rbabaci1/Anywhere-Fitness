@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import ExtraInfoForm from './ExtraInfoForm';
 
 import { showPassword } from '../../functionsLibrary/library';
 
@@ -52,20 +51,36 @@ const FormContainer = styled.div`
         font-family: Ubuntu;
       }
 
-      #show-password {
+      .show-password {
         flex-direction: row;
         margin: 10px 0 0 0;
         font-size: 11px;
       }
     }
-    div {
+    button {
       margin-top: 150px;
-      text-align: center;
+      align-self: center;
+    }
+
+    .extra-info {
+      label {
+        margin-top: 30px;
+      }
+      .select {
+        display: flex;
+        height: 40px;
+        font-size: 20px;
+        background: inherit;
+        border: 2px solid #787777;
+        color: #f7f7f7;
+      }
     }
   }
 `;
 
-function SignUpForm({ match, values }) {
+function SignUpForm({ values, match }) {
+  const { typeName } = match.params;
+
   return (
     <FormContainer>
       <Logo />
@@ -92,42 +107,69 @@ function SignUpForm({ match, values }) {
             id='password'
           />
           {values.password.length > 0 && (
-            <label id='show-password'>
+            <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
               Show Password
             </label>
           )}
         </label>
 
-        <div>
-          {/* <Link  to>
-            <Button textContent='Sign up!' type='submit' />
-          </Link> */}
-          {match.params.typeName === 'client' ? (
-            <Button textContent='Sign up!' type='submit' />
-          ) : (
-            <Link to='/accountType/instructor/signUp/extra'>
-              <Button textContent='Sign up!' type='submit' />
-            </Link>
-          )}
-        </div>
+        {typeName === 'instructor' && (
+          <div className='extra-info'>
+            <label>
+              Exercise you specialize in
+              <Field
+                type='text'
+                name='specialty'
+                placeholder='Exercise you specialize in'
+              />
+            </label>
+
+            <label>
+              Years of Experience
+              <Field type='number' name='yearsOfExperience' id='years' />
+            </label>
+
+            <label>
+              Are You a Certified?
+              <Field
+                as='select'
+                type='text'
+                name='isCertified'
+                className='select'
+              >
+                <option disabled>Select one</option>
+                <option value={true}>Yes</option>
+                <option value={false}>No</option>
+              </Field>
+            </label>
+          </div>
+        )}
+
+        <Button textContent='Sign up!' type='submit' />
       </Form>
     </FormContainer>
   );
 }
 
 export default withFormik({
-  // let matchObj = {};
-  mapPropsToValues: ({ match }) => ({
+  mapPropsToValues: () => ({
     name: '',
     email: '',
-    password: ''
+    password: '',
+    specialty: '',
+    yearsOfExperience: 0,
+    isCertified: true
   }),
   handleSubmit: (values, formikBag) => {
     const { resetForm, props } = formikBag;
     const { typeName } = props.match.params;
+    console.log(typeName);
+    console.log(values.isCertified);
 
     if (typeName === 'instructor') {
+      console.log(values);
+
       // ask for extra info and then submit the data to the database
     } else {
       // Post the data to the database
