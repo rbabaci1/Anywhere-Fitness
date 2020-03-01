@@ -84,10 +84,15 @@ function SignUpPage(props) {
 
         <label>
           Password
-          <Field type='password' name='password' placeholder='Enter password' />
+          <Field
+            type='password'
+            name='password'
+            placeholder='Enter password'
+            id='password'
+          />
           {props.values.password.length > 0 && (
             <label id='show-password'>
-              <input type='checkbox' />
+              <input type='checkbox' onClick={showPassword} />
               Show Password
             </label>
           )}
