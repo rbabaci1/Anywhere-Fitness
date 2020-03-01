@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FormContainer = styled.div`
+export const FormDefaultStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,14 +39,6 @@ export const FormContainer = styled.div`
         background: inherit;
         color: #f7f7f7;
         font-family: Ubuntu;
-      }
-
-      .select {
-        font-size: 20px;
-        height: 40px;
-        background: inherit;
-        border: 2px solid #787777;
-        color: #f7f7f7;
       }
     }
     button {

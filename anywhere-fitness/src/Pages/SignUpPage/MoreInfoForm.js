@@ -4,11 +4,21 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormContainer } from '../../ReusableComponents/Styled-components';
+import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
+
+const MoreInfoFormContainer = styled(FormDefaultStyle)`
+  .select {
+    font-size: 20px;
+    height: 40px;
+    background: inherit;
+    border: 2px solid #787777;
+    color: #f7f7f7;
+  }
+`;
 
 function MoreInfoForm() {
   return (
-    <FormContainer>
+    <MoreInfoFormContainer>
       <Logo />
       <p>Tell us more about you!</p>
 
@@ -38,7 +48,7 @@ function MoreInfoForm() {
 
         <Button textContent='Continue' type='submit' />
       </Form>
-    </FormContainer>
+    </MoreInfoFormContainer>
   );
 }
 
