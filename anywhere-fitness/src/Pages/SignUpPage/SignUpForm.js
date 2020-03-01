@@ -65,7 +65,7 @@ const FormContainer = styled.div`
   }
 `;
 
-function SignUpForm(props) {
+function SignUpForm({ match, values }) {
   return (
     <FormContainer>
       <Logo />
@@ -91,7 +91,7 @@ function SignUpForm(props) {
             placeholder='Enter password'
             id='password'
           />
-          {props.values.password.length > 0 && (
+          {values.password.length > 0 && (
             <label id='show-password'>
               <input type='checkbox' onClick={showPassword} />
               Show Password
@@ -100,7 +100,16 @@ function SignUpForm(props) {
         </label>
 
         <div>
-          <Button textContent='Sign up!' type='submit' />
+          {/* <Link  to>
+            <Button textContent='Sign up!' type='submit' />
+          </Link> */}
+          {match.params.typeName === 'client' ? (
+            <Button textContent='Sign up!' type='submit' />
+          ) : (
+            <Link to='/accountType/instructor/signUp/extra'>
+              <Button textContent='Sign up!' type='submit' />
+            </Link>
+          )}
         </div>
       </Form>
     </FormContainer>
@@ -124,7 +133,7 @@ export default withFormik({
       // Post the data to the database
       // let extra = { age: 25, test: 'hello' };
       // values = { ...values, ...extra };
-      <ExtraInfoForm values={values} />;
+      // <ExtraInfoForm values={values} />;
       console.log(values);
       // return 'submitted';
     }

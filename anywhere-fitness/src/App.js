@@ -8,6 +8,7 @@ import AccountType from './Pages/AccountType/Components/AccountType';
 import UserType from './Pages/AccountType/Components/UserType';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import SignUpForm from './Pages/SignUpPage/SignUpForm';
+import ExtraInfoForm from './Pages/SignUpPage/ExtraInfoForm';
 
 function App() {
   return (
@@ -17,7 +18,15 @@ function App() {
       <Route path='/login' component={LoginPage} />
 
       <Route exact path='/accountType/:typeName' component={UserType} />
-      <Route path='/accountType/:typeName/signUp' component={SignUpForm} />
+      <Route
+        exact
+        path='/accountType/:typeName/signUp'
+        component={SignUpForm}
+      />
+      <Route
+        path='/accountType/instructor/signUp/extra'
+        component={ExtraInfoForm}
+      />
     </div>
   );
 }
