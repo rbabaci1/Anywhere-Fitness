@@ -47,6 +47,12 @@ const FormContainer = styled.div`
         color: #f7f7f7;
         font-family: Ubuntu;
       }
+
+      #show-password {
+        flex-direction: row;
+        margin: 10px 0 0 0;
+        font-size: 11px;
+      }
     }
     div {
       margin-top: 150px;
@@ -55,7 +61,8 @@ const FormContainer = styled.div`
   }
 `;
 
-function SignUpPage() {
+function SignUpPage(props) {
+  console.log(props);
   return (
     <FormContainer>
       <Logo />
@@ -76,6 +83,12 @@ function SignUpPage() {
         <label>
           Password
           <Field type='password' name='password' placeholder='Enter password' />
+          {props.values.password.length > 0 && (
+            <label id='show-password'>
+              <input type='checkbox' />
+              Show Password
+            </label>
+          )}
         </label>
 
         <div>
