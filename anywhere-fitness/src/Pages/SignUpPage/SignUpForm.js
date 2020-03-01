@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { NavLink, Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -145,8 +145,13 @@ function SignUpForm({ values, match }) {
             </label>
           </div>
         )}
-
-        <Button textContent='Sign up!' type='submit' />
+        {typeName === 'instructor' ? (
+          <Link to='/accountType/instructor/signUp/MoreInfo'>
+            <Button textContent='Sign up!' type='button' />
+          </Link>
+        ) : (
+          <Button textContent='Sign up!' type='submit' />
+        )}
       </Form>
     </FormContainer>
   );

@@ -17,9 +17,5 @@ const ButtonComponent = styled.button`
 `;
 
 export default function Button({ textContent, type }) {
-  return (
-    <ButtonComponent type={type ? 'submit' : null}>
-      {textContent}
-    </ButtonComponent>
-  );
+  return <ButtonComponent type={type}>{textContent}</ButtonComponent>;
 }
