@@ -6,7 +6,7 @@ export default function UserType(props) {
 
   return (
     <div>
-      <h1>User Type</h1>
+      <ClientOrInstructor type={typeName} />
     </div>
   );
 }

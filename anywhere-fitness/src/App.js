@@ -5,8 +5,6 @@ import './App.css';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
 import AccountType from './Pages/AccountType/Components/AccountType';
-import ClientSelected from './Pages/AccountType/Components/ClientSelected';
-import InstructorSelected from './Pages/AccountType/Components/InstructorSelected';
 import UserType from './Pages/AccountType/Components/UserType';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import ClientSignUp from './Pages/SignUpPage/ClientSignUp';
@@ -19,8 +17,6 @@ function App() {
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
 
-      {/* <Route exact path='/client' component={ClientSelected} />
-      <Route exact path='/instructor' component={InstructorSelected} /> */}
       <Route path='/accountType/:typeName' component={UserType} />
 
       <Route path='/client/signUp' component={ClientSignUp} />
