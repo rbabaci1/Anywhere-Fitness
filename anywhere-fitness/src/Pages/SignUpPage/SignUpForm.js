@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -123,6 +124,7 @@ export default withFormik({
       // Post the data to the database
       // let extra = { age: 25, test: 'hello' };
       // values = { ...values, ...extra };
+      <ExtraInfoForm values={values} />;
       console.log(values);
       // return 'submitted';
     }
