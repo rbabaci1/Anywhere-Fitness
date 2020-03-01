@@ -4,6 +4,8 @@ import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
+import Button from '../../ReusableComponents/Button';
+
 function SignUpPage({ match }) {
   const { typeName } = match.params;
 
