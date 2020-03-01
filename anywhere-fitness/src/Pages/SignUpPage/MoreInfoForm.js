@@ -2,7 +2,9 @@ import React from 'react';
 import { Form, withFormik, Field } from 'formik';
 import styled from 'styled-components';
 
-export default function MoreInfoForm() {
+import Logo from '../../ReusableComponents/Logo';
+
+function MoreInfoForm() {
   return (
     <div>
       <Form>
@@ -32,3 +34,11 @@ export default function MoreInfoForm() {
     </div>
   );
 }
+
+export default withFormik({
+  mapPropsToValues: () => ({
+    specialty: '',
+    yearsOfExperience: 0,
+    isCertified: true
+  })
+})(MoreInfoForm);

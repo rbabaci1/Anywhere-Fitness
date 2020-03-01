@@ -119,16 +119,12 @@ export default withFormik({
   mapPropsToValues: () => ({
     name: '',
     email: '',
-    password: '',
-    specialty: '',
-    yearsOfExperience: 0,
-    isCertified: true
+    password: ''
   }),
   handleSubmit: (values, formikBag) => {
     const { resetForm, props } = formikBag;
     const { typeName } = props.match.params;
     console.log(typeName);
-    console.log(values.isCertified);
 
     if (typeName === 'instructor') {
       console.log(values);
