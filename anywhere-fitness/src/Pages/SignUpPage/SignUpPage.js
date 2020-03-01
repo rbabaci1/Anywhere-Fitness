@@ -8,15 +8,20 @@ function SignUpPage({ match }) {
   const { typeName } = match.params;
 
   return (
-    <div>
-      <h1>Sign Up Page</h1>
+    <div className='form-container'>
+      <Form>
+        <label>
+          Name
+          <Field type='text' name='name' placeholder='Enter name' />
+        </label>
+      </Form>
     </div>
   );
 }
 
 export default withFormik({
-  mapPropsToValues: () => ({
-    name: '',
+  mapPropsToValues: ({ match }) => ({
+    name: match.params.typeName,
     email: '',
     password: ''
   })
