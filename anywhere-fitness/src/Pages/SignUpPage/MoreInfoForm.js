@@ -3,6 +3,7 @@ import { Form, withFormik, Field } from 'formik';
 import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
+import Button from '../../ReusableComponents/Button';
 
 const FormContainer = styled.div`
   display: flex;
@@ -56,7 +57,8 @@ const FormContainer = styled.div`
   }
 `;
 
-function MoreInfoForm() {
+function MoreInfoForm(props) {
+  console.log(props);
   return (
     <FormContainer>
       <Logo />
