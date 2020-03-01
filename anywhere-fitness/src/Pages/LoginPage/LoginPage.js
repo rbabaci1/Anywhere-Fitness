@@ -46,6 +46,11 @@ const LoginContainer = styled.div`
       span {
         margin-top: 5px;
       }
+      #show-password {
+        margin-top: 10px;
+        font-size: 11px;
+        flex-direction: row;
+      }
     }
     div {
       margin-top: 150px;
@@ -67,6 +72,10 @@ const formValid = (formErrors, email, password) => {
   return isValid;
 };
 
+const showPassword = event => {
+  return null;
+};
+
 export default function LoginPage() {
   const [formData, setFormData] = useState({
     email: '',
@@ -75,7 +84,6 @@ export default function LoginPage() {
       email: ''
     }
   });
-  console.log(formData.formErrors);
   const [inputTouched, setInputTouched] = useState(false);
 
   const handleChange = event => {
@@ -158,6 +166,10 @@ export default function LoginPage() {
               Please, enter your password.
             </span>
           )}
+          <label id='show-password'>
+            <input type='checkbox' onClick={showPassword} />
+            Show Password
+          </label>
         </label>
 
         <div>
