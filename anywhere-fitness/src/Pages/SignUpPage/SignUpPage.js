@@ -117,7 +117,15 @@ export default withFormik({
     const { resetForm, props } = formikBag;
     const { typeName } = props.match.params;
 
-    // if (match.params.name === 'instructor') {
-    // }
+    if (typeName === 'instructor') {
+      // ask for extra info and then submit the data to the database
+    } else {
+      // Post the data to the database
+      let extra = { age: 25, test: 'hello' };
+      values = { ...values, ...extra };
+      console.log(values);
+      // return 'submitted';
+    }
+    resetForm();
   }
 })(SignUpPage);
