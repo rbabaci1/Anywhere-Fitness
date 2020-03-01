@@ -99,7 +99,7 @@ function SignUpPage(props) {
         </label>
 
         <div>
-          <Button textContent='Sign up!' />
+          <Button textContent='Sign up!' type='submit' />
         </div>
       </Form>
     </FormContainer>
@@ -111,5 +111,8 @@ export default withFormik({
     name: match.params.typeName,
     email: '',
     password: ''
-  })
+  }),
+  handleSubmit: (values, formikBag) => {
+    const { resetForm } = formikBag;
+  }
 })(SignUpPage);
