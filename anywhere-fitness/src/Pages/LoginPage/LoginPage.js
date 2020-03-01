@@ -72,8 +72,12 @@ const formValid = (formErrors, email, password) => {
   return isValid;
 };
 
-const showPassword = event => {
-  return null;
+const showPassword = () => {
+  const password = document.getElementById('password');
+
+  password.type === 'password'
+    ? (password.type = 'text')
+    : (password.type = 'password');
 };
 
 export default function LoginPage() {
@@ -159,6 +163,7 @@ export default function LoginPage() {
             value={formData.password}
             onChange={handleChange}
             placeholder='Enter password'
+            id='password'
           />
           {/* Error message for password validation */}
           {formData.password.length === 0 && inputTouched && (
