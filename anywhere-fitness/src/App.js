@@ -18,6 +18,8 @@ function App() {
 
       <Route path='/client' component={ClientSelected} />
       <Route path='/instructor' component={InstructorSelected} />
+
+      {/* <Route path='/client/signUp' component={}/> */}
     </div>
   );
 }
