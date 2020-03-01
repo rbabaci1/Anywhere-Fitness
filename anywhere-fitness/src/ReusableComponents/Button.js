@@ -16,6 +16,10 @@ const ButtonComponent = styled.button`
   width: 163px;
 `;
 
-export default function Button({ textContent }) {
-  return <ButtonComponent>{textContent}</ButtonComponent>;
+export default function Button({ textContent, type }) {
+  return (
+    <ButtonComponent type={type ? 'submit' : null}>
+      {textContent}
+    </ButtonComponent>
+  );
 }

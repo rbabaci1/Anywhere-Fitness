@@ -64,7 +64,7 @@ const FormContainer = styled.div`
 `;
 
 function SignUpPage(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <FormContainer>
       <Logo />
@@ -107,12 +107,17 @@ function SignUpPage(props) {
 }
 
 export default withFormik({
+  // let matchObj = {};
   mapPropsToValues: ({ match }) => ({
-    name: match.params.typeName,
+    name: '',
     email: '',
     password: ''
   }),
   handleSubmit: (values, formikBag) => {
-    const { resetForm } = formikBag;
+    const { resetForm, props } = formikBag;
+    const { typeName } = props.match.params;
+
+    // if (match.params.name === 'instructor') {
+    // }
   }
 })(SignUpPage);
