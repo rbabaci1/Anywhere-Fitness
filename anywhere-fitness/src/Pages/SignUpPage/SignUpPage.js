@@ -4,13 +4,20 @@ import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
+import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+
+const formContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function SignUpPage({ match }) {
   const { typeName } = match.params;
 
   return (
-    <div className='form-container'>
+    <formContainer>
       <Form>
         <label>
           Name
@@ -31,7 +38,7 @@ function SignUpPage({ match }) {
           <Button textContent='Sign up!' />
         </div>
       </Form>
-    </div>
+    </formContainer>
   );
 }
 
