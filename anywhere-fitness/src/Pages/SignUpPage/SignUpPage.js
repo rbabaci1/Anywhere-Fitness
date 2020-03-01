@@ -14,4 +14,10 @@ function SignUpPage({ match }) {
   );
 }
 
-export default withFormik({})(SignUpPage);
+export default withFormik({
+  mapPropsToValues: () => ({
+    name: '',
+    email: '',
+    password: ''
+  })
+})(SignUpPage);
