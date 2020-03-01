@@ -108,7 +108,7 @@ function SignUpForm({ values, match }) {
             to={{
               pathname: '/accountType/instructor/signUp/MoreInfo',
               state: {
-                values: values
+                signUpValues: values
               }
             }}
           >

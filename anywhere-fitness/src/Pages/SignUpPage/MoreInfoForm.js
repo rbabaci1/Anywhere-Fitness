@@ -61,8 +61,7 @@ const FormContainer = styled.div`
   }
 `;
 
-function MoreInfoForm(props) {
-  console.log(props.location);
+function MoreInfoForm({ values }) {
   return (
     <FormContainer>
       <Logo />
@@ -103,5 +102,13 @@ export default withFormik({
     specialty: '',
     yearsOfExperience: 0,
     isCertified: true
-  })
+  }),
+  handleSubmit: (values, formikBag) => {
+    const { props, resetForm } = formikBag;
+    const { signUpValues } = props.location.state;
+
+    values = { ...signUpValues, ...values };
+    console.log(values);
+    // console.log(formikBag);
+  }
 })(MoreInfoForm);
