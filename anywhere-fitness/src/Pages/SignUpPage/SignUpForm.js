@@ -57,23 +57,12 @@ const FormContainer = styled.div`
         font-size: 11px;
       }
     }
+    a {
+      text-align: center;
+    }
     button {
       margin-top: 150px;
       align-self: center;
-    }
-
-    .extra-info {
-      label {
-        margin-top: 30px;
-      }
-      .select {
-        display: flex;
-        height: 40px;
-        font-size: 20px;
-        background: inherit;
-        border: 2px solid #787777;
-        color: #f7f7f7;
-      }
     }
   }
 `;
@@ -114,37 +103,6 @@ function SignUpForm({ values, match }) {
           )}
         </label>
 
-        {typeName === 'instructor' && (
-          <div className='extra-info'>
-            <label>
-              Exercise you specialize in
-              <Field
-                type='text'
-                name='specialty'
-                placeholder='Exercise you specialize in'
-              />
-            </label>
-
-            <label>
-              Years of Experience
-              <Field type='number' name='yearsOfExperience' id='years' />
-            </label>
-
-            <label>
-              Are You a Certified?
-              <Field
-                as='select'
-                type='text'
-                name='isCertified'
-                className='select'
-              >
-                <option disabled>Select one</option>
-                <option value={true}>Yes</option>
-                <option value={false}>No</option>
-              </Field>
-            </label>
-          </div>
-        )}
         {typeName === 'instructor' ? (
           <Link to='/accountType/instructor/signUp/MoreInfo'>
             <Button textContent='Sign up!' type='button' />
