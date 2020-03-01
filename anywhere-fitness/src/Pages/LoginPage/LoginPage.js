@@ -25,6 +25,7 @@ const LoginContainer = styled.div`
     flex-direction: column;
     width: 330px;
     margin-top: 30px;
+
     label {
       display: flex;
       flex-direction: column;
