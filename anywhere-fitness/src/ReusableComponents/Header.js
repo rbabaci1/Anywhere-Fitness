@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from './Logo';
 import styled from 'styled-components';
 
-const HeaderComponent = styled.div`
+const HeaderContainer = styled.div`
   margin-bottom: 50px;
 
   section {
@@ -25,11 +25,11 @@ const HeaderComponent = styled.div`
 
 export default function Header() {
   return (
-    <HeaderComponent>
+    <HeaderContainer>
       <Logo />
       <section>
         <h3>Choose if you want to join as a Client or an Instructor</h3>
       </section>
-    </HeaderComponent>
+    </HeaderContainer>
   );
 }

@@ -56,7 +56,7 @@ const LoginContainer = styled.div`
       }
     }
     div {
-      margin-top: 150px;
+      margin-top: 100px;
       text-align: center;
     }
   }

@@ -68,7 +68,7 @@ const FormContainer = styled.div`
 `;
 
 function SignUpForm({ values, match }) {
-  const { typeName } = match.params;
+  const { userType } = match.params;
 
   return (
     <FormContainer>
@@ -103,12 +103,12 @@ function SignUpForm({ values, match }) {
           )}
         </label>
 
-        {typeName === 'instructor' ? (
+        {userType === 'instructor' ? (
           <Link
             to={{
               pathname: '/accountType/instructor/signUp/MoreInfo',
               state: {
-                signUpValues: values
+                firstFormValues: values
               }
             }}
           >
@@ -130,20 +130,13 @@ export default withFormik({
   }),
   handleSubmit: (values, formikBag) => {
     const { resetForm, props } = formikBag;
-    const { typeName } = props.match.params;
-    console.log(typeName);
+    const { userType } = props.match.params;
+    console.log(userType);
 
-    if (typeName === 'instructor') {
-      console.log(values);
-
-      // ask for extra info and then submit the data to the database
-    } else {
+    if (userType === 'client') {
       // Post the data to the database
-      // let extra = { age: 25, test: 'hello' };
-      // values = { ...values, ...extra };
-      // <ExtraInfoForm values={values} />;
+
       console.log(values);
-      // return 'submitted';
     }
     resetForm();
   }

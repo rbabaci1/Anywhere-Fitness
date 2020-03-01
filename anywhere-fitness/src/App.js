@@ -17,10 +17,11 @@ function App() {
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
 
-      <Route exact path='/accountType/:typeName' component={UserType} />
+      <Route exact path='/accountType/:userType' component={UserType} />
+
       <Route
         exact
-        path='/accountType/:typeName/signUp'
+        path='/accountType/:userType/signUp'
         component={SignUpForm}
       />
       <Route

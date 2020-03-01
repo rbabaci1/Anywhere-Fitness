@@ -61,7 +61,7 @@ const FormContainer = styled.div`
   }
 `;
 
-function MoreInfoForm({ values }) {
+function MoreInfoForm() {
   return (
     <FormContainer>
       <Logo />
@@ -105,10 +105,11 @@ export default withFormik({
   }),
   handleSubmit: (values, formikBag) => {
     const { props, resetForm } = formikBag;
-    const { signUpValues } = props.location.state;
-
-    values = { ...signUpValues, ...values };
+    const { firstFormValues } = props.location.state;
+    // concat the first form values with the current
+    values = { ...firstFormValues, ...values };
     console.log(values);
     // console.log(formikBag);
+    resetForm();
   }
 })(MoreInfoForm);
