@@ -18,11 +18,11 @@ function App() {
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
 
-      <Route path='/client' component={ClientSelected} />
-      <Route path='/instructor' component={InstructorSelected} />
+      <Route exact path='/client' component={ClientSelected} />
+      <Route exact path='/instructor' component={InstructorSelected} />
 
-      <Route path='/client/signUp' component={} />
-      <Route path='/instructor/signUp' component={} />
+      <Route path='/client/signUp' component={ClientSignUp} />
+      <Route path='/instructor/signUp' component={InstructorSignUp} />
     </div>
   );
 }
