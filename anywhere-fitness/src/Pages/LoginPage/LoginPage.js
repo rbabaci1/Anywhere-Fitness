@@ -47,7 +47,7 @@ const LoginContainer = styled.div`
         margin-top: 5px;
       }
       #show-password {
-        margin-top: 10px;
+        margin: 10px 0 0 0;
         font-size: 11px;
         flex-direction: row;
       }
@@ -89,7 +89,7 @@ export default function LoginPage() {
     }
   });
   const [inputTouched, setInputTouched] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  const [passwordIsShown, setPasswordIsShown] = useState(false);
 
   const handleChange = event => {
     const { value, name } = event.target;
@@ -100,6 +100,8 @@ export default function LoginPage() {
       formErrors.email = regex.test(value)
         ? ''
         : 'Please, Enter a valid email address.';
+    } else {
+      setPasswordIsShown(true);
     }
 
     setFormData({ ...formData, [name]: value });
@@ -119,6 +121,7 @@ export default function LoginPage() {
         }
       });
       setInputTouched(false);
+      setPasswordIsShown(false);
     } else {
       // Render the Error message to the User
 
@@ -172,10 +175,12 @@ export default function LoginPage() {
               Please, enter your password.
             </span>
           )}
-          <label id='show-password'>
-            <input type='checkbox' onClick={showPassword} />
-            Show Password
-          </label>
+          {passwordIsShown ? (
+            <label id='show-password'>
+              <input type='checkbox' onClick={showPassword} />
+              Show Password
+            </label>
+          ) : null}
         </label>
 
         <div>
