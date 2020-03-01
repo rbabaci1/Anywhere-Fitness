@@ -8,6 +8,8 @@ import AccountType from './Pages/AccountType/Components/AccountType';
 import ClientSelected from './Pages/AccountType/Components/ClientSelected';
 import InstructorSelected from './Pages/AccountType/Components/InstructorSelected';
 import LoginPage from './Pages/LoginPage/LoginPage';
+import ClientSignUp from './Pages/SignUpPage/ClientSignUp';
+import InstructorSignUp from './Pages/SignUpPage/InstructorSignUp';
 
 function App() {
   return (
@@ -19,7 +21,8 @@ function App() {
       <Route path='/client' component={ClientSelected} />
       <Route path='/instructor' component={InstructorSelected} />
 
-      {/* <Route path='/client/signUp' component={}/> */}
+      <Route path='/client/signUp' component={} />
+      <Route path='/instructor/signUp' component={} />
     </div>
   );
 }
