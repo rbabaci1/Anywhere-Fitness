@@ -17,7 +17,7 @@ function App() {
       <Route path='/login' component={LoginPage} />
 
       <Route exact path='/accountType/:typeName' component={UserType} />
-      <Route path='accountType/:typeName/signUp' component={SignUp} />
+      <Route path='/accountType/:typeName/signUp' component={SignUp} />
     </div>
   );
 }

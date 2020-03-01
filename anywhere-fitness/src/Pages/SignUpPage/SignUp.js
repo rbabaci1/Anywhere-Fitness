@@ -4,6 +4,12 @@ import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
 
-export default function SignUp() {
-  return <div></div>;
+export default function SignUp({ match }) {
+  const { typeName } = match.params;
+
+  return (
+    <div>
+      <h1>Sign Up Page</h1>
+    </div>
+  );
 }
