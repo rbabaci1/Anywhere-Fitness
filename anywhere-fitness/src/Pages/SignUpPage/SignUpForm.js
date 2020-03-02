@@ -110,7 +110,7 @@ export default withFormik({
   validationSchema: Yup.object().shape({
     name: Yup.string()
       .required('Please enter your name.')
-      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.'),
+      .matches(/^[a-zA-Z\s]+$/, 'Must contain alphabet letters only.'),
     email: Yup.string()
       // .notOneOf(['waffle@syrup.com'], 'That email is already taken.')
       .required('Please Enter Your Email.')

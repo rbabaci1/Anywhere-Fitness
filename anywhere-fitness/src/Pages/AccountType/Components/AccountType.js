@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Header from '../../../ReusableComponents/Header';
-import Client from './Client';
-import Instructor from './Instructor';
+import Client from '../../../ReusableComponents/Client';
+import Instructor from '../../../ReusableComponents/Instructor';
 
 const MainContent = styled.div`
   display: flex;

@@ -18,7 +18,7 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
       width: 30px;
       text-align: center;
       margin: 2px 8px 0 0;
-      border: 2px solid gray;
+      border: 2px solid #787777;
       border-radius: 3px;
       cursor: pointer;
     }
@@ -73,7 +73,9 @@ function MoreInfoForm({ setValues, values, touched, errors }) {
             onClick={event => toggleActive(event, setValues, values)}
           >
             <span id='yes'>Yes</span>
-            <span id='no'>No</span>
+            <span id='no' className='active'>
+              No
+            </span>
           </div>
         </label>
 

@@ -40,7 +40,7 @@ const removeActive = () => {
   const yes = document.getElementById('yes');
   const no = document.getElementById('no');
   yes.classList.remove('active');
-  no.classList.remove('active');
+  no.classList.add('active');
 };
 
 export { formIsValid, showPassword, toggleActive, removeActive };

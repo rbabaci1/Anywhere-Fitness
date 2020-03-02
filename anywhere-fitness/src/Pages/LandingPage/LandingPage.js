@@ -24,7 +24,7 @@ const LandingPageContainer = styled.div`
     text-align: center;
   }
   button {
-    margin-top: 80px;
+    margin-top: 70px;
   }
   p {
     font-size: 11px;

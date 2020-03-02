@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Header from './Header';
-import Client from '../Pages/AccountType/Components/Client';
-import Instructor from '../Pages/AccountType/Components/Instructor';
+import Client from '../ReusableComponents/Client';
+import Instructor from '../ReusableComponents/Instructor';
 import Button from '../ReusableComponents/Button';
 
 const SelectedContainer = styled.div`
