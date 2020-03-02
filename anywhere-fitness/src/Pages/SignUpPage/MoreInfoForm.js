@@ -1,11 +1,13 @@
 import React from 'react';
 import { Form, withFormik, Field } from 'formik';
-import * as yup from 'yup';
+import * as Yup from 'yup';
 import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
+import { errorMessageStyle } from '../../ReusableComponents/ErrorMessageStyle';
+
 import { toggleActive, removeActive } from '../../functionsLibrary/library';
 
 const MoreInfoFormContainer = styled(FormDefaultStyle)`
@@ -27,7 +29,7 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
   }
 `;
 
-function MoreInfoForm({ setValues, values }) {
+function MoreInfoForm({ setValues, values, touched, errors }) {
   return (
     <MoreInfoFormContainer>
       <Logo />
@@ -41,6 +43,9 @@ function MoreInfoForm({ setValues, values }) {
             name='specialty'
             placeholder='Exercise you specialize in'
           />
+          {touched.specialty && errors.specialty && (
+            <span style={errorMessageStyle}>{errors.specialty}</span>
+          )}
         </label>
 
         <label>
@@ -81,5 +86,10 @@ export default withFormik({
     // console.log(formikBag);
     removeActive();
     resetForm();
-  }
+  },
+  validationSchema: Yup.object().shape({
+    specialty: Yup.string()
+      .required('Please enter a specialty.')
+      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.')
+  })
 })(MoreInfoForm);

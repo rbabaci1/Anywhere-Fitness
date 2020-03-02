@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
-import * as yup from 'yup';
+import * as Yup from 'yup';
 import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
+import { errorMessageStyle } from '../../ReusableComponents/ErrorMessageStyle';
 
 import { showPassword } from '../../functionsLibrary/library';
 
@@ -24,12 +25,6 @@ const SignUpFormContainer = styled(FormDefaultStyle)`
     text-align: center;
   }
 `;
-const errorMessageStyle = {
-  color: '#da4010',
-  marginTop: '2px',
-  textAlign: 'center',
-  fontSize: '18px'
-};
 
 function SignUpForm({ values, match, touched, errors, isSubmitting }) {
   const { userType } = match.params;
@@ -112,18 +107,15 @@ export default withFormik({
     }
     resetForm();
   },
-  validationSchema: yup.object().shape({
-    name: yup
-      .string()
+  validationSchema: Yup.object().shape({
+    name: Yup.string()
       .required('Please enter your name.')
       .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.'),
-    email: yup
-      .string()
+    email: Yup.string()
       // .notOneOf(['waffle@syrup.com'], 'That email is already taken.')
       .required('Please Enter Your Email.')
       .email("Sorry, that's not a valid email."),
-    password: yup
-      .string()
+    password: Yup.string()
       .required('Please Enter Your Password.')
       .matches(
         /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
