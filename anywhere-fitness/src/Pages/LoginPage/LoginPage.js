@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
+import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
 
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
 

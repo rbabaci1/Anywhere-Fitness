@@ -7,8 +7,8 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
-import { errorMessageStyle } from '../../ReusableComponents/ErrorMessageStyle';
+import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
+import { errorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
 
 import { showPassword } from '../../functionsLibrary/library';
 
@@ -80,10 +80,14 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
               }
             }}
           >
-            <Button textContent='Sign up!' type='button' />
+            <Button textContent='Sign up!' type='button' isSubmitting={false} />
           </Link>
         ) : (
-          <Button textContent='Sign up!' type='submit' />
+          <Button
+            textContent='Sign up!'
+            type='submit'
+            isSubmitting={isSubmitting}
+          />
         )}
       </Form>
     </SignUpFormContainer>

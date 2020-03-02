@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
-import { errorMessageStyle } from '../../ReusableComponents/ErrorMessageStyle';
+import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
+import { errorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
 
 import { toggleActive, removeActive } from '../../functionsLibrary/library';
 
@@ -39,7 +39,7 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
   }
 `;
 
-function MoreInfoForm({ setValues, values, touched, errors }) {
+function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
   return (
     <MoreInfoFormContainer>
       <Logo />
@@ -79,7 +79,11 @@ function MoreInfoForm({ setValues, values, touched, errors }) {
           </div>
         </label>
 
-        <Button textContent='Continue' type='submit' />
+        <Button
+          textContent='Continue'
+          type='submit'
+          isSubmitting={isSubmitting}
+        />
       </Form>
     </MoreInfoFormContainer>
   );
