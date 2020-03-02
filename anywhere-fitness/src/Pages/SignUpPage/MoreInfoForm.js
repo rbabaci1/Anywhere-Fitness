@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, withFormik, Field } from 'formik';
 import styled from 'styled-components';
+import { jquery as $ } from 'jquery';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
