@@ -7,21 +7,30 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+
 import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
 import { errorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
-
 import { showPassword } from '../../functionsLibrary/library';
+
+import './checkbox.css';
 
 const SignUpFormContainer = styled(FormDefaultStyle)`
   p {
     font-size: 20px;
   }
+  a {
+    text-align: center;
+  }
+
   .show-password {
     flex-direction: row;
     margin: 10px 0 0 0;
     font-size: 11px;
+    cursor: pointer;
   }
-  a {
+
+  .button {
+    margin-top: 100px;
     text-align: center;
   }
 `;
@@ -63,6 +72,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           {values.password.length > 0 && (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
+              <span class='checkmark'></span>
               Show Password
             </label>
           )}
@@ -72,22 +82,30 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
         </label>
 
         {userType === 'instructor' ? (
-          <Link
-            to={{
-              pathname: '/accountType/instructor/signUp/MoreInfo',
-              state: {
-                firstFormValues: values
-              }
-            }}
-          >
-            <Button textContent='Sign up!' type='button' isSubmitting={false} />
-          </Link>
+          <div className='button'>
+            <Link
+              to={{
+                pathname: '/accountType/instructor/signUp/MoreInfo',
+                state: {
+                  firstFormValues: values
+                }
+              }}
+            >
+              <Button
+                textContent='Sign up!'
+                type='button'
+                isSubmitting={false}
+              />
+            </Link>
+          </div>
         ) : (
-          <Button
-            textContent='Sign up!'
-            type='submit'
-            isSubmitting={isSubmitting}
-          />
+          <div className='button'>
+            <Button
+              textContent='Sign up!'
+              type='submit'
+              isSubmitting={isSubmitting}
+            />
+          </div>
         )}
       </Form>
     </SignUpFormContainer>
@@ -106,10 +124,10 @@ export default withFormik({
 
     if (userType === 'client') {
       // Post the data to the database
-
       console.log(values);
+
+      resetForm();
     }
-    resetForm();
   },
   validationSchema: Yup.object().shape({
     name: Yup.string()

@@ -23,6 +23,9 @@ const SelectedContainer = styled.div`
       text-align: center;
       letter-spacing: 0.36px;
     }
+    .button {
+      margin-top: 70px;
+    }
   }
 `;
 
@@ -39,9 +42,11 @@ export default function ClientOrInstructor({ userType }) {
             classes based on location, skill level, and preferred work out type.
           </p>
 
-          <Link to='/accountType/client/signUp'>
-            <Button textContent='Continue' />
-          </Link>
+          <section className='button'>
+            <Link to='/accountType/client/signUp'>
+              <Button textContent='Continue' />
+            </Link>
+          </section>
         </div>
       ) : (
         <div>
@@ -52,9 +57,11 @@ export default function ClientOrInstructor({ userType }) {
             and receive payment for classes.
           </p>
 
-          <Link to='/accountType/instructor/signUp'>
-            <Button textContent='Continue' />
-          </Link>
+          <section className='button'>
+            <Link to='/accountType/instructor/signUp'>
+              <Button textContent='Continue' />
+            </Link>
+          </section>
         </div>
       )}
     </SelectedContainer>

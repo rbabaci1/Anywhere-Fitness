@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
 
+import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
 
 const LoginFormContainer = styled(FormDefaultStyle)`
@@ -15,6 +15,10 @@ const LoginFormContainer = styled(FormDefaultStyle)`
     margin: 10px 0 0 0;
     font-size: 11px;
     flex-direction: row;
+  }
+  .button {
+    margin-top: 170px;
+    text-align: center;
   }
 `;
 
@@ -51,13 +55,16 @@ export default function LoginPage() {
     if (formIsValid(formData.formErrors, formData.email, formData.password)) {
       // Submit the Data to Login
 
-      setFormData({
-        email: '',
-        password: '',
-        formErrors: {
-          email: ''
-        }
-      });
+      setTimeout(() => {
+        setFormData({
+          email: '',
+          password: '',
+          formErrors: {
+            email: ''
+          }
+        });
+      }, 3000);
+
       setInputTouched(false);
       setPasswordIsShown(false);
     } else {
@@ -121,7 +128,9 @@ export default function LoginPage() {
           ) : null}
         </label>
 
-        <Button textContent='Log in' type='submit' />
+        <div className='button'>
+          <Button textContent='Log in' type='submit' />
+        </div>
       </form>
     </LoginFormContainer>
   );

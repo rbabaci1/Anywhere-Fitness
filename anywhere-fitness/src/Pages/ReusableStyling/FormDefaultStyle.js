@@ -41,9 +41,5 @@ export const FormDefaultStyle = styled.div`
         font-family: Ubuntu;
       }
     }
-    button {
-      align-self: center;
-      margin-top: 100px;
-    }
   }
 `;

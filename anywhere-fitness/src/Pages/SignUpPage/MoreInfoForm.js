@@ -11,7 +11,13 @@ import { errorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
 import { toggleActive, removeActive } from '../../functionsLibrary/library';
 
 const MoreInfoFormContainer = styled(FormDefaultStyle)`
+  .button {
+    text-align: center;
+    margin-top: 70px;
+  }
   .select {
+    width: fit-content;
+
     span {
       display: inline-block;
       padding: 8px 3px;
@@ -79,11 +85,13 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
           </div>
         </label>
 
-        <Button
-          textContent='Continue'
-          type='submit'
-          isSubmitting={isSubmitting}
-        />
+        <div className='button'>
+          <Button
+            textContent='Continue'
+            type='submit'
+            isSubmitting={isSubmitting}
+          />
+        </div>
       </Form>
     </MoreInfoFormContainer>
   );
@@ -101,10 +109,16 @@ export default withFormik({
     // concat the first form values with the current
     values = { ...firstFormValues, ...values };
 
-    console.log(values);
+    setTimeout(() => {
+      console.log(values);
+      resetForm();
+      removeActive();
+    }, 3000);
+
+    // console.log(values);
     // console.log(formikBag);
-    removeActive();
-    resetForm();
+    // removeActive();
+    // resetForm();
   },
   validationSchema: Yup.object().shape({
     specialty: Yup.string()

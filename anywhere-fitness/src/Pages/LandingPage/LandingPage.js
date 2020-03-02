@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../ReusableComponents/Logo';
-import landingPageImage from '../Images/landingPageImage.png';
 import Button from '../../ReusableComponents/Button';
+
+import landingPageImage from '../Images/landingPageImage.png';
 
 const LandingPageContainer = styled.div`
   display: flex;
@@ -23,14 +24,10 @@ const LandingPageContainer = styled.div`
     letter-spacing: 0.36px;
     text-align: center;
   }
-  button {
-    margin-top: 70px;
-  }
   p {
     font-size: 11px;
     line-height: 13px;
     width: 174px;
-    font-style: normal;
     color: #f7f7f7;
     margin-top: 70px;
     text-align: center;
@@ -39,6 +36,10 @@ const LandingPageContainer = styled.div`
     a {
       color: #ca1f3d;
     }
+  }
+
+  .button {
+    margin-top: 100px;
   }
 `;
 
@@ -50,9 +51,11 @@ export default function LandingPage() {
       <img src={landingPageImage} alt='Athletes working out.' />
       <h4>Attend classes that are run by local instructors, anywhere!</h4>
 
-      <Link to='/accountType'>
-        <Button textContent='Join Now!' />
-      </Link>
+      <div className='button'>
+        <Link to='/accountType'>
+          <Button textContent='Join Now!' />
+        </Link>
+      </div>
 
       <p>
         Already have an account? <Link to='/login'>Log In.</Link>

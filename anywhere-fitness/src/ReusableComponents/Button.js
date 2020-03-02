@@ -7,7 +7,6 @@ const ButtonComponent = styled.button`
   font-size: 22px;
   color: #f7f7f7;
   border-radius: 100px;
-  margin-top: 30px;
   border: none;
   font-weight: bold;
   line-height: 25px;
@@ -19,7 +18,7 @@ const ButtonComponent = styled.button`
 export default function Button({ textContent, type, isSubmitting }) {
   return (
     <ButtonComponent type={type} disabled={isSubmitting}>
-      {isSubmitting ? 'Signing up...' : textContent}
+      {isSubmitting ? 'Submitting ...' : textContent}
     </ButtonComponent>
   );
 }
