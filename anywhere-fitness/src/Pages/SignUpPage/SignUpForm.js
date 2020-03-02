@@ -52,6 +52,9 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
         <label>
           Email
           <Field type='email' name='email' placeholder='Enter email' />
+          {touched.email && errors.email && (
+            <span style={errorMessageStyle}>{errors.email}</span>
+          )}
         </label>
 
         <label>
@@ -111,6 +114,11 @@ export default withFormik({
     name: yup
       .string()
       .required('Please enter your name.')
-      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.')
+      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.'),
+    email: yup
+      .string()
+      // .notOneOf(['waffle@syrup.com'], 'That email is already taken.')
+      .required('Please Enter Your Email.')
+      .email("Sorry, that's not a valid email.")
   })
 })(SignUpForm);
