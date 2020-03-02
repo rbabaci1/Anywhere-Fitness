@@ -11,60 +11,17 @@ import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
 
 import { showPassword } from '../../functionsLibrary/library';
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+const SignUpFormContainer = styled(FormDefaultStyle)`
   p {
-    width: 344px;
     font-size: 20px;
-    line-height: 23px;
-    text-align: center;
-    letter-spacing: 0.36px;
-    color: #f7f7f7;
   }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 330px;
-    margin-top: 30px;
-
-    label {
-      display: flex;
-      flex-direction: column;
-      color: #f7f7f7;
-      font-size: 17px;
-      font-weight: normal;
-      line-height: 20px;
-      letter-spacing: 0.36px;
-      margin-bottom: 13px;
-
-      input {
-        border-radius: 3px;
-        box-sizing: border-box;
-        border: 2px solid #787777;
-        padding: 10px 6px;
-        font-size: 17px;
-        background: inherit;
-        color: #f7f7f7;
-        font-family: Ubuntu;
-      }
-
-      .show-password {
-        flex-direction: row;
-        margin: 10px 0 0 0;
-        font-size: 11px;
-      }
-    }
-    a {
-      text-align: center;
-    }
-    button {
-      margin-top: 100px;
-      align-self: center;
-    }
+  .show-password {
+    flex-direction: row;
+    margin: 10px 0 0 0;
+    font-size: 11px;
+  }
+  a {
+    text-align: center;
   }
 `;
 
@@ -72,7 +29,7 @@ function SignUpForm({ values, match }) {
   const { userType } = match.params;
 
   return (
-    <FormContainer>
+    <SignUpFormContainer>
       <Logo />
 
       <p>Create an account by providing the information below</p>
@@ -119,7 +76,7 @@ function SignUpForm({ values, match }) {
           <Button textContent='Sign up!' type='submit' />
         )}
       </Form>
-    </FormContainer>
+    </SignUpFormContainer>
   );
 }
 
