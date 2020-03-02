@@ -18,7 +18,7 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
       width: 30px;
       text-align: center;
       margin: 2px 8px 0 0;
-      border: 1px solid gray;
+      border: 2px solid gray;
       border-radius: 3px;
       cursor: pointer;
     }
@@ -26,6 +26,16 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
       color: #000000;
       background: #f7f7f7;
     }
+  }
+  #experience {
+    padding: 8px 0;
+    width: 40px;
+    text-align: center;
+  }
+  #experience::-webkit-outer-spin-button,
+  #experience::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 
@@ -50,7 +60,10 @@ function MoreInfoForm({ setValues, values, touched, errors }) {
 
         <label>
           Years of Experience
-          <Field type='number' name='yearsOfExperience' id='years' />
+          <Field type='number' name='yearsOfExperience' id='experience' />
+          {touched.yearsOfExperience && errors.yearsOfExperience && (
+            <span style={errorMessageStyle}>{errors.yearsOfExperience}</span>
+          )}
         </label>
 
         <label>
@@ -90,6 +103,9 @@ export default withFormik({
   validationSchema: Yup.object().shape({
     specialty: Yup.string()
       .required('Please enter a specialty.')
-      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.')
+      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.'),
+    yearsOfExperience: Yup.number().required(
+      'Please enter the number of years of experience.'
+    )
   })
 })(MoreInfoForm);
