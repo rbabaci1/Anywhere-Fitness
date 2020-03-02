@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Form, Field, withFormik } from 'formik';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -24,8 +24,14 @@ const SignUpFormContainer = styled(FormDefaultStyle)`
     text-align: center;
   }
 `;
+const errorMessageStyle = {
+  color: '#da4010',
+  marginTop: '2px',
+  textAlign: 'center',
+  fontSize: '18px'
+};
 
-function SignUpForm({ values, match }) {
+function SignUpForm({ values, match, touched, errors, isSubmitting }) {
   const { userType } = match.params;
 
   return (
@@ -38,6 +44,9 @@ function SignUpForm({ values, match }) {
         <label>
           Name
           <Field type='text' name='name' placeholder='Enter name' />
+          {touched.name && errors.name && (
+            <span style={errorMessageStyle}>{errors.name}</span>
+          )}
         </label>
 
         <label>
@@ -97,5 +106,11 @@ export default withFormik({
       console.log(values);
     }
     resetForm();
-  }
+  },
+  validationSchema: yup.object().shape({
+    name: yup
+      .string()
+      .required('Please enter your name.')
+      .matches(/^[a-zA-Z]+$/, 'Must contain alphabet letters only.')
+  })
 })(SignUpForm);
