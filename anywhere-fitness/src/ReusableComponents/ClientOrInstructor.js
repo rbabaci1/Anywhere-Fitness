@@ -26,12 +26,12 @@ const SelectedContainer = styled.div`
   }
 `;
 
-export default function ClientOrInstructor({ type }) {
+export default function ClientOrInstructor({ userType }) {
   return (
     <SelectedContainer>
       <Header />
 
-      {type === 'client' ? (
+      {userType === 'client' ? (
         <div>
           <Client />
           <p>

@@ -2,10 +2,10 @@ import React from 'react';
 import ClientOrInstructor from '../../../ReusableComponents/ClientOrInstructor';
 
 export default function UserType({ match }) {
-  const { typeName } = match.params;
+  const { userType } = match.params;
   return (
     <div>
-      <ClientOrInstructor type={typeName} />
+      <ClientOrInstructor userType={userType} />
     </div>
   );
 }

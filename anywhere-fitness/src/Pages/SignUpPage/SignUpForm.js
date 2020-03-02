@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
 
 import { showPassword } from '../../functionsLibrary/library';
 
