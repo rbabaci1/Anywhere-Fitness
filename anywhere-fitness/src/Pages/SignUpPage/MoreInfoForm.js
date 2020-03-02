@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, withFormik, Field } from 'formik';
+import * as yup from 'yup';
 import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';

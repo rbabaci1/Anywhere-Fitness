@@ -72,9 +72,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
             </label>
           )}
           {touched.password && errors.password && (
-            <span style={{ color: '#da4010', marginTop: '5px' }}>
-              {errors.password}
-            </span>
+            <span style={errorMessageStyle}>{errors.password}</span>
           )}
         </label>
 
@@ -106,7 +104,6 @@ export default withFormik({
   handleSubmit: (values, formikBag) => {
     const { resetForm, props } = formikBag;
     const { userType } = props.match.params;
-    console.log(userType);
 
     if (userType === 'client') {
       // Post the data to the database
