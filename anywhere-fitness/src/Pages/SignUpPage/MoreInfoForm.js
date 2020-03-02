@@ -1,23 +1,32 @@
 import React from 'react';
 import { Form, withFormik, Field } from 'formik';
 import styled from 'styled-components';
-import { jquery as $ } from 'jquery';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 import { FormDefaultStyle } from '../../ReusableComponents/FormDefaultStyle';
+import { toggleActive, removeActive } from '../../functionsLibrary/library';
 
 const MoreInfoFormContainer = styled(FormDefaultStyle)`
   .select {
-    font-size: 20px;
-    height: 40px;
-    background: inherit;
-    border: 2px solid #787777;
-    color: #f7f7f7;
+    span {
+      display: inline-block;
+      padding: 8px 3px;
+      width: 30px;
+      text-align: center;
+      margin: 2px 8px 0 0;
+      border: 1px solid gray;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .active {
+      color: #000000;
+      background: #f7f7f7;
+    }
   }
 `;
 
-function MoreInfoForm() {
+function MoreInfoForm({ setValues, values }) {
   return (
     <MoreInfoFormContainer>
       <Logo />
@@ -40,11 +49,13 @@ function MoreInfoForm() {
 
         <label>
           Are You a Certified?
-          <Field as='select' type='text' name='isCertified' className='select'>
-            <option disabled>Select one</option>
-            <option value={true}>Yes</option>
-            <option value={false}>No</option>
-          </Field>
+          <div
+            className='select'
+            onClick={event => toggleActive(event, setValues, values)}
+          >
+            <span id='yes'>Yes</span>
+            <span id='no'>No</span>
+          </div>
         </label>
 
         <Button textContent='Continue' type='submit' />
@@ -57,15 +68,17 @@ export default withFormik({
   mapPropsToValues: () => ({
     specialty: '',
     yearsOfExperience: 0,
-    isCertified: true
+    isCertified: false
   }),
   handleSubmit: (values, formikBag) => {
     const { props, resetForm } = formikBag;
     const { firstFormValues } = props.location.state;
     // concat the first form values with the current
     values = { ...firstFormValues, ...values };
+
     console.log(values);
     // console.log(formikBag);
+    removeActive();
     resetForm();
   }
 })(MoreInfoForm);

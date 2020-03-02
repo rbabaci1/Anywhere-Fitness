@@ -19,4 +19,28 @@ const showPassword = () => {
     : (password.type = 'password');
 };
 
-export { formIsValid, showPassword };
+const toggleActive = (event, setValues, values) => {
+  let yes = document.getElementById('yes');
+  let no = document.getElementById('no');
+
+  if (event.target.textContent === 'Yes') {
+    setValues({ ...values, isCertified: true });
+
+    event.target.classList.add('active');
+    no.classList.remove('active');
+  } else {
+    setValues({ ...values, isCertified: false });
+
+    event.target.classList.add('active');
+    yes.classList.remove('active');
+  }
+};
+
+const removeActive = () => {
+  const yes = document.getElementById('yes');
+  const no = document.getElementById('no');
+  yes.classList.remove('active');
+  no.classList.remove('active');
+};
+
+export { formIsValid, showPassword, toggleActive, removeActive };
