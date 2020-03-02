@@ -71,6 +71,11 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
               Show Password
             </label>
           )}
+          {touched.password && errors.password && (
+            <span style={{ color: '#da4010', marginTop: '5px' }}>
+              {errors.password}
+            </span>
+          )}
         </label>
 
         {userType === 'instructor' ? (
@@ -119,6 +124,13 @@ export default withFormik({
       .string()
       // .notOneOf(['waffle@syrup.com'], 'That email is already taken.')
       .required('Please Enter Your Email.')
-      .email("Sorry, that's not a valid email.")
+      .email("Sorry, that's not a valid email."),
+    password: yup
+      .string()
+      .required('Please Enter Your Password.')
+      .matches(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+        'Must contain 8 characters, 1 uppercase, 1 lowercase, 1 number and 1 special case character.'
+      )
   })
 })(SignUpForm);
