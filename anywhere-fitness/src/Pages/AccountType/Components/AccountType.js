@@ -16,7 +16,7 @@ const MainContent = styled.div`
   }
   @media only screen and (min-width: 500px) {
     margin-top: 100px;
-    padding: 20px 0 30px 0;
+    padding: 20px 0 50px 0;
     background: #252327;
   }
 `;
