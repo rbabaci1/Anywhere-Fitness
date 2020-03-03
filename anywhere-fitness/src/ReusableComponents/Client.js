@@ -5,6 +5,7 @@ import clientImage from '../Pages/Images/clientImage.png';
 
 const ClientContainer = styled.div`
   text-align: center;
+  margin: 20px;
 
   h2 {
     font-style: normal;
@@ -15,6 +16,16 @@ const ClientContainer = styled.div`
     letter-spacing: 0.36px;
     color: #f7f7f7;
     margin: 0 0 5px 0;
+
+    @media only screen and (min-width: 500px) {
+      font-size: 26px;
+    }
+  }
+
+  img {
+    @media only screen and (min-width: 500px) {
+      width: 300px;
+    }
   }
 `;
 

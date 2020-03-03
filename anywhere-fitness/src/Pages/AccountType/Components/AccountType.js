@@ -9,9 +9,15 @@ import Instructor from '../../../ReusableComponents/Instructor';
 const MainContent = styled.div`
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 
   a {
     text-decoration: none;
+  }
+  @media only screen and (min-width: 500px) {
+    margin-top: 100px;
+    padding: 20px 0 30px 0;
+    background: #252327;
   }
 `;
 

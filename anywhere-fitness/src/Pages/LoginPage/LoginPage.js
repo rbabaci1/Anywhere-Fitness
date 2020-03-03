@@ -25,30 +25,6 @@ const LoginFormContainer = styled(FormDefaultStyle)`
 
   /*********** Media queries ************/
   @media only screen and (min-width: 500px) {
-    h1 {
-      font-size: 45px;
-      line-height: 50px;
-    }
-    p {
-      font-size: 25px;
-      width: 90%;
-      line-height: 30px;
-    }
-    form {
-      width: 90%;
-      max-width: 700px;
-
-      label {
-        font-size: 24px;
-        margin-bottom: 30px;
-
-        input {
-          margin-top: 5px;
-          height: 60px;
-          font-size: 22px;
-        }
-      }
-    }
     .button {
       margin-top: 100px;
 
