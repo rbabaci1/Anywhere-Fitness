@@ -15,7 +15,7 @@ const ButtonComponent = styled.button`
   width: 163px;
 
   @media only screen and (min-width: 500px) {
-    padding: 13px 0;
+    padding: 11px 0;
   }
 `;
 

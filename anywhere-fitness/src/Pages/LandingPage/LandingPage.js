@@ -50,6 +50,9 @@ const LandingPageContainer = styled.div`
       display: block;
       margin-top: 20px;
     }
+    .images-slideshow {
+      height: fit-content;
+    }
     .image1 {
       margin: 0;
     }
@@ -86,8 +89,7 @@ const LandingPageContainer = styled.div`
       .title-section {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin: 0 50px;
+        margin: 200px 20px 0 70px;
 
         h1 {
           display: block;
@@ -104,12 +106,10 @@ const LandingPageContainer = styled.div`
         }
         .button {
           align-self: flex-start;
-          margin-top: 30px;
+          margin-top: 40px;
         }
 
         @media only screen and (min-width: 1000px) {
-          margin: 0 0 70px 70px;
-
           h1 {
             font-size: 80px;
           }
