@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import clientImage from '../../Images/clientImage.png';
+import clientImage from '../Pages/Images/clientImage.png';
 
 const ClientContainer = styled.div`
   text-align: center;
-  margin-top: 40px;
 
   h2 {
     font-style: normal;
@@ -15,11 +14,11 @@ const ClientContainer = styled.div`
     text-align: center;
     letter-spacing: 0.36px;
     color: #f7f7f7;
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
   }
 `;
 
-export default function ClientType() {
+export default function Client() {
   return (
     <ClientContainer>
       <h2>Client</h2>

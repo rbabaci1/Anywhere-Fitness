@@ -3,28 +3,31 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 
-import AccountTypeHome from './Pages/AccountType/Components/AccountTypeHome';
-import ClientSelected from './Pages/AccountType/Components/ClientSelected';
-import InstructorSelected from './Pages/AccountType/Components/InstructorSelected';
+import LandingPage from './Pages/LandingPage/LandingPage';
+import AccountType from './Pages/AccountType/Components/AccountType';
+import UserType from './Pages/AccountType/Components/UserType';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import SignUpForm from './Pages/SignUpPage/SignUpForm';
+import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
 
 function App() {
   return (
     <div className='App'>
-      {/* <AccountTypeHome /> */}
+      <Route exact path='/' component={LandingPage} />
+      <Route exact path='/accountType' component={AccountType} />
+      <Route path='/login' component={LoginPage} />
 
-      {/*Login/Signup Page*/}
+      <Route exact path='/accountType/:userType' component={UserType} />
 
-      {/*Choose account type page*/}
-      {/*Sign up form*/}
-      {/*Login Form*/}
-      {/*User home page*/}
-      {/*Class Page / schedule /// reserve button is on schedule next to the class
-      and the about class button is a feature we will add specifically for the web app*/}
-      {/*Invite a friend*/}
-      <Route exact path='/' component={AccountTypeHome} />
-
-      <Route path='/clientSelect' component={ClientSelected} />
-      <Route path='/instructorSelect' component={InstructorSelected} />
+      <Route
+        exact
+        path='/accountType/:userType/signUp'
+        component={SignUpForm}
+      />
+      <Route
+        path='/accountType/instructor/signUp/moreInfo'
+        component={MoreInfoForm}
+      />
     </div>
   );
 }

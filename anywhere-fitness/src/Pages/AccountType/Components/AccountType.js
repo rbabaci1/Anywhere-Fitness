@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Header from '../../../ReusableComponents/Header';
-import ClientType from './ClientType';
-import InstructorType from './InstructorType';
+import Client from '../../../ReusableComponents/Client';
+import Instructor from '../../../ReusableComponents/Instructor';
 
 const MainContent = styled.div`
   display: flex;
@@ -15,18 +15,18 @@ const MainContent = styled.div`
   }
 `;
 
-export default function AccountTypeHome() {
+export default function AccountType() {
   return (
     <div>
       <Header />
 
       <MainContent>
-        <Link to='/clientSelect'>
-          <ClientType />
+        <Link to='/accountType/client'>
+          <Client />
         </Link>
 
-        <Link to='/instructorSelect'>
-          <InstructorType />
+        <Link to='/accountType/instructor'>
+          <Instructor />
         </Link>
       </MainContent>
     </div>

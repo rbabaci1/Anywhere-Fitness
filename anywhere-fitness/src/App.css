@@ -1,3 +1,11 @@
 .App {
     font-family: Ubuntu;
 }
+
+.active {
+    background: rgb(87, 86, 86);
+}
+
+.hide {
+    display: none;
+}
