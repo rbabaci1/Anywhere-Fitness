@@ -5,7 +5,9 @@ import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
 import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
+
 import '../SignUpPage/checkbox.css';
 
 const LoginFormContainer = styled(FormDefaultStyle)`
@@ -81,16 +83,13 @@ export default function LoginPage() {
     if (formIsValid(formData.formErrors, formData.email, formData.password)) {
       // Submit the Data to Login
 
-      setTimeout(() => {
-        setFormData({
-          email: '',
-          password: '',
-          formErrors: {
-            email: ''
-          }
-        });
-      }, 3000);
-
+      setFormData({
+        email: '',
+        password: '',
+        formErrors: {
+          email: ''
+        }
+      });
       setInputTouched(false);
       setPasswordIsShown(false);
     } else {
@@ -124,9 +123,7 @@ export default function LoginPage() {
           />
           {/* Error message for email validation */}
           {formData.formErrors.email.length > 0 && inputTouched && (
-            <span style={{ color: '#da4010' }}>
-              {formData.formErrors.email}
-            </span>
+            <ErrorMessageStyle>{formData.formErrors.email}</ErrorMessageStyle>
           )}
         </label>
 
@@ -142,9 +139,7 @@ export default function LoginPage() {
           />
           {/* Error message for password validation */}
           {formData.password.length === 0 && inputTouched && (
-            <span style={{ color: '#da4010' }}>
-              Please, enter your password.
-            </span>
+            <ErrorMessageStyle>Please, enter your password.</ErrorMessageStyle>
           )}
           {passwordIsShown ? (
             <label className='show-password'>
