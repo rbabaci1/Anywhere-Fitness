@@ -6,6 +6,7 @@ import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
 import landingPageImage from '../Images/landingPageImage.png';
+import './landingPage.css';
 
 const LandingPageContainer = styled.div`
   display: flex;
