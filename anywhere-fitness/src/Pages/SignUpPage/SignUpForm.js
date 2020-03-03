@@ -27,6 +27,7 @@ const SignUpFormContainer = styled(FormDefaultStyle)`
     margin: 10px 0 0 0;
     font-size: 11px;
     cursor: pointer;
+    width: fit-content;
   }
 
   .button {

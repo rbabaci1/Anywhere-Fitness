@@ -26,8 +26,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   background-color: inherit;
   border: 1px solid #787777;
   border-radius: 3px;
@@ -35,13 +35,13 @@
 
 /* On mouse-over, add a grey background color */
 
-.show-password:hover input ~ .checkmark {
+.show-password:hover input~.checkmark {
   background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
 
-.show-password input:checked ~ .checkmark {
+.show-password input:checked~.checkmark {
   background-color: inherit;
 }
 
@@ -53,13 +53,13 @@
   display: none;
 }
 
-.show-password input:checked ~ .checkmark:after {
+.show-password input:checked~.checkmark:after {
   display: block;
 }
 
 .show-password .checkmark:after {
-  left: 7px;
-  top: 3px;
+  left: 6px;
+  top: 1px;
   width: 5px;
   height: 10px;
   border: solid #f7f7f7;
