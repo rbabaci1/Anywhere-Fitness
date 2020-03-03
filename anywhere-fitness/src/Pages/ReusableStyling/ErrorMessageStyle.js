@@ -1,6 +1,12 @@
-export const errorMessageStyle = {
-  color: '#da4010',
-  marginTop: '3px',
-  textAlign: 'center',
-  fontSize: '18px'
-};
+import styled from 'styled-components';
+
+export const ErrorMessageStyle = styled.span`
+  color: #da4010;
+  margin-top: 3px;
+  text-align: center;
+  font-size: 18px;
+
+  @media only screen and (min-width: 500px) {
+    font-size: 22px;
+  }
+`;

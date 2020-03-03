@@ -38,7 +38,7 @@ const SelectedContainer = styled.div`
       }
     }
     .button {
-      margin: 70px 0 30px 0;
+      margin: 50px 0 30px 0;
     }
   }
 `;

@@ -13,6 +13,10 @@ const ButtonComponent = styled.button`
   padding: 9px 0;
   cursor: pointer;
   width: 163px;
+
+  @media only screen and (min-width: 500px) {
+    padding: 13px 0;
+  }
 `;
 
 export default function Button({ textContent, type, isSubmitting }) {
