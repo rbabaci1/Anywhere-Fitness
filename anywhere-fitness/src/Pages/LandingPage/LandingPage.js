@@ -42,6 +42,8 @@ const LandingPageContainer = styled.div`
     text-align: center;
   }
 
+  /********** Media queries ************/
+
   @media only screen and (min-width: 700px) {
     .landing-image {
       align-self: flex-end;
@@ -189,7 +191,7 @@ export default function LandingPage() {
       </div>
 
       <p className='mobile-login'>
-        Already have an account? <Link to='/login'>Log In</Link>
+        Already have an account ? <Link to='/login'>Log In</Link>
       </p>
     </LandingPageContainer>
   );

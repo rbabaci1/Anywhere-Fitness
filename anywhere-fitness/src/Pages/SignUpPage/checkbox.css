@@ -68,3 +68,16 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+@media(min-width: 500px) {
+  .checkmark {
+    height: 30px;
+    width: 29px;
+  }
+  .show-password .checkmark:after {
+    width: 9px;
+    height: 16px;
+    left: 8px;
+    top: 2px;
+  }
+}

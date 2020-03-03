@@ -6,6 +6,7 @@ import Button from '../../ReusableComponents/Button';
 
 import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
+import '../SignUpPage/checkbox.css';
 
 const LoginFormContainer = styled(FormDefaultStyle)`
   p {
@@ -15,10 +16,59 @@ const LoginFormContainer = styled(FormDefaultStyle)`
     margin: 10px 0 0 0;
     font-size: 11px;
     flex-direction: row;
+    width: fit-content;
   }
   .button {
     margin-top: 170px;
     text-align: center;
+  }
+
+  /*********** Media queries ************/
+  @media only screen and (min-width: 500px) {
+    h1 {
+      font-size: 45px;
+      line-height: 50px;
+    }
+    p {
+      font-size: 25px;
+      width: 90%;
+      line-height: 30px;
+    }
+    form {
+      width: 90%;
+      max-width: 700px;
+
+      label {
+        font-size: 24px;
+        margin-bottom: 30px;
+
+        input {
+          margin-top: 5px;
+          height: 60px;
+          font-size: 22px;
+        }
+      }
+    }
+    .button {
+      margin-top: 100px;
+
+      button {
+        font-size: 30px;
+        padding: 15px 0;
+        width: 180px;
+      }
+      button:hover {
+        background: #820e22;
+      }
+    }
+    .show-password {
+      font-size: 20px;
+      margin-top: 12px;
+
+      #text {
+        margin: 5px 0 0 5px;
+      }
+    }
   }
 `;
 
@@ -123,7 +173,8 @@ export default function LoginPage() {
           {passwordIsShown ? (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              Show Password
+              <span class='checkmark'></span>
+              <span id='text'>Show Password</span>
             </label>
           ) : null}
         </label>
