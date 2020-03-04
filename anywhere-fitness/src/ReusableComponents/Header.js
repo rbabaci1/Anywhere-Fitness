@@ -19,6 +19,10 @@ const HeaderContainer = styled.div`
       text-align: center;
       letter-spacing: 0.36px;
       color: #f7f7f7;
+      @media only screen and (min-width: 500px) {
+        font-size: 25px;
+        width: 100%;
+      }
     }
   }
 `;

@@ -4,8 +4,11 @@ import styled from 'styled-components';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
+import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
+
+import '../SignUpPage/checkbox.css';
 
 const LoginFormContainer = styled(FormDefaultStyle)`
   p {
@@ -15,10 +18,35 @@ const LoginFormContainer = styled(FormDefaultStyle)`
     margin: 10px 0 0 0;
     font-size: 11px;
     flex-direction: row;
+    width: fit-content;
   }
   .button {
     margin-top: 170px;
     text-align: center;
+  }
+
+  /*********** Media queries ************/
+  @media only screen and (min-width: 500px) {
+    .button {
+      margin-top: 100px;
+
+      button {
+        font-size: 30px;
+        padding: 15px 0;
+        width: 180px;
+      }
+      button:hover {
+        background: #820e22;
+      }
+    }
+    .show-password {
+      font-size: 20px;
+      margin-top: 12px;
+
+      #text {
+        margin: 5px 0 0 5px;
+      }
+    }
   }
 `;
 
@@ -55,16 +83,13 @@ export default function LoginPage() {
     if (formIsValid(formData.formErrors, formData.email, formData.password)) {
       // Submit the Data to Login
 
-      setTimeout(() => {
-        setFormData({
-          email: '',
-          password: '',
-          formErrors: {
-            email: ''
-          }
-        });
-      }, 3000);
-
+      setFormData({
+        email: '',
+        password: '',
+        formErrors: {
+          email: ''
+        }
+      });
       setInputTouched(false);
       setPasswordIsShown(false);
     } else {
@@ -98,9 +123,7 @@ export default function LoginPage() {
           />
           {/* Error message for email validation */}
           {formData.formErrors.email.length > 0 && inputTouched && (
-            <span style={{ color: '#da4010' }}>
-              {formData.formErrors.email}
-            </span>
+            <ErrorMessageStyled>{formData.formErrors.email}</ErrorMessageStyled>
           )}
         </label>
 
@@ -116,14 +139,15 @@ export default function LoginPage() {
           />
           {/* Error message for password validation */}
           {formData.password.length === 0 && inputTouched && (
-            <span style={{ color: '#da4010' }}>
+            <ErrorMessageStyled>
               Please, enter your password.
-            </span>
+            </ErrorMessageStyled>
           )}
           {passwordIsShown ? (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              Show Password
+              <span class='checkmark'></span>
+              <span id='text'>Show Password</span>
             </label>
           ) : null}
         </label>

@@ -8,8 +8,8 @@ import axios from 'axios';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
-import { errorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
+import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { showPassword } from '../../functionsLibrary/library';
 
 import './checkbox.css';
@@ -28,11 +28,21 @@ const SignUpFormContainer = styled(FormDefaultStyle)`
     font-size: 11px;
     cursor: pointer;
     width: fit-content;
+    @media only screen and (min-width: 500px) {
+      margin-bottom: 10px;
+      #text {
+        margin: 5px 0 0 5px;
+        font-size: 20px;
+      }
+    }
   }
 
   .button {
     margin-top: 100px;
     text-align: center;
+    @media only screen and (min-width: 500px) {
+      margin: 30px 0;
+    }
   }
 `;
 
@@ -50,7 +60,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           Name
           <Field type='text' name='name' placeholder='Enter name' />
           {touched.name && errors.name && (
-            <span style={errorMessageStyle}>{errors.name}</span>
+            <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
           )}
         </label>
 
@@ -58,7 +68,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           Email
           <Field type='email' name='email' placeholder='Enter email' />
           {touched.email && errors.email && (
-            <span style={errorMessageStyle}>{errors.email}</span>
+            <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
           )}
         </label>
 
@@ -74,11 +84,11 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
               <span class='checkmark'></span>
-              Show Password
+              <span id='text'>Show Password</span>
             </label>
           )}
           {touched.password && errors.password && (
-            <span style={errorMessageStyle}>{errors.password}</span>
+            <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
           )}
         </label>
 

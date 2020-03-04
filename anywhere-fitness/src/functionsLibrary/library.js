@@ -26,21 +26,21 @@ const toggleActive = (event, setValues, values) => {
   if (event.target.textContent === 'Yes') {
     setValues({ ...values, isCertified: true });
 
-    event.target.classList.add('active');
-    no.classList.remove('active');
+    event.target.classList.add('selected');
+    no.classList.remove('selected');
   } else {
     setValues({ ...values, isCertified: false });
 
-    event.target.classList.add('active');
-    yes.classList.remove('active');
+    event.target.classList.add('selected');
+    yes.classList.remove('selected');
   }
 };
 
 const removeActive = () => {
   const yes = document.getElementById('yes');
   const no = document.getElementById('no');
-  yes.classList.remove('active');
-  no.classList.add('active');
+  yes.classList.remove('selected');
+  no.classList.add('selected');
 };
 
 export { formIsValid, showPassword, toggleActive, removeActive };

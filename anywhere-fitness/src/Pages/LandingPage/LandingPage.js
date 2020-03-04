@@ -42,12 +42,16 @@ const LandingPageContainer = styled.div`
     text-align: center;
   }
 
+  /********** Media queries ************/
+
   @media only screen and (min-width: 700px) {
     .landing-image {
-      width: 100%;
       align-self: flex-end;
       display: block;
       margin-top: 20px;
+    }
+    .images-slideshow {
+      height: fit-content;
     }
     .image1 {
       margin: 0;
@@ -85,23 +89,30 @@ const LandingPageContainer = styled.div`
       .title-section {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        margin-left: 100px;
+        margin: 200px 20px 0 70px;
 
         h1 {
           display: block;
           color: #f7f7f7;
-          font-size: 90px;
+          font-size: 55px;
           width: fit-content;
           margin: 0;
         }
         h4 {
           width: 100%;
+          text-align: start;
           margin: 10px 0 0 0;
+          line-height: 25px;
         }
         .button {
           align-self: flex-start;
-          margin-top: 30px;
+          margin-top: 40px;
+        }
+
+        @media only screen and (min-width: 1000px) {
+          h1 {
+            font-size: 80px;
+          }
         }
       }
 
@@ -109,6 +120,26 @@ const LandingPageContainer = styled.div`
         display: flex;
         flex-direction: column;
       }
+    }
+  }
+  @media only screen and (min-width: 500px) {
+    .main-content,
+    .landing-image {
+      width: 100%;
+    }
+    .title-section {
+      h4 {
+        width: 100%;
+        font-size: 21px;
+      }
+    }
+
+    .mobile-login {
+      font-size: 20px;
+      width: 100%;
+    }
+    .button {
+      margin-top: 50px;
     }
   }
 `;
@@ -160,7 +191,7 @@ export default function LandingPage() {
       </div>
 
       <p className='mobile-login'>
-        Already have an account? <Link to='/login'>Log In</Link>
+        Already have an account ? <Link to='/login'>Log In</Link>
       </p>
     </LandingPageContainer>
   );

@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
-import { errorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
+import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 
 import { toggleActive, removeActive } from '../../functionsLibrary/library';
 
@@ -32,11 +32,23 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
       color: #000000;
       background: #f7f7f7;
     }
+
+    @media only screen and (min-width: 500px) {
+      margin-top: 3px;
+      span {
+        width: 45px;
+        padding: 17px 3px;
+      }
+    }
   }
   #experience {
     padding: 8px 0;
     width: 40px;
     text-align: center;
+    @media only screen and (min-width: 500px) {
+      width: 55px;
+      font-size: 24px;
+    }
   }
   #experience::-webkit-outer-spin-button,
   #experience::-webkit-inner-spin-button {
@@ -60,7 +72,7 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
             placeholder='Exercise you specialize in'
           />
           {touched.specialty && errors.specialty && (
-            <span style={errorMessageStyle}>{errors.specialty}</span>
+            <ErrorMessageStyled>{errors.specialty}</ErrorMessageStyled>
           )}
         </label>
 
@@ -68,7 +80,7 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
           Years of Experience
           <Field type='number' name='yearsOfExperience' id='experience' />
           {touched.yearsOfExperience && errors.yearsOfExperience && (
-            <span style={errorMessageStyle}>{errors.yearsOfExperience}</span>
+            <ErrorMessageStyled>{errors.yearsOfExperience}</ErrorMessageStyled>
           )}
         </label>
 
@@ -79,7 +91,7 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
             onClick={event => toggleActive(event, setValues, values)}
           >
             <span id='yes'>Yes</span>
-            <span id='no' className='active'>
+            <span id='no' className='selected'>
               No
             </span>
           </div>
