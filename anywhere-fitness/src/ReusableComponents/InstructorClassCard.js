@@ -1,13 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import testImage from '../Pages/Images/karate.png';
+
+const ClassContainer = styled.div`
+  margin: 0 30px 30px 0;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.36px;
+    color: gray;
+    margin: 3px 0 0 0;
+  }
+  h2 {
+    font-size: 24px;
+    margin: 8px 0;
+
+    color: #f7f7f7;
+    letter-spacing: 0.36px;
+  }
+
+  a {
+    color: #ca1f3d;
+    letter-spacing: 0.36px;
+    text-decoration: none;
+  }
+`;
+
 export default function InstructorClassCard({ classInfo }) {
   return (
-    <div className='class-card'>
-      <img />
+    <ClassContainer className='class-card'>
+      <img src={testImage} />
       <h3>{classInfo.name}</h3>
       <h2>{classInfo.location}</h2>
-      <p>{classInfo.teacher}</p>
-    </div>
+      <a href='#'>Edit</a>
+    </ClassContainer>
   );
 }
