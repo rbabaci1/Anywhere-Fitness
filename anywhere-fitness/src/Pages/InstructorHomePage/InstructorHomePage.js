@@ -56,6 +56,8 @@ const InstructorPageContainer = styled.div`
 `;
 
 export default function InstructorHomePage() {
+  const [classes, setClasses] = useState([]);
+
   return (
     <InstructorPageContainer>
       <div className='empty-nav-bar hide'></div>
