@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
@@ -14,7 +15,8 @@ const InstructorPageContainer = styled.div`
   margin: 0 30px;
 
   .icon-wrapper {
-    float: right;
+    padding: 5px 10px;
+    width: fit-content;
 
     .classes-icon {
       height: 35px;
@@ -30,12 +32,14 @@ const InstructorPageContainer = styled.div`
   }
   .icon-wrapper:hover {
     background: #211f22;
-    padding: 5px 10px;
     cursor: pointer;
+    p {
+      color: #ca1f3d;
+    }
   }
 
   .active-classes {
-    margin-top: 80px;
+    margin-top: 30px;
 
     h1 {
       margin: 0 0 24px 120px;
