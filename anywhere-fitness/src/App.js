@@ -11,6 +11,7 @@ import SignUpForm from './Pages/SignUpPage/SignUpForm';
 import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
 
 import ClientHomePage from './Pages/ClientHomePage/ClientHomePage';
+import InstructorHomePage from './Pages/InstructorHomePage/InstructorHomePage';
 
 function App() {
   return (
