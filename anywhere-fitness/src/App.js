@@ -16,13 +16,12 @@ function App() {
   return (
     <div className='App'>
       {/* <Route exact path='/' component={LandingPage} /> */}
-      {/* <Route exact path='/' component={ClientHomePage} /> */}
-      <Route exact path='/' component={InstructorHomePage} />
+      <Route exact path='/' component={ClientHomePage} />
+      {/* <Route exact path='/' component={InstructorHomePage} /> */}
       {/* <InstructorHomePage exact path='/' component={InstructorHomePage} /> */}
 
-      <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
-
+      <Route exact path='/accountType' component={AccountType} />
       <Route exact path='/accountType/:userType' component={UserType} />
 
       <Route

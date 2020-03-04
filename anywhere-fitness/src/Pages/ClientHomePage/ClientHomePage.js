@@ -2,7 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
-import ClassesPage from '../ClassesPage/ClassesPage';
+import ClientClassCard from '../../ReusableComponents/ClientClassCard';
+
+const classData = {
+  name: 'Yoga',
+  location: 'Cincy Yoga Club',
+  teacher: 'Cincinnati',
+  rating: '4.5'
+};
 
 const HomePageContainer = styled.div`
   .empty-nav-bar {
@@ -24,6 +31,30 @@ const HomePageContainer = styled.div`
       flex-direction: column-reverse;
     }
   }
+  .classes-wrapper {
+    margin-top: 80px;
+
+    section {
+      .title {
+        margin: 0 0 24px 120px;
+        color: #f7f7f7;
+        font-size: 54px;
+        @media only screen and (max-width: 500px) {
+          font-size: 30px;
+          margin: 0 0 20px 0;
+        }
+      }
+
+      .classes {
+        display: flex;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 500px) {
+          flex-wrap: nowrap;
+          overflow: auto;
+        }
+      }
+    }
+  }
 `;
 
 export default function ClientHomePage() {
@@ -33,7 +64,23 @@ export default function ClientHomePage() {
       <div className='home-page-wrapper'>
         <HomePageNav />
 
-        <ClassesPage />
+        <div className='classes-wrapper'>
+          <section className='nearby-popular'>
+            <h1 className='title'>Nearby Popular</h1>
+            {/* Testing */}
+            <div className='classes'>
+              <ClientClassCard classInfo={classData} />
+              <ClientClassCard classInfo={classData} />
+              <ClientClassCard classInfo={classData} />
+              <ClientClassCard classInfo={classData} />
+              <ClientClassCard classInfo={classData} />
+
+              {/* {classes.map(classInfo => (
+            <ClassCard classInfo={classInfo} />
+          ))} */}
+            </div>
+          </section>
+        </div>
       </div>
     </HomePageContainer>
   );
