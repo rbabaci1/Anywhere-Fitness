@@ -7,6 +7,8 @@ export default function ClientHomePage() {
   return (
     <div>
       <HomePageNav />
+
+      <ClassesPage />
     </div>
   );
 }
