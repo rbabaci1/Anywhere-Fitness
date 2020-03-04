@@ -14,6 +14,8 @@ export default function InstructorHomePage() {
 
       <div className='home-page-wrapper'>
         <HomePageNav />
+
+        <div className='active-classes'></div>
       </div>
     </InstructorPageContainer>
   );
