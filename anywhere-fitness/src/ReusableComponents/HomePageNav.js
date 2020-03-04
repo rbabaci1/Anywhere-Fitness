@@ -17,6 +17,13 @@ const NavContainer = styled.div`
   h1 {
     font-size: 32px;
     line-height: 35px;
+    @media only screen and (max-width: 700px) {
+      font-size: 26px;
+      line-height: 30px;
+    }
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
   }
   .icons {
     width: 200px;
@@ -26,6 +33,20 @@ const NavContainer = styled.div`
     img {
       width: 30px;
       height: 30px;
+
+      @media only screen and (max-width: 700px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    @media only screen and (max-width: 500px) {
+      width: 100%;
+      justify-content: space-around;
+      padding: 30px 0;
+      background: #29272c;
+      position: fixed;
+      bottom: 0;
+      left: 0;
     }
   }
 `;
