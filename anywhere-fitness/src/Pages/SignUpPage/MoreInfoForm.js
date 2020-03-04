@@ -122,16 +122,17 @@ export default withFormik({
     // concat the first form values with the current
     values = { ...firstFormValues, ...values };
 
-    setTimeout(() => {
-      console.log(values);
-      resetForm();
-      removeActive();
-    }, 3000);
-
     // console.log(values);
-    // console.log(formikBag);
-    // removeActive();
-    // resetForm();
+    axios
+      .post('https://anywhere-fitness1.herokuapp.com/api/auth/register', {
+        username: values.name,
+        password: values.password
+      })
+      .then(response => console.log(response))
+      .catch(error => console.error(error));
+
+    removeActive();
+    resetForm();
   },
   validationSchema: Yup.object().shape({
     specialty: Yup.string()
