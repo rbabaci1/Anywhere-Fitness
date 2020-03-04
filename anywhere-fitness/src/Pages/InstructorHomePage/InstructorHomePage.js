@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
@@ -65,7 +65,7 @@ export default function InstructorHomePage() {
       <div className='home-page-wrapper'>
         <HomePageNav />
 
-        <NavLink to='#'>
+        <NavLink to='/instructor/addNewClass'>
           <div className='icon-wrapper'>
             <img src={classesIcon} className='classes-icon' />
             <p>Create New Class</p>
@@ -74,6 +74,7 @@ export default function InstructorHomePage() {
 
         <div className='active-classes'>
           <h1>Active Classes</h1>
+
           <div className='classes'>
             {classes.map(classInfo => (
               <InstructorClassCard classInfo={classInfo} />
