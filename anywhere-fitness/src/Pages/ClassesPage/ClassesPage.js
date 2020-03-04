@@ -37,6 +37,8 @@ const ClassesContainer = styled.div`
 `;
 
 export default function ClassesPage() {
+  const [classes] = useState([]);
+
   axios
     .get('https://anywhere-fitness1.herokuapp.com/api/classes')
     .then(response => console.log(response))
