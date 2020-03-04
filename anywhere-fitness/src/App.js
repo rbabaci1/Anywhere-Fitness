@@ -10,10 +10,14 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import SignUpForm from './Pages/SignUpPage/SignUpForm';
 import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
 
+import HomePageNav from './ReusableComponents/HomePageNav';
+
 function App() {
   return (
     <div className='App'>
-      <Route exact path='/' component={LandingPage} />
+      {/* <Route exact path='/' component={LandingPage} /> */}
+      <Route exact path='/' component={HomePageNav} />
+
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
 
