@@ -12,6 +12,8 @@ import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { showPassword } from '../../functionsLibrary/library';
 
+import { axiosWithAuth } from '../../Auxillary/axiosWithAuth';
+
 import './checkbox.css';
 
 const SignUpFormContainer = styled(FormDefaultStyle)`

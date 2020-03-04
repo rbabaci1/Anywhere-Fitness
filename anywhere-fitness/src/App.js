@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import PrivateRoute from "./Auxillary/privateRoute";
 
 import './App.css';
 
@@ -21,6 +22,8 @@ function App() {
 
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
+
+      <PrivateRoute path="succeeded" component={AccountType} />
 
       <Route exact path='/accountType/:userType' component={UserType} />
 
