@@ -7,7 +7,11 @@ import ClassCard from '../../ReusableComponents/ClassCard';
 export default function ClassesPage() {
   return (
     <div>
-      <h1>Classes Page</h1>
+      <section className='nearby-popular'></section>
+
+      <section className='preference'></section>
+
+      <section className='new-classes'></section>
     </div>
   );
 }
