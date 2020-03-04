@@ -75,7 +75,9 @@ export default function InstructorHomePage() {
         <div className='active-classes'>
           <h1>Active Classes</h1>
           <div className='classes'>
-            <InstructorClassCard classInfo={classData} />
+            {classes.map(classInfo => (
+              <InstructorClassCard classInfo={classInfo} />
+            ))}
           </div>
         </div>
       </div>
