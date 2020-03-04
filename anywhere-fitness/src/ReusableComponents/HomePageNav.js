@@ -15,8 +15,8 @@ const NavContainer = styled.div`
   align-items: center;
 
   h1 {
-    font-size: 27px;
-    line-height: 32px;
+    font-size: 32px;
+    line-height: 35px;
   }
   .icons {
     width: 200px;
