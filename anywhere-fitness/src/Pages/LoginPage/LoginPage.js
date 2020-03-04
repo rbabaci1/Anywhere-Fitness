@@ -78,6 +78,7 @@ export default function LoginPage() {
     event.preventDefault();
 
     if (formIsValid(formData.formErrors, formData.email, formData.password)) {
+      console.log(formData);
       // Submit the Data to Login
 
       setFormData({
@@ -143,7 +144,7 @@ export default function LoginPage() {
           {passwordIsShown ? (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              <span class='checkmark'></span>
+              <span className='checkmark'></span>
               <span id='text'>Show Password</span>
             </label>
           ) : null}

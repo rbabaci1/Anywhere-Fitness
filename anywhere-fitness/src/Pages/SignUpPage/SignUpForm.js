@@ -144,7 +144,6 @@ export default withFormik({
         .catch(error => console.log(error));
 
       console.log(values);
-      console.log(props);
       resetForm();
     }
   },
