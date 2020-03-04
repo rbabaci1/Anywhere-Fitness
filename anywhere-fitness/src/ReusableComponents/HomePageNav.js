@@ -37,10 +37,21 @@ export default function HomePageNav() {
       <Logo />
 
       <section className='icons'>
-        <img src={accountIcon} />
-        <img src={searchIcon} />
-        <img src={calendarIcon} />
-        <img src={settingIcon} />
+        <NavLink to='/'>
+          <img src={accountIcon} />
+        </NavLink>
+
+        <NavLink to='/'>
+          <img src={searchIcon} />
+        </NavLink>
+
+        <NavLink to='/'>
+          <img src={calendarIcon} />
+        </NavLink>
+
+        <NavLink to='/'>
+          <img src={settingIcon} />
+        </NavLink>
       </section>
     </NavContainer>
   );

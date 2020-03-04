@@ -91,7 +91,7 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
             onClick={event => toggleActive(event, setValues, values)}
           >
             <span id='yes'>Yes</span>
-            <span id='no' className='active'>
+            <span id='no' className='selected'>
               No
             </span>
           </div>

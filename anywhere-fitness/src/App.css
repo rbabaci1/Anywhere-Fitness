@@ -2,8 +2,9 @@
     font-family: Ubuntu;
 }
 
-.active {
-    background: rgb(87, 86, 86);
+.selected {
+    background: #f7f7f7;
+    color: #000000;
 }
 
 .hide {
