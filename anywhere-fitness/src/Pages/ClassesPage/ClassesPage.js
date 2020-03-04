@@ -58,6 +58,10 @@ export default function ClassesPage() {
           <ClassCard classInfo={classData} />
           <ClassCard classInfo={classData} />
           <ClassCard classInfo={classData} />
+
+          {/* {classes.map(classInfo => (
+            <ClassCard classInfo={classInfo} />
+          ))} */}
         </div>
       </section>
 
