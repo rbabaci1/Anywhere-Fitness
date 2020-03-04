@@ -8,8 +8,8 @@ import axios from 'axios';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
-import { ErrorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
+import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { showPassword } from '../../functionsLibrary/library';
 
 import './checkbox.css';
@@ -60,7 +60,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           Name
           <Field type='text' name='name' placeholder='Enter name' />
           {touched.name && errors.name && (
-            <ErrorMessageStyle>{errors.name}</ErrorMessageStyle>
+            <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
           )}
         </label>
 
@@ -68,7 +68,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           Email
           <Field type='email' name='email' placeholder='Enter email' />
           {touched.email && errors.email && (
-            <ErrorMessageStyle>{errors.email}</ErrorMessageStyle>
+            <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
           )}
         </label>
 
@@ -88,7 +88,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
             </label>
           )}
           {touched.password && errors.password && (
-            <ErrorMessageStyle>{errors.password}</ErrorMessageStyle>
+            <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
           )}
         </label>
 

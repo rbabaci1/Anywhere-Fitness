@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom';
 import './App.css';
 
 import LandingPage from './Pages/LandingPage/LandingPage';
-import AccountType from './Pages/AccountType/Components/AccountType';
-import UserType from './Pages/AccountType/Components/UserType';
+import AccountType from './Pages/AccountType/AccountType';
+import UserType from './Pages/AccountType/UserType';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import SignUpForm from './Pages/SignUpPage/SignUpForm';
 import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
@@ -15,8 +15,8 @@ import ClientHomePage from './Pages/ClientHomePage/ClientHomePage';
 function App() {
   return (
     <div className='App'>
-      {/* <Route exact path='/' component={LandingPage} /> */}
-      <Route exact path='/' component={ClientHomePage} />
+      <Route exact path='/' component={LandingPage} />
+      {/* <Route exact path='/' component={ClientHomePage} /> */}
 
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
-import { ErrorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
+import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { formIsValid, showPassword } from '../../functionsLibrary/library';
 
 import '../SignUpPage/checkbox.css';
@@ -123,7 +123,7 @@ export default function LoginPage() {
           />
           {/* Error message for email validation */}
           {formData.formErrors.email.length > 0 && inputTouched && (
-            <ErrorMessageStyle>{formData.formErrors.email}</ErrorMessageStyle>
+            <ErrorMessageStyled>{formData.formErrors.email}</ErrorMessageStyled>
           )}
         </label>
 
@@ -139,7 +139,9 @@ export default function LoginPage() {
           />
           {/* Error message for password validation */}
           {formData.password.length === 0 && inputTouched && (
-            <ErrorMessageStyle>Please, enter your password.</ErrorMessageStyle>
+            <ErrorMessageStyled>
+              Please, enter your password.
+            </ErrorMessageStyled>
           )}
           {passwordIsShown ? (
             <label className='show-password'>

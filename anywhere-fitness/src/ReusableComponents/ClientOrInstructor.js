@@ -49,7 +49,7 @@ export default function ClientOrInstructor({ userType }) {
       <Header />
 
       {userType === 'client' ? (
-        <div className='user'>
+        <div className='user' style={{ flexDirection: 'row-reverse' }}>
           <Client />
           <div>
             <p>

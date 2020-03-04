@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ErrorMessageStyle = styled.span`
+export const ErrorMessageStyled = styled.span`
   color: #da4010;
   margin-top: 3px;
   text-align: center;

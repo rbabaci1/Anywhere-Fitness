@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import Header from '../../../ReusableComponents/Header';
-import Client from '../../../ReusableComponents/Client';
-import Instructor from '../../../ReusableComponents/Instructor';
+import Header from '../../ReusableComponents/Header';
+import Client from '../../ReusableComponents/Client';
+import Instructor from '../../ReusableComponents/Instructor';
 
 const MainContent = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ const MainContent = styled.div`
     text-decoration: none;
   }
   @media only screen and (min-width: 500px) {
-    margin-top: 100px;
+    margin-top: 50px;
     background: #252327;
   }
 `;

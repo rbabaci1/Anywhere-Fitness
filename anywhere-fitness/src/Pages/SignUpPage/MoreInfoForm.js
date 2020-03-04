@@ -5,8 +5,8 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import { FormDefaultStyle } from '../ReusableStyling/FormDefaultStyle';
-import { ErrorMessageStyle } from '../ReusableStyling/ErrorMessageStyle';
+import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
+import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 
 import { toggleActive, removeActive } from '../../functionsLibrary/library';
 
@@ -72,7 +72,7 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
             placeholder='Exercise you specialize in'
           />
           {touched.specialty && errors.specialty && (
-            <ErrorMessageStyle>{errors.specialty}</ErrorMessageStyle>
+            <ErrorMessageStyled>{errors.specialty}</ErrorMessageStyled>
           )}
         </label>
 
@@ -80,7 +80,7 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
           Years of Experience
           <Field type='number' name='yearsOfExperience' id='experience' />
           {touched.yearsOfExperience && errors.yearsOfExperience && (
-            <ErrorMessageStyle>{errors.yearsOfExperience}</ErrorMessageStyle>
+            <ErrorMessageStyled>{errors.yearsOfExperience}</ErrorMessageStyled>
           )}
         </label>
 
