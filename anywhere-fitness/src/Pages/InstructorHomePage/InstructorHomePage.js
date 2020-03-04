@@ -11,6 +11,20 @@ const classData = {
 
 const InstructorPageContainer = styled.div`
   margin: 0 30px;
+
+  .active-classes {
+    margin-top: 80px;
+
+    h1 {
+      margin: 0 0 24px 120px;
+      color: #f7f7f7;
+      font-size: 54px;
+    }
+    .classes {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 `;
 
 export default function InstructorHomePage() {
@@ -22,7 +36,10 @@ export default function InstructorHomePage() {
         <HomePageNav />
 
         <div className='active-classes'>
-          <InstructorClassCard classInfo={classData} />
+          <h1>Active Classes</h1>
+          <div className='classes'>
+            <InstructorClassCard classInfo={classData} />
+          </div>
         </div>
       </div>
     </InstructorPageContainer>
