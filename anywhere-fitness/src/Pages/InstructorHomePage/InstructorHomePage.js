@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
+import InstructorClassCard from '../../ReusableComponents/InstructorClassCard';
 
 const InstructorPageContainer = styled.div`
   margin: 0 30px;
