@@ -5,7 +5,7 @@ import clientImage from '../Pages/Images/clientImage.png';
 
 const ClientContainer = styled.div`
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 
   h2 {
     font-style: normal;

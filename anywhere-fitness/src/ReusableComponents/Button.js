@@ -14,6 +14,10 @@ const ButtonComponent = styled.button`
   cursor: pointer;
   width: 163px;
 
+  &:hover {
+    background: #820e22;
+  }
+
   @media only screen and (min-width: 500px) {
     padding: 11px 0;
   }

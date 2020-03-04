@@ -35,9 +35,6 @@ const LoginFormContainer = styled(FormDefaultStyle)`
         padding: 15px 0;
         width: 180px;
       }
-      button:hover {
-        background: #820e22;
-      }
     }
     .show-password {
       font-size: 20px;

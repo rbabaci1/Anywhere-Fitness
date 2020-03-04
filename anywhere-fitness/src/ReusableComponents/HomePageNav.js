@@ -13,7 +13,6 @@ const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 20px;
 
   h1 {
     font-size: 27px;

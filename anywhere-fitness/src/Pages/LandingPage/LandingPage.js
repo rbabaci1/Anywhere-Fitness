@@ -71,8 +71,8 @@ const LandingPageContainer = styled.div`
         padding-right: 15px;
       }
       h1 {
-        font-size: 22px;
-        line-height: 25px;
+        font-size: 26px;
+        line-height: 30px;
         padding-left: 15px;
       }
     }

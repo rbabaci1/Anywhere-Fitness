@@ -83,7 +83,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           {values.password.length > 0 && (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              <span class='checkmark'></span>
+              <span className='checkmark'></span>
               <span id='text'>Show Password</span>
             </label>
           )}
@@ -136,7 +136,7 @@ export default withFormik({
     if (userType === 'client') {
       // Post the data to the database
       console.log(values);
-
+      console.log(props);
       resetForm();
     }
   },
