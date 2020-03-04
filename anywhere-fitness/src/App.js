@@ -10,7 +10,7 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import SignUpForm from './Pages/SignUpPage/SignUpForm';
 import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
 
-import HomePageNav from './ReusableComponents/HomePageNav';
+import ClientHomePage from './Pages/ClientHomePage/ClientHomePage';
 
 function App() {
   return (
