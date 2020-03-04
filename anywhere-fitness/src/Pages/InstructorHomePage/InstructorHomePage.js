@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
@@ -14,8 +14,11 @@ const classData = {
 const InstructorPageContainer = styled.div`
   margin: 0 30px;
 
+  a {
+    text-decoration: none;
+  }
   .icon-wrapper {
-    padding: 5px 10px;
+    padding: 2px 7px;
     width: fit-content;
 
     .classes-icon {
@@ -26,12 +29,11 @@ const InstructorPageContainer = styled.div`
     }
     p {
       color: #f7f7f7;
-      margin: 10px 0;
+      margin: 5px 0;
       font-size: 20px;
     }
   }
   .icon-wrapper:hover {
-    background: #211f22;
     cursor: pointer;
     p {
       color: #ca1f3d;
@@ -61,10 +63,12 @@ export default function InstructorHomePage() {
       <div className='home-page-wrapper'>
         <HomePageNav />
 
-        <div className='icon-wrapper'>
-          <img src={classesIcon} className='classes-icon' />
-          <p>Classes</p>
-        </div>
+        <NavLink to='#'>
+          <div className='icon-wrapper'>
+            <img src={classesIcon} className='classes-icon' />
+            <p>Create New Class</p>
+          </div>
+        </NavLink>
 
         <div className='active-classes'>
           <h1>Active Classes</h1>
