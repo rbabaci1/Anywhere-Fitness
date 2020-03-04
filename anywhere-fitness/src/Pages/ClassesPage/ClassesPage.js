@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ClassCard from '../../ReusableComponents/ClassCard';
+
 export default function ClassesPage() {
   return (
     <div>
