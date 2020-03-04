@@ -19,11 +19,19 @@ const ClassesContainer = styled.div`
       margin: 0 0 24px 120px;
       color: #f7f7f7;
       font-size: 54px;
+      @media only screen and (max-width: 500px) {
+        font-size: 30px;
+        margin: 0 0 20px 0;
+      }
     }
 
     .classes {
       display: flex;
       flex-wrap: wrap;
+      @media only screen and (max-width: 500px) {
+        flex-wrap: nowrap;
+        overflow: auto;
+      }
     }
   }
 `;

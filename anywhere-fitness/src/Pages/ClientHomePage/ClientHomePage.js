@@ -7,7 +7,7 @@ import ClassesPage from '../ClassesPage/ClassesPage';
 const HomePageContainer = styled.div`
   .empty-nav-bar {
     width: 100%;
-    height: 35px;
+    height: 40px;
     background: #ca1f3d;
     @media only screen and (max-width: 500px) {
       display: block;
