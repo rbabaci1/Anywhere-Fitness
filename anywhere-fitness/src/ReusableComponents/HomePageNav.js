@@ -38,19 +38,19 @@ export default function HomePageNav() {
 
       <section className='icons'>
         <NavLink to='/'>
-          <img src={accountIcon} />
+          <img src={accountIcon} alt='account icon' />
         </NavLink>
 
         <NavLink to='/'>
-          <img src={searchIcon} />
+          <img src={searchIcon} alt='search icon' />
         </NavLink>
 
         <NavLink to='/'>
-          <img src={calendarIcon} />
+          <img src={calendarIcon} alt='calendar icon' />
         </NavLink>
 
         <NavLink to='/'>
-          <img src={settingIcon} />
+          <img src={settingIcon} alt='setting icon' />
         </NavLink>
       </section>
     </NavContainer>
