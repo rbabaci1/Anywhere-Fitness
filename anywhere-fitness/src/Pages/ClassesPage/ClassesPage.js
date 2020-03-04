@@ -1,4 +1,4 @@
-import React, { Link } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
@@ -37,6 +37,11 @@ const ClassesContainer = styled.div`
 `;
 
 export default function ClassesPage() {
+  axios
+    .get('https://anywhere-fitness1.herokuapp.com/api/classes')
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+
   return (
     <ClassesContainer>
       <section className='nearby-popular'>
