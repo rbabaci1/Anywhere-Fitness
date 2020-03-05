@@ -133,7 +133,7 @@ export default withFormik({
       })
       .then(response => console.log(response))
       .catch(error => console.error(error));
-
+      props.history.push("/instructorhome");
     removeActive();
     resetForm();
   },

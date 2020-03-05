@@ -10,6 +10,8 @@ import UserType from './Pages/AccountType/UserType';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import SignUpForm from './Pages/SignUpPage/SignUpForm';
 import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
+import ClientHomePage from './Pages/ClientHomePage/ClientHomePage';
+import InstructorHomePage from './Pages/InstructorHomePage/InstructorHomePage';
 
 function App() {
   return (
@@ -24,6 +26,12 @@ function App() {
       <Route exact path='/accountType' component={AccountType} />
     
       <Route exact path='/accountType/:userType' component={UserType} />
+
+      {/* Here are the differente home pages */}
+
+      <Route exact path='/ClientHome' component={ClientHomePage} />
+
+      <Route exact path='/InstructorHome' component={InstructorHomePage} />
 
       <Route
         exact
