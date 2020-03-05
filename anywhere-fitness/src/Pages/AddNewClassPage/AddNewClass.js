@@ -7,8 +7,6 @@ import Button from '../../ReusableComponents/Button';
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 450px;
-  max-width: 450px;
 
   background: #1e1d20;
   height: 100vh;
@@ -32,7 +30,7 @@ const FormContainer = styled.div`
       display: flex;
       flex-direction: column;
       color: #f7f7f7;
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 15px;
       width: 94%;
 
@@ -49,9 +47,9 @@ const FormContainer = styled.div`
     .button {
       text-align: center;
       button {
-        font-size: 24px;
-        width: 150px;
-        padding: 8px 0;
+        font-size: 22px;
+        width: 140px;
+        padding: 7px 0;
         margin-top: 10px;
       }
     }

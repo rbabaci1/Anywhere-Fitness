@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import PrivateRoute from "./Auxillary/privateRoute";
+import PrivateRoute from './Auxillary/privateRoute';
 
 import './App.css';
 
@@ -19,19 +19,16 @@ function App() {
       <Route exact path='/' component={LandingPage} />
       <Route path='/login' component={LoginPage} />
 
-
       {/*Work in progress, not actual component that will be rendered*/}
-      <PrivateRoute path="/succeed" component={AccountType} />
+      <PrivateRoute path='/succeed' component={AccountType} />
 
       <Route exact path='/accountType' component={AccountType} />
-    
       <Route exact path='/accountType/:userType' component={UserType} />
 
       {/* Here are the differente home pages */}
 
       <Route exact path='/ClientHome' component={ClientHomePage} />
-
-      <Route exact path='/InstructorHome' component={InstructorHomePage} />
+      <Route path='/InstructorHome' component={InstructorHomePage} />
 
       <Route
         exact

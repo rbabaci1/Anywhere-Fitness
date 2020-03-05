@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
@@ -18,10 +18,9 @@ const InstructorPageContainer = styled.div`
 
   a {
     text-decoration: none;
-  }
-  .icon-wrapper {
-    padding: 2px 7px;
-    width: fit-content;
+    display: inline-block;
+    margin-bottom: 20px;
+    cursor: pointer;
 
     .classes-icon {
       height: 35px;
@@ -29,35 +28,40 @@ const InstructorPageContainer = styled.div`
       margin-top: 20px;
       margin-left: 15px;
     }
-    p {
+
+    span {
       color: #f7f7f7;
       margin: 5px 0;
       font-size: 20px;
     }
-  }
-  .new-classes-main {
-    display: flex;
-  }
-  .icon-wrapper:hover {
-    cursor: pointer;
-    p {
-      color: #ca1f3d;
+    &:hover {
+      span {
+        color: #ca1f3d;
+      }
     }
   }
 
+  .new-classes-main {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .active-classes {
-    width: 90%;
+    width: 80%;
 
     h1 {
       margin: 0 0 20px 20px;
       color: #f7f7f7;
-      font-size: 50px;
+      font-size: 48px;
       border-bottom: 2px solid;
     }
     .classes {
       display: flex;
       flex-wrap: wrap;
     }
+  }
+  .create-classes {
+    width: 18%;
   }
 `;
 
@@ -73,19 +77,7 @@ export default function InstructorHomePage() {
       <div className='home-page-wrapper'>
         <HomePageNav />
 
-        <NavLink to='/instructor/addNewClass'>
-          <div className='icon-wrapper'>
-            <img src={classesIcon} className='classes-icon' />
-            <p>Create New Class</p>
-          </div>
-        </NavLink>
-
         <div className='new-classes-main'>
-          <Route
-            path='/instructor/addNewClass'
-            render={props => <AddNewClass {...props} addClass={addClass} />}
-          />
-
           <div className='active-classes'>
             <h1>Active Classes</h1>
 
@@ -94,6 +86,18 @@ export default function InstructorHomePage() {
                 <InstructorClassCard classInfo={classInfo} />
               ))}
             </div>
+          </div>
+
+          <div className='create-classes'>
+            <Link to='/InstructorHome/addNewClass'>
+              <span>Create New Class</span>
+              <img src={classesIcon} className='classes-icon' />
+            </Link>
+
+            <Route
+              path='/InstructorHome/addNewClass'
+              render={props => <AddNewClass {...props} addClass={addClass} />}
+            />
           </div>
         </div>
       </div>
