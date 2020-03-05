@@ -10,22 +10,19 @@ import UserType from './Pages/AccountType/UserType';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import SignUpForm from './Pages/SignUpPage/SignUpForm';
 import MoreInfoForm from './Pages/SignUpPage/MoreInfoForm';
-import ClientHomePage from './Pages/ClientHomePage/ClientHomePage';
-import InstructorHomePage from './Pages/InstructorHomePage/InstructorHomePage';
 
 function App() {
   return (
     <div className='App'>
       <Route exact path='/' component={LandingPage} />
-      {/* <Route exact path='/' component={ClientHomePage} /> */}
-      {/* <InstructorHomePage exact path='/' component={InstructorHomePage} /> */}
-
-      <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
+
 
       {/*Work in progress, not actual component that will be rendered*/}
       <PrivateRoute path="/succeed" component={AccountType} />
 
+      <Route exact path='/accountType' component={AccountType} />
+    
       <Route exact path='/accountType/:userType' component={UserType} />
 
       <Route

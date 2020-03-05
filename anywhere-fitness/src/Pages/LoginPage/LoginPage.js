@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import ClientHomePage from '../ClientHomePage/ClientHomePage';
+import InstructorHomePage from '../InstructorHomePage/InstructorHomePage';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -36,9 +38,6 @@ const LoginFormContainer = styled(FormDefaultStyle)`
         font-size: 30px;
         padding: 15px 0;
         width: 180px;
-      }
-      button:hover {
-        background: #820e22;
       }
     }
     .show-password {
@@ -83,6 +82,7 @@ export default function LoginPage(props) {
     event.preventDefault();
 
     if (formIsValid(formData.formErrors, formData.email, formData.password)) {
+      console.log(formData);
       // Submit the Data to Login
       axios
         .post("https://anywhere-fitness1.herokuapp.com/api/auth/login", {
@@ -156,7 +156,7 @@ export default function LoginPage(props) {
           {passwordIsShown ? (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              <span class='checkmark'></span>
+              <span className='checkmark'></span>
               <span id='text'>Show Password</span>
             </label>
           ) : null}

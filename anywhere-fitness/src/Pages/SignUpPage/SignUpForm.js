@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import ClientHomePage from '../ClientHomePage/ClientHomePage';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -85,7 +86,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           {values.password.length > 0 && (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              <span class='checkmark'></span>
+              <span className='checkmark'></span>
               <span id='text'>Show Password</span>
             </label>
           )}
@@ -145,6 +146,7 @@ export default withFormik({
           console.log("This is the username: ", res.data.username);
         })
       props.history.push("/succeed");
+
       resetForm();
     }
   },

@@ -5,7 +5,8 @@ import instructorImage from '../Pages/Images/instructorImage.png';
 
 const InstructorContainer = styled.div`
   text-align: center;
-  margin: 20px;
+  margin: 10px;
+
   h2 {
     font-style: normal;
     font-weight: bold;

@@ -8,11 +8,12 @@ import Instructor from '../../ReusableComponents/Instructor';
 
 const MainContent = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   a {
     text-decoration: none;
+    width: 49%;
   }
   @media only screen and (min-width: 500px) {
     margin-top: 50px;

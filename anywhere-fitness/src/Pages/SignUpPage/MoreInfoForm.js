@@ -1,10 +1,14 @@
 import React from 'react';
 import { Form, withFormik, Field } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+
+import InstructorHomePage from '../InstructorHomePage/InstructorHomePage';
+
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 
@@ -121,16 +125,17 @@ export default withFormik({
     // concat the first form values with the current
     values = { ...firstFormValues, ...values };
 
-    setTimeout(() => {
-      console.log(values);
-      resetForm();
-      removeActive();
-    }, 3000);
-
     // console.log(values);
-    // console.log(formikBag);
-    // removeActive();
-    // resetForm();
+    axios
+      .post('https://anywhere-fitness1.herokuapp.com/api/auth/register', {
+        username: values.name,
+        password: values.password
+      })
+      .then(response => console.log(response))
+      .catch(error => console.error(error));
+
+    removeActive();
+    resetForm();
   },
   validationSchema: Yup.object().shape({
     specialty: Yup.string()
