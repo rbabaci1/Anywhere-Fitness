@@ -6,6 +6,7 @@ import HomePageNav from '../../ReusableComponents/HomePageNav';
 import InstructorClassCard from '../../ReusableComponents/InstructorClassCard';
 import classesIcon from '../Images/classes.png';
 import addNewClass from '../AddNewClassPage/AddNewClass';
+import AddNewClass from '../AddNewClassPage/AddNewClass';
 
 const classData = {
   name: 'Karate',
@@ -84,7 +85,10 @@ export default function InstructorHomePage() {
         </div>
       </div>
 
-      {/* <Route path='/instructor/addNewClass' render={() => }/> */}
+      <Route
+        path='/instructor/addNewClass'
+        render={props => <AddNewClass {...props} setClasses={setClasses} />}
+      />
     </InstructorPageContainer>
   );
 }
