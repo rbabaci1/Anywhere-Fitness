@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import InstructorClassCard from '../../ReusableComponents/InstructorClassCard';
-import classesIcon from '../Images/classes.png';
-import addNewClass from '../AddNewClassPage/AddNewClass';
 import AddNewClass from '../AddNewClassPage/AddNewClass';
+
+import classesIcon from '../Images/classes.png';
 
 const classData = {
   name: 'Karate',

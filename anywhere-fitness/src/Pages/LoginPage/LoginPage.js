@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import ClientHomePage from '../ClientHomePage/ClientHomePage';
+import InstructorHomePage from '../InstructorHomePage/InstructorHomePage';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
