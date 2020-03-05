@@ -8,19 +8,15 @@ import AddNewClass from '../AddNewClassPage/AddNewClass';
 
 import classesIcon from '../Images/classes.png';
 
-const classData = {
-  name: 'Karate',
-  location: "Taryn's Dojo"
-};
-
 const InstructorPageContainer = styled.div`
   margin: 0 30px;
 
-  a {
+  .add-class-link {
     text-decoration: none;
     display: inline-block;
     margin-bottom: 20px;
     cursor: pointer;
+    border-bottom: 2px solid #ca1f3d;
 
     .classes-icon {
       height: 35px;
@@ -36,6 +32,7 @@ const InstructorPageContainer = styled.div`
     }
     &:hover {
       span {
+        transition: 2s;
         color: #ca1f3d;
       }
     }
@@ -47,7 +44,7 @@ const InstructorPageContainer = styled.div`
   }
 
   .active-classes {
-    width: 80%;
+    width: 70%;
 
     h1 {
       margin: 0 0 20px 20px;
@@ -61,7 +58,8 @@ const InstructorPageContainer = styled.div`
     }
   }
   .create-classes {
-    width: 18%;
+    text-align: end;
+    width: 28%;
   }
 `;
 
@@ -89,7 +87,7 @@ export default function InstructorHomePage() {
           </div>
 
           <div className='create-classes'>
-            <Link to='/InstructorHome/addNewClass'>
+            <Link to='/InstructorHome/addNewClass' className='add-class-link'>
               <span>Create New Class</span>
               <img src={classesIcon} className='classes-icon' />
             </Link>

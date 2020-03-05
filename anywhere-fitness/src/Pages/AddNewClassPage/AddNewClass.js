@@ -7,7 +7,7 @@ import Button from '../../ReusableComponents/Button';
 const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-
+  text-align: start;
   background: #1e1d20;
   height: 100vh;
 
@@ -56,7 +56,7 @@ const FormContainer = styled.div`
   }
 `;
 
-export default function AddNewClass({ addClass }) {
+export default function AddNewClass({ addClass, history }) {
   const [newClass, setNewClass] = useState({
     name: '',
     category: '',
@@ -87,6 +87,7 @@ export default function AddNewClass({ addClass }) {
       location: '',
       imageUrl: ''
     });
+    history.push('/InstructorHome');
   };
 
   return (
