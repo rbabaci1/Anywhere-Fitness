@@ -12,6 +12,8 @@ import { formIsValid, showPassword } from '../../functionsLibrary/library';
 
 import '../SignUpPage/checkbox.css';
 
+import axios from "axios";
+
 const LoginFormContainer = styled(FormDefaultStyle)`
   p {
     font-size: 20px;
@@ -49,7 +51,7 @@ const LoginFormContainer = styled(FormDefaultStyle)`
   }
 `;
 
-export default function LoginPage() {
+export default function LoginPage(props) {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -82,7 +84,15 @@ export default function LoginPage() {
     if (formIsValid(formData.formErrors, formData.email, formData.password)) {
       console.log(formData);
       // Submit the Data to Login
-
+      axios
+        .post("https://anywhere-fitness1.herokuapp.com/api/auth/login", {
+          username: formData.email,
+          password: formData.password
+        })
+        .then(res => {
+          localStorage.setItem('token', res.data.token);
+          props.history.push('/succeed');
+        })
       setFormData({
         email: '',
         password: '',
