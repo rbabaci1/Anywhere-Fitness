@@ -33,9 +33,9 @@ const LoginFormContainer = styled(FormDefaultStyle)`
       margin-top: 100px;
 
       button {
-        font-size: 30px;
-        padding: 15px 0;
-        width: 180px;
+        font-size: 28px;
+        padding: 13px 0;
+        width: 170px;
       }
     }
     .show-password {

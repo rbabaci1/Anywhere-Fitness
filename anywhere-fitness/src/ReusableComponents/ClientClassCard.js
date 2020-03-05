@@ -16,7 +16,7 @@ const ClassContainer = styled.div`
   h2 {
     font-size: 24px;
     margin: 3px 0 0 0;
-    color: #ca1f3d;
+    color: #fa2742;
     letter-spacing: 0.36px;
   }
   p {

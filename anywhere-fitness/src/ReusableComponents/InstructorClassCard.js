@@ -24,7 +24,7 @@ const ClassContainer = styled.div`
   }
 
   span {
-    color: #ca1f3d;
+    color: #fa2742;
     letter-spacing: 1px;
     font-size: 18px;
     text-decoration: none;

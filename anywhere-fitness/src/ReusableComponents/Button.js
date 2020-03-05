@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ButtonComponent = styled.button`
   font-family: Ubuntu;
-  background: #ca1f3d;
+  background: #fa2742;
   font-size: 22px;
   color: #f7f7f7;
   border-radius: 100px;

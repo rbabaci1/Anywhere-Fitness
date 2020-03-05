@@ -17,7 +17,7 @@ const LogoContainer = styled.div`
       line-height: 50px;
     }
     span {
-      color: #ca1f3d;
+      color: #fa2742;
     }
   }
 `;
