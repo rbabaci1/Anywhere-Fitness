@@ -4,13 +4,6 @@ import styled from 'styled-components';
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import ClientClassCard from '../../ReusableComponents/ClientClassCard';
 
-const classData = {
-  name: 'Yoga',
-  location: 'Cincy Yoga Club',
-  teacher: 'Cincinnati',
-  rating: '4.5'
-};
-
 const HomePageContainer = styled.div`
   .empty-nav-bar {
     width: 100%;
@@ -58,6 +51,15 @@ const HomePageContainer = styled.div`
 `;
 
 export default function ClientHomePage() {
+  const [classes, setClasses] = useState([
+    {
+      name: 'Yoga',
+      location: 'Cincy Yoga Club',
+      teacher: 'Cincinnati',
+      rating: '4.5'
+    }
+  ]);
+
   return (
     <HomePageContainer>
       <div className='empty-nav-bar hide'></div>
@@ -67,13 +69,9 @@ export default function ClientHomePage() {
         <div className='classes-wrapper'>
           <section className='nearby-popular'>
             <h1 className='title'>Nearby Popular</h1>
-            {/* Testing */}
             <div className='classes'>
-              <ClientClassCard classInfo={classData} />
-              <ClientClassCard classInfo={classData} />
-              <ClientClassCard classInfo={classData} />
-              <ClientClassCard classInfo={classData} />
-              <ClientClassCard classInfo={classData} />
+              {/* Testing */}
+              {/* <ClientClassCard classInfo={classData} /> */}
 
               {/* {classes.map(classInfo => (
             <ClassCard classInfo={classInfo} />
