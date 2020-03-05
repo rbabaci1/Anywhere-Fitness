@@ -60,6 +60,7 @@ export default function ClientHomePage() {
       rating: '4.5'
     }
   ]);
+  const [numberOfClasses, setNumberOfClasses] = useState(0);
 
   useEffect(() => {
     axios
@@ -69,7 +70,7 @@ export default function ClientHomePage() {
         // setClasses with the received data
       })
       .catch(error => console.error(error));
-  }, []);
+  }, [numberOfClasses]);
 
   return (
     <HomePageContainer>
