@@ -145,7 +145,7 @@ export default withFormik({
         .then(res => {
           console.log("This is the username: ", res.data.username);
         })
-      props.history.push("/succeed");
+      props.history.push("/clienthome");
 
       resetForm();
     }
