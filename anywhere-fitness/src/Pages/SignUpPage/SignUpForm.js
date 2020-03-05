@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import ClientHomePage from '../ClientHomePage/ClientHomePage';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -83,7 +84,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
           {values.password.length > 0 && (
             <label className='show-password'>
               <input type='checkbox' onClick={showPassword} />
-              <span class='checkmark'></span>
+              <span className='checkmark'></span>
               <span id='text'>Show Password</span>
             </label>
           )}
@@ -135,8 +136,15 @@ export default withFormik({
 
     if (userType === 'client') {
       // Post the data to the database
-      console.log(values);
+      axios
+        .post('https://anywhere-fitness1.herokuapp.com/api/auth/register', {
+          username: values.name,
+          password: values.password
+        })
+        .then(response => console.log(response))
+        .catch(error => console.log(error));
 
+      console.log(values);
       resetForm();
     }
   },
