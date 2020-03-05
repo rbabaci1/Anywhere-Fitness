@@ -60,7 +60,6 @@ export default function ClientHomePage() {
       rating: '4.5'
     }
   ]);
-  const [numberOfClasses, setNumberOfClasses] = useState(0);
 
   useEffect(() => {
     axios
@@ -70,7 +69,7 @@ export default function ClientHomePage() {
         // setClasses with the received data
       })
       .catch(error => console.error(error));
-  }, [numberOfClasses]);
+  }, []);
 
   return (
     <HomePageContainer>
@@ -85,9 +84,9 @@ export default function ClientHomePage() {
               {/* Testing */}
               {/* <ClientClassCard classInfo={classData} /> */}
 
-              {/* {classes.map(classInfo => (
-            <ClassCard classInfo={classInfo} />
-          ))} */}
+              {classes.map(classInfo => (
+                <ClientClassCard classInfo={classInfo} />
+              ))}
             </div>
           </section>
         </div>
