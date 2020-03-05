@@ -27,7 +27,7 @@ function App() {
 
       {/* Here are the differente home pages */}
 
-      <Route exact path='/ClientHome' component={ClientHomePage} />
+      <Route path='/ClientHome' component={ClientHomePage} />
       <Route path='/InstructorHome' component={InstructorHomePage} />
 
       <Route

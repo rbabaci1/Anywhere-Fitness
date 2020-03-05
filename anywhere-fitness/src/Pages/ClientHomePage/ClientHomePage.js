@@ -47,6 +47,9 @@ const HomePageContainer = styled.div`
           flex-wrap: nowrap;
           overflow: auto;
         }
+        a {
+          text-decoration: none;
+        }
       }
     }
   }
@@ -86,7 +89,9 @@ export default function ClientHomePage() {
 
             <div className='classes'>
               {classes.map(classInfo => (
-                <ClientClassCard classInfo={classInfo} key={classInfo.id} />
+                <Link to='/ClientHome/class'>
+                  <ClientClassCard classInfo={classInfo} key={classInfo.id} />
+                </Link>
               ))}
             </div>
           </section>
