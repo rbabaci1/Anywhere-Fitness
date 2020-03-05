@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import InstructorClassCard from '../../ReusableComponents/InstructorClassCard';
 import classesIcon from '../Images/classes.png';
+import addNewClass from '../AddNewClassPage/AddNewClass';
 
 const classData = {
   name: 'Karate',
@@ -82,6 +83,8 @@ export default function InstructorHomePage() {
           </div>
         </div>
       </div>
+
+      {/* <Route path='/instructor/addNewClass' render={() => }/> */}
     </InstructorPageContainer>
   );
 }
