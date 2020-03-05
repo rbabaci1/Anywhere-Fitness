@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import ClientClassCard from '../../ReusableComponents/ClientClassCard';
+import axios from 'axios';
 
 const HomePageContainer = styled.div`
   .empty-nav-bar {
@@ -59,6 +60,16 @@ export default function ClientHomePage() {
       rating: '4.5'
     }
   ]);
+
+  useEffect(() => {
+    axios
+      .get('https://anywhere-fitness1.herokuapp.com/api/classes')
+      .then(response => {
+        console.log(response);
+        // setClasses with the received data
+      })
+      .catch(error => console.error(error));
+  }, []);
 
   return (
     <HomePageContainer>
