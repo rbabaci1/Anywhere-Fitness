@@ -138,7 +138,13 @@ export default withFormik({
     if (userType === 'client') {
       // Post the data to the database
       console.log(values);
-
+      axios
+        .post("https://anywhere-fitness1.herokuapp.com/api/auth/register", 
+        { username: values.name, password: values.password})
+        .then(res => {
+          console.log("This is the username: ", res.data.username);
+        })
+      props.history.push("/succeed");
       resetForm();
     }
   },

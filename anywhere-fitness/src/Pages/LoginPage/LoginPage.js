@@ -89,7 +89,7 @@ export default function LoginPage(props) {
           username: formData.email,
           password: formData.password
         })
-        .then(resp => {
+        .then(res => {
           localStorage.setItem('token', res.data.token);
           props.history.push('/succeed');
         })

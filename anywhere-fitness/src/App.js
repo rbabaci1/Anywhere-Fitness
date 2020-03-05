@@ -23,7 +23,8 @@ function App() {
       <Route exact path='/accountType' component={AccountType} />
       <Route path='/login' component={LoginPage} />
 
-      <PrivateRoute path="succeeded" component={AccountType} />
+      {/*Work in progress, not actual component that will be rendered*/}
+      <PrivateRoute path="/succeed" component={AccountType} />
 
       <Route exact path='/accountType/:userType' component={UserType} />
 
