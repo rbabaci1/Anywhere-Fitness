@@ -74,6 +74,11 @@ export default function InstructorHomePage() {
           </div>
         </NavLink>
 
+        <Route
+          path='/instructor/addNewClass'
+          render={props => <AddNewClass {...props} setClasses={setClasses} />}
+        />
+
         <div className='active-classes'>
           <h1>Active Classes</h1>
 
@@ -84,11 +89,6 @@ export default function InstructorHomePage() {
           </div>
         </div>
       </div>
-
-      <Route
-        path='/instructor/addNewClass'
-        render={props => <AddNewClass {...props} setClasses={setClasses} />}
-      />
     </InstructorPageContainer>
   );
 }

@@ -17,7 +17,7 @@ function App() {
     <div className='App'>
       {/* <Route exact path='/' component={LandingPage} /> */}
       {/* <Route exact path='/' component={ClientHomePage} /> */}
-      <Route exact path='/' component={InstructorHomePage} />
+      <Route path='/' component={InstructorHomePage} />
       {/* <InstructorHomePage exact path='/' component={InstructorHomePage} /> */}
 
       <Route path='/login' component={LoginPage} />
