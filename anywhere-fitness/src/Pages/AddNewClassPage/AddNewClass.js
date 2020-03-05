@@ -74,6 +74,13 @@ export default function AddNewClass({ addClass }) {
   const submitHandler = event => {
     event.preventDefault();
     addClass(newClass);
+    // Post the Class to the database
+    axios
+      .post(
+        'https://anywhere-fitness1.herokuapp.com/api/users/:id/post',
+        newClass
+      )
+      .catch(error => console.error(error));
 
     // reset the form
     setNewClass({
