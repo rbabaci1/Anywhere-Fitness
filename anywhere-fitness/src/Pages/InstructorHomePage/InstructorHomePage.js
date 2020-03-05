@@ -35,6 +35,9 @@ const InstructorPageContainer = styled.div`
       font-size: 20px;
     }
   }
+  .new-classes-main {
+    display: flex;
+  }
   .icon-wrapper:hover {
     cursor: pointer;
     p {
@@ -43,12 +46,13 @@ const InstructorPageContainer = styled.div`
   }
 
   .active-classes {
-    margin-top: 30px;
+    width: 90%;
 
     h1 {
-      margin: 0 0 24px 120px;
+      margin: 0 0 20px 20px;
       color: #f7f7f7;
-      font-size: 54px;
+      font-size: 50px;
+      border-bottom: 2px solid;
     }
     .classes {
       display: flex;
@@ -76,18 +80,20 @@ export default function InstructorHomePage() {
           </div>
         </NavLink>
 
-        <Route
-          path='/instructor/addNewClass'
-          render={props => <AddNewClass {...props} addClass={addClass} />}
-        />
+        <div className='new-classes-main'>
+          <Route
+            path='/instructor/addNewClass'
+            render={props => <AddNewClass {...props} addClass={addClass} />}
+          />
 
-        <div className='active-classes'>
-          <h1>Active Classes</h1>
+          <div className='active-classes'>
+            <h1>Active Classes</h1>
 
-          <div className='classes'>
-            {classes.map(classInfo => (
-              <InstructorClassCard classInfo={classInfo} />
-            ))}
+            <div className='classes'>
+              {classes.map(classInfo => (
+                <InstructorClassCard classInfo={classInfo} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
