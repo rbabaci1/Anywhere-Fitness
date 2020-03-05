@@ -7,12 +7,10 @@ import styled from 'styled-components';
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 
-import InstructorHomePage from '../InstructorHomePage/InstructorHomePage';
-
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 
-import { toggleActive, removeActive } from '../../functionsLibrary/library';
+import { toggleActive } from '../../functionsLibrary/library';
 
 const MoreInfoFormContainer = styled(FormDefaultStyle)`
   .button {
@@ -94,10 +92,8 @@ function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
             className='select'
             onClick={event => toggleActive(event, setValues, values)}
           >
-            <span id='yes'>Yes</span>
-            <span id='no' className='selected'>
-              No
-            </span>
+            <span className='yes'>Yes</span>
+            <span className='no selected'>No</span>
           </div>
         </label>
 
@@ -122,10 +118,12 @@ export default withFormik({
   handleSubmit: (values, formikBag) => {
     const { props, resetForm } = formikBag;
     const { firstFormValues } = props.location.state;
+
     // concat the first form values with the current
     values = { ...firstFormValues, ...values };
 
     // console.log(values);
+
     axios
       .post('https://anywhere-fitness1.herokuapp.com/api/auth/register', {
         username: values.name,
@@ -136,7 +134,6 @@ export default withFormik({
 
     props.history.push('/InstructorHome');
 
-    removeActive();
     resetForm();
   },
   validationSchema: Yup.object().shape({

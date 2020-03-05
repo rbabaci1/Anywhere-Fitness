@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -81,7 +81,7 @@ export default function InstructorHomePage() {
 
             <div className='classes'>
               {classes.map(classInfo => (
-                <InstructorClassCard classInfo={classInfo} />
+                <InstructorClassCard classInfo={classInfo} key={classInfo.id} />
               ))}
             </div>
           </div>
@@ -89,7 +89,11 @@ export default function InstructorHomePage() {
           <div className='create-classes'>
             <Link to='/InstructorHome/addNewClass' className='add-class-link'>
               <span>Create New Class</span>
-              <img src={classesIcon} className='classes-icon' />
+              <img
+                src={classesIcon}
+                className='classes-icon'
+                alt='create new class icon'
+              />
             </Link>
 
             <Route

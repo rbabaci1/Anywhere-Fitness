@@ -20,8 +20,8 @@ const showPassword = () => {
 };
 
 const toggleActive = (event, setValues, values) => {
-  let yes = document.getElementById('yes');
-  let no = document.getElementById('no');
+  const yes = document.querySelector('.yes');
+  const no = document.querySelector('.no');
 
   if (event.target.textContent === 'Yes') {
     setValues({ ...values, isCertified: true });
@@ -36,11 +36,4 @@ const toggleActive = (event, setValues, values) => {
   }
 };
 
-const removeActive = () => {
-  const yes = document.getElementById('yes');
-  const no = document.getElementById('no');
-  yes.classList.remove('selected');
-  no.classList.add('selected');
-};
-
-export { formIsValid, showPassword, toggleActive, removeActive };
+export { formIsValid, showPassword, toggleActive };

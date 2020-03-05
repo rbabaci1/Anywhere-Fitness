@@ -34,7 +34,7 @@ const ClassContainer = styled.div`
 export default function ClassCard({ classInfo }) {
   return (
     <ClassContainer className='class-card'>
-      <img src={testImage} />
+      <img src={testImage} alt='workout class' />
       <h3>{classInfo.name}</h3>
       <h2>{classInfo.location}</h2>
       <p>{classInfo.teacher}</p>

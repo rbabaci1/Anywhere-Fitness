@@ -58,6 +58,7 @@ const FormContainer = styled.div`
 
 export default function AddNewClass({ addClass, history }) {
   const [newClass, setNewClass] = useState({
+    id: 0,
     name: '',
     category: '',
     location: '',
@@ -82,6 +83,7 @@ export default function AddNewClass({ addClass, history }) {
 
     // reset the form
     setNewClass({
+      id: 0,
       name: '',
       category: '',
       location: '',

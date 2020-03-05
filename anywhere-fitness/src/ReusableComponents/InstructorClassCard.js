@@ -23,7 +23,7 @@ const ClassContainer = styled.div`
     letter-spacing: 1.5px;
   }
 
-  a {
+  span {
     color: #ca1f3d;
     letter-spacing: 1px;
     font-size: 18px;
@@ -40,11 +40,11 @@ export default function InstructorClassCard({ classInfo }) {
             ? classInfo.imageUrl
             : 'https://cdn.pixabay.com/photo/2013/09/23/18/22/kick-185384__340.jpg'
         }
-        alt='a workout class image'
+        alt='a workout class'
       />
       <h3>{classInfo.name}</h3>
       <h2>{classInfo.location}</h2>
-      <a href='#'>Edit</a>
+      <span>Edit</span>
     </ClassContainer>
   );
 }
