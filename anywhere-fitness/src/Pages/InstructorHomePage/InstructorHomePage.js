@@ -60,6 +60,8 @@ const InstructorPageContainer = styled.div`
 export default function InstructorHomePage() {
   const [classes, setClasses] = useState([]);
 
+  const addClass = newClass => setClasses([...classes, newClass]);
+
   return (
     <InstructorPageContainer>
       <div className='empty-nav-bar hide'></div>
@@ -76,7 +78,7 @@ export default function InstructorHomePage() {
 
         <Route
           path='/instructor/addNewClass'
-          render={props => <AddNewClass {...props} setClasses={setClasses} />}
+          render={props => <AddNewClass {...props} addClass={addClass} />}
         />
 
         <div className='active-classes'>
