@@ -14,3 +14,4 @@ Rabah Babaci-Front End Developer:
   
 Gabriel Lopez-Back End Developer:
   -Responsible for under the hood operations, ex. state management and communicating with API.
+
