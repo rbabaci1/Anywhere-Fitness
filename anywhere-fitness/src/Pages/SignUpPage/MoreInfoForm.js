@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -65,51 +66,55 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
 
 function MoreInfoForm({ setValues, values, touched, errors, isSubmitting }) {
   return (
-    <MoreInfoFormContainer>
-      <Logo />
-      <p>Tell us more about you!</p>
+    <AbsoluteWrapper>
+      <MoreInfoFormContainer>
+        <Logo />
+        <p>Tell us more about you!</p>
 
-      <Form>
-        <label>
-          Exercise you specialize in
-          <Field
-            type='text'
-            name='specialty'
-            placeholder='Exercise you specialize in'
-          />
-          {touched.specialty && errors.specialty && (
-            <ErrorMessageStyled>{errors.specialty}</ErrorMessageStyled>
-          )}
-        </label>
+        <Form>
+          <label>
+            Exercise you specialize in
+            <Field
+              type='text'
+              name='specialty'
+              placeholder='Exercise you specialize in'
+            />
+            {touched.specialty && errors.specialty && (
+              <ErrorMessageStyled>{errors.specialty}</ErrorMessageStyled>
+            )}
+          </label>
 
-        <label>
-          Years of Experience
-          <Field type='number' name='yearsOfExperience' id='experience' />
-          {touched.yearsOfExperience && errors.yearsOfExperience && (
-            <ErrorMessageStyled>{errors.yearsOfExperience}</ErrorMessageStyled>
-          )}
-        </label>
+          <label>
+            Years of Experience
+            <Field type='number' name='yearsOfExperience' id='experience' />
+            {touched.yearsOfExperience && errors.yearsOfExperience && (
+              <ErrorMessageStyled>
+                {errors.yearsOfExperience}
+              </ErrorMessageStyled>
+            )}
+          </label>
 
-        <label>
-          Are You a Certified?
-          <div
-            className='select'
-            onClick={event => toggleActive(event, setValues, values)}
-          >
-            <span className='yes'>Yes</span>
-            <span className='no selected'>No</span>
+          <label>
+            Are You a Certified?
+            <div
+              className='select'
+              onClick={event => toggleActive(event, setValues, values)}
+            >
+              <span className='yes'>Yes</span>
+              <span className='no selected'>No</span>
+            </div>
+          </label>
+
+          <div className='button'>
+            <Button
+              textContent='Continue'
+              type='submit'
+              isSubmitting={isSubmitting}
+            />
           </div>
-        </label>
-
-        <div className='button'>
-          <Button
-            textContent='Continue'
-            type='submit'
-            isSubmitting={isSubmitting}
-          />
-        </div>
-      </Form>
-    </MoreInfoFormContainer>
+        </Form>
+      </MoreInfoFormContainer>
+    </AbsoluteWrapper>
   );
 }
 

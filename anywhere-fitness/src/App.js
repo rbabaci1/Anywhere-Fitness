@@ -15,31 +15,54 @@ import ClientHomePage from './Pages/ClientHomePage/ClientHomePage';
 import InstructorHomePage from './Pages/InstructorHomePage/InstructorHomePage';
 
 function App() {
+  const { location } = useContext(__RouterContext);
+  const transitions1 = useTransition(location, location => location.pathname, {
+    from: { opacity: 0, transform: 'translate(100%, 0)' },
+    enter: { opacity: 1, transform: 'translate(0%, 0)' },
+    leave: { opacity: 0, transform: 'translate(20px, 0)' }
+  });
+  const transitions2 = useTransition(location, location => location.pathname, {
+    from: { opacity: 0, transform: 'translate(0, 100%)' },
+    enter: { opacity: 1, transform: 'translate(0%, 0)' },
+    leave: { opacity: 0, transform: 'translate(0%, 100px)' }
+  });
+
   return (
     <div className='App'>
-      <Switch>
-        <Route exact path='/' component={LandingPage} />
-        <Route path='/login' component={LoginPage} />
+      {transitions1.map(({ item, props, key }) => (
+        <animated.div key={key} style={props}>
+          <Switch location={item}>
+            <Route exact path='/' component={LandingPage} />
+            <Route exact path='/login' component={LoginPage} />
 
-        {/*Work in progress, not actual component that will be rendered*/}
-        <PrivateRoute path='/succeed' component={AccountType} />
+            {/*Work in progress, not actual component that will be rendered*/}
+            <PrivateRoute path='/succeed' component={AccountType} />
 
-        <Route exact path='/accountType' component={AccountType} />
-        <Route exact path='/accountType/:userType' component={UserType} />
+            <Route exact path='/accountType' component={AccountType} />
+          </Switch>
+        </animated.div>
+      ))}
 
-        <Route path='/ClientHome' component={ClientHomePage} />
-        <Route path='/InstructorHome' component={InstructorHomePage} />
+      {transitions2.map(({ item, props, key }) => (
+        <animated.div key={key} style={props}>
+          <Switch>
+            <Route exact path='/accountType/:userType' component={UserType} />
+            <Route
+              exact
+              path='/accountType/:userType/signUp'
+              component={SignUpForm}
+            />
+            <Route
+              exact
+              path='/accountType/instructor/signUp/moreInfo'
+              component={MoreInfoForm}
+            />
+            <Route exact path='/ClientHome' component={ClientHomePage} />
+          </Switch>
+        </animated.div>
+      ))}
 
-        <Route
-          exact
-          path='/accountType/:userType/signUp'
-          component={SignUpForm}
-        />
-        <Route
-          path='/accountType/instructor/signUp/moreInfo'
-          component={MoreInfoForm}
-        />
-      </Switch>
+      <Route path='/InstructorHome' component={InstructorHomePage} />
     </div>
   );
 }

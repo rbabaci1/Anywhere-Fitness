@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import landingPageImage from '../Images/landingPageImage.png';
 import landingPageImage2 from '../Images/landingPageImage2.png';
@@ -157,53 +158,55 @@ const LandingPageContainer = styled.div`
 
 export default function LandingPage() {
   return (
-    <LandingPageContainer className='landing-wrapper'>
-      <div className='header'>
-        <Logo />
-        <p className='sign-in hide'>
-          Already have an account? <Link to='/login'>Log In</Link>
+    <AbsoluteWrapper>
+      <LandingPageContainer className='landing-wrapper'>
+        <div className='header'>
+          <Logo />
+          <p className='sign-in hide'>
+            Already have an account? <Link to='/login'>Log In</Link>
+          </p>
+        </div>
+
+        <div className='main-content'>
+          <section className='images-slideshow'>
+            <img
+              src={landingPageImage3}
+              alt='Athletes working out.'
+              className='landing-image hide image1'
+            />
+
+            <img
+              src={landingPageImage}
+              alt='Athletes working out.'
+              className='landing-image'
+            />
+
+            <img
+              src={landingPageImage2}
+              alt='Athletes working out.'
+              className='landing-image hide'
+            />
+          </section>
+
+          <section className='title-section'>
+            <h1 className='hide'>
+              Work out,
+              <br /> anytime
+            </h1>
+            <h4>Attend classes that are run by local instructors, anywhere!</h4>
+
+            <div className='button'>
+              <Link to='/accountType'>
+                <Button textContent='Join Now!' />
+              </Link>
+            </div>
+          </section>
+        </div>
+
+        <p className='mobile-login'>
+          Already have an account ? <Link to='/login'>Log In</Link>
         </p>
-      </div>
-
-      <div className='main-content'>
-        <section className='images-slideshow'>
-          <img
-            src={landingPageImage3}
-            alt='Athletes working out.'
-            className='landing-image hide image1'
-          />
-
-          <img
-            src={landingPageImage}
-            alt='Athletes working out.'
-            className='landing-image'
-          />
-
-          <img
-            src={landingPageImage2}
-            alt='Athletes working out.'
-            className='landing-image hide'
-          />
-        </section>
-
-        <section className='title-section'>
-          <h1 className='hide'>
-            Work out,
-            <br /> anytime
-          </h1>
-          <h4>Attend classes that are run by local instructors, anywhere!</h4>
-
-          <div className='button'>
-            <Link to='/accountType'>
-              <Button textContent='Join Now!' />
-            </Link>
-          </div>
-        </section>
-      </div>
-
-      <p className='mobile-login'>
-        Already have an account ? <Link to='/login'>Log In</Link>
-      </p>
-    </LandingPageContainer>
+      </LandingPageContainer>
+    </AbsoluteWrapper>
   );
 }

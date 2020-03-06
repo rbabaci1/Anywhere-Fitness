@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -115,56 +116,60 @@ export default function LoginPage(props) {
   };
 
   return (
-    <LoginFormContainer>
-      <Logo />
+    <AbsoluteWrapper>
+      <LoginFormContainer>
+        <Logo />
 
-      <p>Log in by providing the information below</p>
+        <p>Log in by providing the information below</p>
 
-      <form onSubmit={handleSubmit} noValidate>
-        <label>
-          Email
-          <input
-            type='email'
-            name='email'
-            value={formData.email}
-            onChange={handleChange}
-            placeholder='Enter email'
-          />
-          {/* Error message for email validation */}
-          {formData.formErrors.email.length > 0 && inputTouched && (
-            <ErrorMessageStyled>{formData.formErrors.email}</ErrorMessageStyled>
-          )}
-        </label>
+        <form onSubmit={handleSubmit} noValidate>
+          <label>
+            Email
+            <input
+              type='email'
+              name='email'
+              value={formData.email}
+              onChange={handleChange}
+              placeholder='Enter email'
+            />
+            {/* Error message for email validation */}
+            {formData.formErrors.email.length > 0 && inputTouched && (
+              <ErrorMessageStyled>
+                {formData.formErrors.email}
+              </ErrorMessageStyled>
+            )}
+          </label>
 
-        <label>
-          Password
-          <input
-            type='password'
-            name='password'
-            value={formData.password}
-            onChange={handleChange}
-            placeholder='Enter password'
-            id='password'
-          />
-          {/* Error message for password validation */}
-          {formData.password.length === 0 && inputTouched && (
-            <ErrorMessageStyled>
-              Please, enter your password.
-            </ErrorMessageStyled>
-          )}
-          {passwordIsShown ? (
-            <label className='show-password'>
-              <input type='checkbox' onClick={showPassword} />
-              <span className='checkmark'></span>
-              <span id='text'>Show Password</span>
-            </label>
-          ) : null}
-        </label>
+          <label>
+            Password
+            <input
+              type='password'
+              name='password'
+              value={formData.password}
+              onChange={handleChange}
+              placeholder='Enter password'
+              id='password'
+            />
+            {/* Error message for password validation */}
+            {formData.password.length === 0 && inputTouched && (
+              <ErrorMessageStyled>
+                Please, enter your password.
+              </ErrorMessageStyled>
+            )}
+            {passwordIsShown ? (
+              <label className='show-password'>
+                <input type='checkbox' onClick={showPassword} />
+                <span className='checkmark'></span>
+                <span id='text'>Show Password</span>
+              </label>
+            ) : null}
+          </label>
 
-        <div className='button'>
-          <Button textContent='Log in' type='submit' />
-        </div>
-      </form>
-    </LoginFormContainer>
+          <div className='button'>
+            <Button textContent='Log in' type='submit' />
+          </div>
+        </form>
+      </LoginFormContainer>
+    </AbsoluteWrapper>
   );
 }

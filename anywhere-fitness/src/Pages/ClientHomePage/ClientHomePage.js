@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import ClientClassCard from '../../ReusableComponents/ClientClassCard';
-import axios from 'axios';
+import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 const HomePageContainer = styled.div`
   .empty-nav-bar {
@@ -78,25 +79,27 @@ export default function ClientHomePage() {
   }, []);
 
   return (
-    <HomePageContainer>
-      <div className='empty-nav-bar hide'></div>
-      <div className='home-page-wrapper'>
-        <HomePageNav />
+    <AbsoluteWrapper>
+      <HomePageContainer>
+        <div className='empty-nav-bar hide'></div>
+        <div className='home-page-wrapper'>
+          <HomePageNav />
 
-        <div className='classes-wrapper'>
-          <section className='nearby-popular'>
-            <h1 className='title'>Nearby Popular</h1>
+          <div className='classes-wrapper'>
+            <section className='nearby-popular'>
+              <h1 className='title'>Nearby Popular</h1>
 
-            <div className='classes'>
-              {classes.map(classInfo => (
-                <Link to='/ClientHome/class'>
-                  <ClientClassCard classInfo={classInfo} key={classInfo.id} />
-                </Link>
-              ))}
-            </div>
-          </section>
+              <div className='classes'>
+                {classes.map(classInfo => (
+                  <Link to='/ClientHome/class'>
+                    <ClientClassCard classInfo={classInfo} key={classInfo.id} />
+                  </Link>
+                ))}
+              </div>
+            </section>
+          </div>
         </div>
-      </div>
-    </HomePageContainer>
+      </HomePageContainer>
+    </AbsoluteWrapper>
   );
 }

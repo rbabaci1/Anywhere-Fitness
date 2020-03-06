@@ -7,12 +7,11 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
+import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { showPassword } from '../../functionsLibrary/library';
-
-import { axiosWithAuth } from '../../Auxillary/axiosWithAuth';
 
 import './checkbox.css';
 
@@ -53,76 +52,78 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
   const { userType } = match.params;
 
   return (
-    <SignUpFormContainer>
-      <Logo />
+    <AbsoluteWrapper>
+      <SignUpFormContainer>
+        <Logo />
 
-      <p>Create an account by providing the information below</p>
+        <p>Create an account by providing the information below</p>
 
-      <Form>
-        <label>
-          Name
-          <Field type='text' name='name' placeholder='Enter name' />
-          {touched.name && errors.name && (
-            <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
-          )}
-        </label>
+        <Form>
+          <label>
+            Name
+            <Field type='text' name='name' placeholder='Enter name' />
+            {touched.name && errors.name && (
+              <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
+            )}
+          </label>
 
-        <label>
-          Email
-          <Field type='email' name='email' placeholder='Enter email' />
-          {touched.email && errors.email && (
-            <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
-          )}
-        </label>
+          <label>
+            Email
+            <Field type='email' name='email' placeholder='Enter email' />
+            {touched.email && errors.email && (
+              <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
+            )}
+          </label>
 
-        <label>
-          Password
-          <Field
-            type='password'
-            name='password'
-            placeholder='Enter password'
-            id='password'
-          />
-          {values.password.length > 0 && (
-            <label className='show-password'>
-              <input type='checkbox' onClick={showPassword} />
-              <span className='checkmark'></span>
-              <span id='text'>Show Password</span>
-            </label>
-          )}
-          {touched.password && errors.password && (
-            <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
-          )}
-        </label>
+          <label>
+            Password
+            <Field
+              type='password'
+              name='password'
+              placeholder='Enter password'
+              id='password'
+            />
+            {values.password.length > 0 && (
+              <label className='show-password'>
+                <input type='checkbox' onClick={showPassword} />
+                <span className='checkmark'></span>
+                <span id='text'>Show Password</span>
+              </label>
+            )}
+            {touched.password && errors.password && (
+              <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
+            )}
+          </label>
 
-        {userType === 'instructor' ? (
-          <div className='button'>
-            <Link
-              to={{
-                pathname: '/accountType/instructor/signUp/MoreInfo',
-                state: {
-                  firstFormValues: values
-                }
-              }}
-            >
+          {userType === 'instructor' ? (
+            <div className='button'>
+              <Link
+                to={{
+                  pathname: '/accountType/instructor/signUp/MoreInfo',
+                  state: {
+                    firstFormValues: values
+                  }
+                }}
+              >
+                <Button
+                  textContent='Sign up!'
+                  type='button'
+                  isSubmitting={false}
+                />
+              </Link>
+            </div>
+          ) : (
+            <div className='button'>
               <Button
                 textContent='Sign up!'
-                type='button'
-                isSubmitting={false}
+                type='submit'
+                isSubmitting={isSubmitting}
               />
-            </Link>
-          </div>
-        ) : (
-          <div className='button'>
-            <Button
-              textContent='Sign up!'
-              type='submit'
-              isSubmitting={isSubmitting}
-            />
-          </div>
-        )}
-      </Form>
-    </SignUpFormContainer>
+            </div>
+          )}
+        </Form>
+      </SignUpFormContainer>
+    </AbsoluteWrapper>
   );
 }
 
