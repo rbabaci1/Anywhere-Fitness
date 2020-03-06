@@ -25,8 +25,6 @@ function App() {
       <Route exact path='/accountType' component={AccountType} />
       <Route exact path='/accountType/:userType' component={UserType} />
 
-      {/* Here are the differente home pages */}
-
       <Route path='/ClientHome' component={ClientHomePage} />
       <Route path='/InstructorHome' component={InstructorHomePage} />
 
