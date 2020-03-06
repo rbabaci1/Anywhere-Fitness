@@ -27,7 +27,7 @@ const HomePageContainer = styled.div`
     }
   }
   .classes-wrapper {
-    margin-top: 80px;
+    margin-top: 50px;
 
     section {
       .title {
