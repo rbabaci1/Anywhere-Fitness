@@ -30,11 +30,12 @@ const SelectedContainer = styled.div`
       line-height: 20px;
       text-align: center;
       letter-spacing: 0.36px;
+
       @media only screen and (min-width: 500px) {
-        font-size: 24px;
         width: 500px;
+        font-size: 24px;
         line-height: 35px;
-        margin-top: 60px;
+        margin-top: 30px;
       }
     }
     .button {

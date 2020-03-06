@@ -3,8 +3,6 @@ import styled from 'styled-components';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import ClientHomePage from '../ClientHomePage/ClientHomePage';
-import InstructorHomePage from '../InstructorHomePage/InstructorHomePage';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -12,11 +10,12 @@ import { formIsValid, showPassword } from '../../functionsLibrary/library';
 
 import '../SignUpPage/checkbox.css';
 
-import axios from "axios";
+import axios from 'axios';
 
 const LoginFormContainer = styled(FormDefaultStyle)`
   p {
     font-size: 20px;
+    margin: 25px 0;
   }
   .show-password {
     margin: 10px 0 0 0;
@@ -35,9 +34,9 @@ const LoginFormContainer = styled(FormDefaultStyle)`
       margin-top: 100px;
 
       button {
-        font-size: 30px;
-        padding: 15px 0;
-        width: 180px;
+        font-size: 28px;
+        padding: 13px 0;
+        width: 170px;
       }
     }
     .show-password {
@@ -85,14 +84,14 @@ export default function LoginPage(props) {
       console.log(formData);
       // Submit the Data to Login
       axios
-        .post("https://anywhere-fitness1.herokuapp.com/api/auth/login", {
+        .post('https://anywhere-fitness1.herokuapp.com/api/auth/login', {
           username: formData.email,
           password: formData.password
         })
         .then(res => {
           localStorage.setItem('token', res.data.token);
           props.history.push('/succeed');
-        })
+        });
       setFormData({
         email: '',
         password: '',

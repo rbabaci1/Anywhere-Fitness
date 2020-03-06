@@ -14,6 +14,12 @@ const LandingPageContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  .landing-image {
+    width: 100%;
+  }
+  .main-content {
+    width: 100%;
+  }
   h4 {
     width: 343px;
     font-size: 17px;
@@ -24,21 +30,21 @@ const LandingPageContainer = styled.div`
     text-align: center;
   }
   p {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 13px;
-    width: 174px;
+    width: 190px;
     color: #f7f7f7;
-    margin-top: 70px;
+    margin: 70px 0 0 0;
     text-align: center;
-    letter-spacing: 0.36px;
+    letter-spacing: 0.45px;
 
     a {
-      color: #ca1f3d;
+      color: #fa2742;
       text-decoration: none;
     }
   }
   .button {
-    margin-top: 100px;
+    margin-top: 70px;
     text-align: center;
   }
 
@@ -67,12 +73,12 @@ const LandingPageContainer = styled.div`
         margin-top: 0;
         display: block;
         font-size: 20px;
-        width: 306px;
+        width: 320px;
         padding-right: 15px;
       }
       h1 {
-        font-size: 26px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 33px;
         padding-left: 15px;
       }
     }
@@ -123,11 +129,16 @@ const LandingPageContainer = styled.div`
     }
   }
   @media only screen and (min-width: 500px) {
-    .main-content,
-    .landing-image {
+    h1 {
+      margin: 10px 0;
+    }
+    .main-content {
       width: 100%;
     }
     .title-section {
+      h1 {
+        font-weight: bold;
+      }
       h4 {
         width: 100%;
         font-size: 21px;

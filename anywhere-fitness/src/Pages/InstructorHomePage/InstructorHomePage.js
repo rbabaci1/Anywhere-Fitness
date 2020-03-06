@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
@@ -8,56 +8,60 @@ import AddNewClass from '../AddNewClassPage/AddNewClass';
 
 import classesIcon from '../Images/classes.png';
 
-const classData = {
-  name: 'Karate',
-  location: "Taryn's Dojo"
-};
-
 const InstructorPageContainer = styled.div`
   margin: 0 30px;
 
-  a {
+  .add-class-link {
+    box-sizing: border-box;
     text-decoration: none;
-  }
-  .icon-wrapper {
-    padding: 2px 7px;
-    width: fit-content;
+    display: inline-block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid #fa2742;
+    width: 210px;
+    padding: 10px 0;
 
     .classes-icon {
       height: 35px;
       width: 30px;
-      margin-top: 20px;
       margin-left: 15px;
     }
-    p {
+
+    span {
       color: #f7f7f7;
       margin: 5px 0;
       font-size: 20px;
     }
-  }
-  .new-classes-main {
-    display: flex;
-  }
-  .icon-wrapper:hover {
-    cursor: pointer;
-    p {
-      color: #ca1f3d;
+    &:hover {
+      span {
+        transition: 2s;
+        color: #fa2742;
+      }
     }
   }
 
+  .new-classes-main {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .active-classes {
-    width: 90%;
+    width: 70%;
 
     h1 {
       margin: 0 0 20px 20px;
       color: #f7f7f7;
-      font-size: 50px;
+      font-size: 48px;
       border-bottom: 2px solid;
     }
     .classes {
       display: flex;
       flex-wrap: wrap;
     }
+  }
+  .create-classes {
+    text-align: end;
+    width: 28%;
   }
 `;
 
@@ -73,27 +77,31 @@ export default function InstructorHomePage() {
       <div className='home-page-wrapper'>
         <HomePageNav />
 
-        <NavLink to='/instructor/addNewClass'>
-          <div className='icon-wrapper'>
-            <img src={classesIcon} className='classes-icon' />
-            <p>Create New Class</p>
-          </div>
-        </NavLink>
-
         <div className='new-classes-main'>
-          <Route
-            path='/instructor/addNewClass'
-            render={props => <AddNewClass {...props} addClass={addClass} />}
-          />
-
           <div className='active-classes'>
             <h1>Active Classes</h1>
 
             <div className='classes'>
               {classes.map(classInfo => (
-                <InstructorClassCard classInfo={classInfo} />
+                <InstructorClassCard classInfo={classInfo} key={classInfo.id} />
               ))}
             </div>
+          </div>
+
+          <div className='create-classes'>
+            <Link to='/InstructorHome/addNewClass' className='add-class-link'>
+              <span>Create New Class</span>
+              <img
+                src={classesIcon}
+                className='classes-icon'
+                alt='create new class icon'
+              />
+            </Link>
+
+            <Route
+              path='/InstructorHome/addNewClass'
+              render={props => <AddNewClass {...props} addClass={addClass} />}
+            />
           </div>
         </div>
       </div>

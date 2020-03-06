@@ -31,7 +31,7 @@ const InstructorContainer = styled.div`
 export default function InstructorType() {
   return (
     <InstructorContainer>
-      <h2 style={{ color: '#CA1F3D' }}>Instructor</h2>
+      <h2 style={{ color: '#FA2742' }}>Instructor</h2>
       <img src={instructorImage} alt='instructor athlete'></img>
     </InstructorContainer>
   );

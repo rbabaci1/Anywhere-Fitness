@@ -16,7 +16,7 @@ const ClassContainer = styled.div`
   h2 {
     font-size: 24px;
     margin: 3px 0 0 0;
-    color: #ca1f3d;
+    color: #fa2742;
     letter-spacing: 0.36px;
   }
   p {
@@ -34,7 +34,7 @@ const ClassContainer = styled.div`
 export default function ClassCard({ classInfo }) {
   return (
     <ClassContainer className='class-card'>
-      <img src={testImage} />
+      <img src={testImage} alt='workout class' />
       <h3>{classInfo.name}</h3>
       <h2>{classInfo.location}</h2>
       <p>{classInfo.teacher}</p>

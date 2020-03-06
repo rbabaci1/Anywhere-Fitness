@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import ClientClassCard from '../../ReusableComponents/ClientClassCard';
@@ -26,7 +27,7 @@ const HomePageContainer = styled.div`
     }
   }
   .classes-wrapper {
-    margin-top: 80px;
+    margin-top: 50px;
 
     section {
       .title {
@@ -42,9 +43,13 @@ const HomePageContainer = styled.div`
       .classes {
         display: flex;
         flex-wrap: wrap;
+
         @media only screen and (max-width: 500px) {
           flex-wrap: nowrap;
           overflow: auto;
+        }
+        a {
+          text-decoration: none;
         }
       }
     }
@@ -54,6 +59,7 @@ const HomePageContainer = styled.div`
 export default function ClientHomePage() {
   const [classes, setClasses] = useState([
     {
+      id: 0,
       name: 'Yoga',
       location: 'Cincy Yoga Club',
       teacher: 'Cincinnati',
@@ -67,6 +73,7 @@ export default function ClientHomePage() {
       .then(response => {
         console.log(response);
         // setClasses with the received data
+        setClasses(response.data);
       })
       .catch(error => console.error(error));
   }, []);
@@ -80,12 +87,12 @@ export default function ClientHomePage() {
         <div className='classes-wrapper'>
           <section className='nearby-popular'>
             <h1 className='title'>Nearby Popular</h1>
-            <div className='classes'>
-              {/* Testing */}
-              {/* <ClientClassCard classInfo={classData} /> */}
 
+            <div className='classes'>
               {classes.map(classInfo => (
-                <ClientClassCard classInfo={classInfo} />
+                <Link to='/ClientHome/class'>
+                  <ClientClassCard classInfo={classInfo} key={classInfo.id} />
+                </Link>
               ))}
             </div>
           </section>

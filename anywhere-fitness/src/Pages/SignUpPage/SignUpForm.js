@@ -7,7 +7,6 @@ import axios from 'axios';
 
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
-import ClientHomePage from '../ClientHomePage/ClientHomePage';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
@@ -20,6 +19,7 @@ import './checkbox.css';
 const SignUpFormContainer = styled(FormDefaultStyle)`
   p {
     font-size: 20px;
+    margin: 25px 0;
   }
   a {
     text-align: center;
@@ -140,13 +140,15 @@ export default withFormik({
       // Post the data to the database
       console.log(values);
       axios
-        .post("https://anywhere-fitness1.herokuapp.com/api/auth/register", 
-        { username: values.name, password: values.password})
-        .then(res => {
-          console.log("This is the username: ", res.data.username);
+        .post('https://anywhere-fitness1.herokuapp.com/api/auth/register', {
+          username: values.name,
+          password: values.password
         })
-      props.history.push("/clienthome");
+        .then(res => {
+          console.log('This is the username: ', res.data.username);
+        });
 
+      props.history.push('/ClientHome');
       resetForm();
     }
   },
