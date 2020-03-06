@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './Auxillary/privateRoute';
 
 import './App.css';
@@ -16,27 +16,29 @@ import InstructorHomePage from './Pages/InstructorHomePage/InstructorHomePage';
 function App() {
   return (
     <div className='App'>
-      <Route exact path='/' component={LandingPage} />
-      <Route path='/login' component={LoginPage} />
+      <Switch>
+        <Route exact path='/' component={LandingPage} />
+        <Route path='/login' component={LoginPage} />
 
-      {/*Work in progress, not actual component that will be rendered*/}
-      <PrivateRoute path='/succeed' component={AccountType} />
+        {/*Work in progress, not actual component that will be rendered*/}
+        <PrivateRoute path='/succeed' component={AccountType} />
 
-      <Route exact path='/accountType' component={AccountType} />
-      <Route exact path='/accountType/:userType' component={UserType} />
+        <Route exact path='/accountType' component={AccountType} />
+        <Route exact path='/accountType/:userType' component={UserType} />
 
-      <Route path='/ClientHome' component={ClientHomePage} />
-      <Route path='/InstructorHome' component={InstructorHomePage} />
+        <Route path='/ClientHome' component={ClientHomePage} />
+        <Route path='/InstructorHome' component={InstructorHomePage} />
 
-      <Route
-        exact
-        path='/accountType/:userType/signUp'
-        component={SignUpForm}
-      />
-      <Route
-        path='/accountType/instructor/signUp/moreInfo'
-        component={MoreInfoForm}
-      />
+        <Route
+          exact
+          path='/accountType/:userType/signUp'
+          component={SignUpForm}
+        />
+        <Route
+          path='/accountType/instructor/signUp/moreInfo'
+          component={MoreInfoForm}
+        />
+      </Switch>
     </div>
   );
 }
