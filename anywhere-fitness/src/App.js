@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PrivateRoute from './Auxillary/privateRoute';
+import { useTransition, animated } from 'react-spring';
 
 import './App.css';
 
