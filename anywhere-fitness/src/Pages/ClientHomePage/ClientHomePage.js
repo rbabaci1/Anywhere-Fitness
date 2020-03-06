@@ -43,7 +43,6 @@ const HomePageContainer = styled.div`
       .classes {
         display: flex;
         flex-wrap: wrap;
-
         @media only screen and (max-width: 500px) {
           flex-wrap: nowrap;
           overflow: auto;
