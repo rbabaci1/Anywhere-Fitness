@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import HomePageNav from '../../ReusableComponents/HomePageNav';
 import InstructorClassCard from '../../ReusableComponents/InstructorClassCard';
 import AddNewClass from '../AddNewClassPage/AddNewClass';
+import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import classesIcon from '../Images/classes.png';
 
@@ -71,40 +72,45 @@ export default function InstructorHomePage() {
   const addClass = newClass => setClasses([...classes, newClass]);
 
   return (
-    <InstructorPageContainer>
-      <div className='empty-nav-bar hide'></div>
+    <AbsoluteWrapper>
+      <InstructorPageContainer>
+        <div className='empty-nav-bar hide'></div>
 
-      <div className='home-page-wrapper'>
-        <HomePageNav />
+        <div className='home-page-wrapper'>
+          <HomePageNav />
 
-        <div className='new-classes-main'>
-          <div className='active-classes'>
-            <h1>Active Classes</h1>
+          <div className='new-classes-main'>
+            <div className='active-classes'>
+              <h1>Active Classes</h1>
 
-            <div className='classes'>
-              {classes.map(classInfo => (
-                <InstructorClassCard classInfo={classInfo} key={classInfo.id} />
-              ))}
+              <div className='classes'>
+                {classes.map(classInfo => (
+                  <InstructorClassCard
+                    classInfo={classInfo}
+                    key={classInfo.id}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <div className='create-classes'>
+              <Link to='/InstructorHome/addNewClass' className='add-class-link'>
+                <span>Create New Class</span>
+                <img
+                  src={classesIcon}
+                  className='classes-icon'
+                  alt='create new class icon'
+                />
+              </Link>
+
+              <Route
+                path='/InstructorHome/addNewClass'
+                render={props => <AddNewClass {...props} addClass={addClass} />}
+              />
             </div>
           </div>
-
-          <div className='create-classes'>
-            <Link to='/InstructorHome/addNewClass' className='add-class-link'>
-              <span>Create New Class</span>
-              <img
-                src={classesIcon}
-                className='classes-icon'
-                alt='create new class icon'
-              />
-            </Link>
-
-            <Route
-              path='/InstructorHome/addNewClass'
-              render={props => <AddNewClass {...props} addClass={addClass} />}
-            />
-          </div>
         </div>
-      </div>
-    </InstructorPageContainer>
+      </InstructorPageContainer>
+    </AbsoluteWrapper>
   );
 }
