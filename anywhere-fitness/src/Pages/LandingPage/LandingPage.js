@@ -22,7 +22,7 @@ const LandingPageContainer = styled.div`
     width: 100%;
   }
   h4 {
-    width: 343px;
+    margin-top: 20px;
     font-size: 17px;
     font-weight: 500;
     color: #f7f7f7;
