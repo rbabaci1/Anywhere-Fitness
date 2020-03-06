@@ -13,6 +13,10 @@ import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { toggleActive } from '../../functionsLibrary/library';
 
 const MoreInfoFormContainer = styled(FormDefaultStyle)`
+  p {
+    margin: 25px 0;
+  }
+
   .button {
     text-align: center;
     margin-top: 70px;
@@ -23,7 +27,7 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
     span {
       display: inline-block;
       padding: 8px 3px;
-      width: 30px;
+      width: 40px;
       text-align: center;
       margin: 2px 8px 0 0;
       border: 2px solid #787777;
@@ -38,8 +42,8 @@ const MoreInfoFormContainer = styled(FormDefaultStyle)`
     @media only screen and (min-width: 500px) {
       margin-top: 3px;
       span {
-        width: 45px;
-        padding: 17px 3px;
+        width: 55px;
+        padding: 18px 3px;
       }
     }
   }

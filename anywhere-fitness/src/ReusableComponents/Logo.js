@@ -11,6 +11,7 @@ const LogoContainer = styled.div`
     text-align: center;
     letter-spacing: 0.36px;
     color: #f7f7f7;
+    margin: 25px 0;
 
     @media only screen and (min-width: 500px) {
       font-size: 45px;

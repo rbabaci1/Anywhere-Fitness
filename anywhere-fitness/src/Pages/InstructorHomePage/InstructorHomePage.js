@@ -12,16 +12,18 @@ const InstructorPageContainer = styled.div`
   margin: 0 30px;
 
   .add-class-link {
+    box-sizing: border-box;
     text-decoration: none;
     display: inline-block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     cursor: pointer;
-    border-bottom: 2px solid #ca1f3d;
+    border-bottom: 2px solid #fa2742;
+    width: 210px;
+    padding: 10px 0;
 
     .classes-icon {
       height: 35px;
       width: 30px;
-      margin-top: 20px;
       margin-left: 15px;
     }
 
@@ -33,7 +35,7 @@ const InstructorPageContainer = styled.div`
     &:hover {
       span {
         transition: 2s;
-        color: #ca1f3d;
+        color: #fa2742;
       }
     }
   }

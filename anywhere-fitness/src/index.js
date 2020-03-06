@@ -8,19 +8,21 @@ import { Provider } from 'react-redux';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const store = createStore(reducer);
 
-function reducer(){
+function reducer() {
   return {
     title: 'Hi from the Redux Store!'
-  }
+  };
 }
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App /> 
-    </Router>  
+      <App />
+    </Router>
   </Provider>,
 
   document.getElementById('root')

@@ -19,6 +19,7 @@ import './checkbox.css';
 const SignUpFormContainer = styled(FormDefaultStyle)`
   p {
     font-size: 20px;
+    margin: 25px 0;
   }
   a {
     text-align: center;

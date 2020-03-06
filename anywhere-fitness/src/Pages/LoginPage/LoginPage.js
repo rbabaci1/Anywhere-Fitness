@@ -15,6 +15,7 @@ import axios from 'axios';
 const LoginFormContainer = styled(FormDefaultStyle)`
   p {
     font-size: 20px;
+    margin: 25px 0;
   }
   .show-password {
     margin: 10px 0 0 0;

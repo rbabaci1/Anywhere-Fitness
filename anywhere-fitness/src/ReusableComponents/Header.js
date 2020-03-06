@@ -18,6 +18,7 @@ const HeaderContainer = styled.div`
       line-height: 23px;
       text-align: center;
       letter-spacing: 0.36px;
+      margin: 30px 0;
       color: #f7f7f7;
       @media only screen and (min-width: 500px) {
         font-size: 25px;
