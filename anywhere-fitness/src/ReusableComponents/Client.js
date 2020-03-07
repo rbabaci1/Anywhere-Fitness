@@ -18,7 +18,8 @@ const ClientContainer = styled.div`
     margin: 0 0 5px 0;
 
     @media only screen and (min-width: 500px) {
-      font-size: 26px;
+      font-size: 30px;
+      letter-spacing: 1px;
     }
   }
 
