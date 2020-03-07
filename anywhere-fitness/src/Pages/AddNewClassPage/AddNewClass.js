@@ -8,14 +8,15 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   text-align: start;
-  background: #1e1d20;
-  height: 100vh;
+  background: #1a1c1f;
+  padding: 25px 5px;
+  border-radius: 10px;
 
   h2 {
     color: #f7f7f7;
     padding: 5px 0;
     margin: 0 0 8px 0;
-    background: #414143;
+    background: #262930;
     letter-spacing: 2px;
     font-weight: 200;
     text-align: center;
@@ -48,8 +49,8 @@ const FormContainer = styled.div`
       text-align: center;
       button {
         font-size: 22px;
-        width: 140px;
-        padding: 7px 0;
+        width: 150px;
+        padding: 10px 0;
         margin-top: 10px;
       }
     }
