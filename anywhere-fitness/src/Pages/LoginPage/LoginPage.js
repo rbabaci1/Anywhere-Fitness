@@ -7,7 +7,7 @@ import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
-import { formIsValid, showPassword } from '../../functionsLibrary/library';
+import { formIsValid, showPassword } from '../../HelpersLibrary/library';
 
 import '../SignUpPage/checkbox.css';
 

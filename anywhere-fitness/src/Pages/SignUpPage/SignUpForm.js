@@ -11,7 +11,7 @@ import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
-import { showPassword } from '../../functionsLibrary/library';
+import { showPassword } from '../../HelpersLibrary/library';
 
 import './checkbox.css';
 

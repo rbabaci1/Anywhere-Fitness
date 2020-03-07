@@ -11,7 +11,7 @@ import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 
-import { toggleActive } from '../../functionsLibrary/library';
+import { toggleActive } from '../../HelpersLibrary/library';
 
 const MoreInfoFormContainer = styled(FormDefaultStyle)`
   p {
