@@ -15,31 +15,35 @@ const SelectedContainer = styled.div`
 
   .user {
     text-align: center;
+
     @media only screen and (min-width: 500px) {
       display: flex;
       width: 100%;
       justify-content: space-evenly;
+      padding: 10px 0 15px 0;
       flex-wrap: wrap;
-      background: #252327;
+      background: #1a1c1f;
     }
+    div {
+      p {
+        width: 341px;
+        color: #f7f7f7;
+        font-size: 17px;
+        line-height: 20px;
+        text-align: center;
+        letter-spacing: 0.36px;
+        margin-top: 25px;
 
-    p {
-      width: 341px;
-      color: #f7f7f7;
-      font-size: 17px;
-      line-height: 20px;
-      text-align: center;
-      letter-spacing: 0.36px;
-
-      @media only screen and (min-width: 500px) {
-        width: 500px;
-        font-size: 24px;
-        line-height: 35px;
-        margin-top: 30px;
+        @media only screen and (min-width: 500px) {
+          width: 500px;
+          font-size: 24px;
+          line-height: 35px;
+          margin-top: 30px;
+        }
       }
-    }
-    .button {
-      margin: 50px 0 30px 0;
+      .button {
+        margin: 50px 0 30px 0;
+      }
     }
   }
 `;
@@ -52,7 +56,7 @@ export default function ClientOrInstructor({ userType }) {
       {userType === 'client' ? (
         <div className='user' style={{ flexDirection: 'row-reverse' }}>
           <Client />
-          <div>
+          <div style={{ marginTop: '40px' }}>
             <p>
               As a client, you will be able to search and sign up for fitness
               classes based on location, skill level, and preferred work out
@@ -69,7 +73,7 @@ export default function ClientOrInstructor({ userType }) {
       ) : (
         <div className='user'>
           <Instructor />
-          <div>
+          <div style={{ marginTop: '10px' }}>
             <p>
               As an instructor you will be able to manage and post the location
               of your fitness classes for others to join, manage clients

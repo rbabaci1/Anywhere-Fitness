@@ -4,7 +4,7 @@ import Logo from './Logo';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 
   section {
     display: flex;
@@ -25,6 +25,9 @@ const HeaderContainer = styled.div`
         width: 100%;
       }
     }
+  }
+  @media only screen and (min-width: 500px) {
+    margin-bottom: 50px;
   }
 `;
 
