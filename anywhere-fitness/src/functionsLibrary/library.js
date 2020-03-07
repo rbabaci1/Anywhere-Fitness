@@ -12,7 +12,7 @@ const formIsValid = (formErrors, email, password) => {
 };
 
 const showPassword = () => {
-  const password = document.getElementById('password');
+  const password = document.querySelector('.password');
 
   password.type === 'password'
     ? (password.type = 'text')

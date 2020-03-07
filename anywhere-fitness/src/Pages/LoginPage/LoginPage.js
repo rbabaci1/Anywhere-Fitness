@@ -148,7 +148,7 @@ export default function LoginPage(props) {
               value={formData.password}
               onChange={handleChange}
               placeholder='Enter password'
-              id='password'
+              className='password'
             />
             {/* Error message for password validation */}
             {formData.password.length === 0 && inputTouched && (

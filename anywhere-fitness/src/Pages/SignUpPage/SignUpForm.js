@@ -81,7 +81,7 @@ function SignUpForm({ values, match, touched, errors, isSubmitting }) {
               type='password'
               name='password'
               placeholder='Enter password'
-              id='password'
+              className='password'
             />
             {values.password.length > 0 && (
               <label className='show-password'>
