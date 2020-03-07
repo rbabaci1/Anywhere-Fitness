@@ -25,14 +25,14 @@ const LoginFormContainer = styled(FormDefaultStyle)`
     width: fit-content;
   }
   .button {
-    margin-top: 170px;
+    margin-top: 130px;
     text-align: center;
   }
 
   /*********** Media queries ************/
   @media only screen and (min-width: 500px) {
     .button {
-      margin-top: 100px;
+      margin-top: 70px;
 
       button {
         font-size: 28px;
