@@ -31,9 +31,9 @@ const LandingPageContainer = styled.div`
     text-align: center;
   }
   p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 13px;
-    width: 190px;
+    width: 220px;
     color: #f7f7f7;
     margin: 70px 0 0 0;
     text-align: center;
@@ -42,6 +42,9 @@ const LandingPageContainer = styled.div`
     a {
       color: #fa2742;
       text-decoration: none;
+      &:hover {
+        color: #f3617a;
+      }
     }
   }
   .button {
