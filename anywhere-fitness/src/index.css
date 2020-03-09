@@ -9,3 +9,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.App {
+  font-family: Ubuntu;
+}
+
+.selected {
+  background: #f7f7f7;
+  color: #000000;
+}
+
+.hide {
+  display: none;
+}

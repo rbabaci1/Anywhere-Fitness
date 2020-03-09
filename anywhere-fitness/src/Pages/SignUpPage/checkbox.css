@@ -1,13 +1,23 @@
 .show-password {
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: 32px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+#text {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+@media(min-width: 500px) {
+  #text {
+    font-size: 17px;
+  }
 }
 
 /* Hide the browser's default checkbox */
@@ -26,8 +36,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 22px;
+  width: 22px;
   background-color: inherit;
   border: 1px solid #787777;
   border-radius: 3px;
@@ -60,8 +70,8 @@
 .show-password .checkmark:after {
   left: 6px;
   top: 1px;
-  width: 5px;
-  height: 10px;
+  width: 8px;
+  height: 13px;
   border: solid #f7f7f7;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
@@ -76,8 +86,8 @@
   }
   .show-password .checkmark:after {
     width: 9px;
-    height: 16px;
-    left: 8px;
+    height: 18px;
+    left: 9px;
     top: 2px;
   }
 }

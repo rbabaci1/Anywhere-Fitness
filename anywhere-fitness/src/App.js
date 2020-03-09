@@ -3,8 +3,6 @@ import { Route, Switch, __RouterContext } from 'react-router-dom';
 import PrivateRoute from './Auxillary/privateRoute';
 import { useTransition, animated } from 'react-spring';
 
-import './App.css';
-
 import LandingPage from './Pages/LandingPage/LandingPage';
 import AccountType from './Pages/AccountType/AccountType';
 import UserType from './Pages/AccountType/UserType';
