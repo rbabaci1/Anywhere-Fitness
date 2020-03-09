@@ -40,7 +40,7 @@ const SignUpFormContainer = styled(FormDefaultStyle)`
   }
 
   .button {
-    margin-top: 100px;
+    margin: 70px 0 30px 0;
     text-align: center;
     @media only screen and (min-width: 500px) {
       margin: 30px 0;
