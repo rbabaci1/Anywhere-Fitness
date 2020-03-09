@@ -10,7 +10,7 @@ import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 const HomePageContainer = styled.div`
   .empty-nav-bar {
     width: 100%;
-    height: 40px;
+    height: 45px;
     background: #ca1f3d;
     @media only screen and (max-width: 500px) {
       display: block;

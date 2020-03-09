@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import accountIcon from '../Pages/Images/accountIcon.png';
-import searchIcon from '../Pages/Images/searchIcon.png';
-import calendarIcon from '../Pages/Images/calendarIcon.png';
-import settingIcon from '../Pages/Images/settingIcon.png';
+import accountIcon from '../Images/accountIcon.png';
+import searchIcon from '../Images/searchIcon.png';
+import calendarIcon from '../Images/calendarIcon.png';
+import settingIcon from '../Images/settingIcon.png';
 
 import Logo from './Logo';
 
@@ -42,7 +42,7 @@ const NavContainer = styled.div`
     @media only screen and (max-width: 500px) {
       width: 100%;
       justify-content: space-around;
-      padding: 30px 0;
+      padding: 25px 0;
       background: #29272c;
       position: fixed;
       bottom: 0;

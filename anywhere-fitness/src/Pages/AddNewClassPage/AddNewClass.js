@@ -11,6 +11,9 @@ const FormContainer = styled.div`
   background: #1a1c1f;
   padding: 25px 5px;
   border-radius: 10px;
+  @media only screen and (max-width: 500px) {
+    padding: 10px 0;
+  }
 
   h2 {
     color: #f7f7f7;
@@ -20,6 +23,9 @@ const FormContainer = styled.div`
     letter-spacing: 2px;
     font-weight: 200;
     text-align: center;
+    @media only screen and (max-width: 500px) {
+      font-size: 22px;
+    }
   }
 
   form {
@@ -34,6 +40,10 @@ const FormContainer = styled.div`
       font-size: 20px;
       margin-bottom: 15px;
       width: 94%;
+      @media only screen and (max-width: 500px) {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
 
       input {
         border-radius: 3px;
@@ -43,6 +53,9 @@ const FormContainer = styled.div`
         font-size: 21px;
         margin-top: 2px;
         color: blue;
+        @media only screen and (max-width: 500px) {
+          font-size: 16px;
+        }
       }
     }
     .button {
@@ -52,6 +65,11 @@ const FormContainer = styled.div`
         width: 150px;
         padding: 10px 0;
         margin-top: 10px;
+        @media only screen and (max-width: 500px) {
+          font-size: 18px;
+          width: 130px;
+          padding: 7px 0;
+        }
       }
     }
   }

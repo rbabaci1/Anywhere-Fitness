@@ -6,9 +6,9 @@ import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
-import landingPageImage from '../Images/landingPageImage.png';
-import landingPageImage2 from '../Images/landingPageImage2.png';
-import landingPageImage3 from '../Images/landingPageImage3.png';
+import landingPageImage from '../../Images/landingPageImage.png';
+import landingPageImage2 from '../../Images/landingPageImage2.png';
+import landingPageImage3 from '../../Images/landingPageImage3.png';
 
 const LandingPageContainer = styled.div`
   display: flex;

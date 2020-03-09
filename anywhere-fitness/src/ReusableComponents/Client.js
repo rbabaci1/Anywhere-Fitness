@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import clientImage from '../Pages/Images/clientImage.png';
+import clientImage from '../Images/clientImage.png';
 
 const ClientContainer = styled.div`
   text-align: center;

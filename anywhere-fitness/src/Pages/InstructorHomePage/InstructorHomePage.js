@@ -7,10 +7,27 @@ import InstructorClassCard from '../../ReusableComponents/InstructorClassCard';
 import AddNewClass from '../AddNewClassPage/AddNewClass';
 import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
 
-import classesIcon from '../Images/classes.png';
+import classesIcon from '../../Images/classes.png';
 
 const InstructorPageContainer = styled.div`
   margin: 0 30px;
+
+  .empty-nav-bar {
+    width: 100%;
+    height: 45px;
+    background: #ca1f3d;
+    @media only screen and (max-width: 500px) {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
+  .home-page-wrapper {
+    @media only screen and (max-width: 500px) {
+      margin-top: 60px;
+    }
+  }
 
   .add-class-link {
     box-sizing: border-box;
@@ -20,17 +37,24 @@ const InstructorPageContainer = styled.div`
     cursor: pointer;
     border-bottom: 2px solid #fa2742;
     width: 210px;
-    padding: 10px 0;
+    padding: 11px 0;
+    @media only screen and (max-width: 500px) {
+      padding: 0px 0 5px 0;
+    }
 
     .classes-icon {
       height: 35px;
       width: 30px;
       margin-left: 15px;
+      @media only screen and (max-width: 500px) {
+        float: right;
+        height: 30px;
+        width: 25px;
+      }
     }
 
     span {
       color: #f7f7f7;
-      margin: 5px 0;
       font-size: 20px;
     }
     &:hover {
@@ -44,6 +68,10 @@ const InstructorPageContainer = styled.div`
   .new-classes-main {
     display: flex;
     justify-content: space-between;
+
+    @media only screen and (max-width: 500px) {
+      flex-direction: column-reverse;
+    }
   }
 
   .active-classes {
@@ -58,11 +86,28 @@ const InstructorPageContainer = styled.div`
     .classes {
       display: flex;
       flex-wrap: wrap;
+      @media only screen and (max-width: 500px) {
+        justify-content: space-between;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      width: 100%;
+
+      h1 {
+        margin: 5px 0 5px 0;
+        font-size: 24px;
+        width: fit-content;
+      }
     }
   }
   .create-classes {
     text-align: end;
     width: 28%;
+    @media only screen and (max-width: 500px) {
+      width: 100%;
+      text-align: start;
+    }
   }
 `;
 

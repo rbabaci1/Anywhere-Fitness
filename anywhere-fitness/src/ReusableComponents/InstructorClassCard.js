@@ -3,10 +3,15 @@ import styled from 'styled-components';
 
 const ClassContainer = styled.div`
   margin: 0 30px 30px 20px;
-
+  @media only screen and (max-width: 500px) {
+    margin: 5px 0 0 0;
+  }
   img {
     width: 240px;
     border-radius: 10px;
+    @media only screen and (max-width: 500px) {
+      width: 150px;
+    }
   }
 
   h3 {
@@ -15,12 +20,19 @@ const ClassContainer = styled.div`
     color: gray;
     letter-spacing: 1.8px;
     margin: 3px 0 0 0;
+    @media only screen and (max-width: 500px) {
+      font-size: 18px;
+    }
   }
   h2 {
     font-size: 20px;
     margin: 8px 0;
     color: #f7f7f7;
     letter-spacing: 1.5px;
+    @media only screen and (max-width: 500px) {
+      font-size: 16px;
+      margin: 5px 0 3px 0;
+    }
   }
 
   span {
@@ -28,6 +40,9 @@ const ClassContainer = styled.div`
     letter-spacing: 1px;
     font-size: 18px;
     text-decoration: none;
+    @media only screen and (max-width: 500px) {
+      font-size: 15px;
+    }
   }
 `;
 

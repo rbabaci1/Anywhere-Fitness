@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import instructorImage from '../Pages/Images/instructorImage.png';
+import instructorImage from '../Images/instructorImage.png';
 
 const InstructorContainer = styled.div`
   text-align: center;

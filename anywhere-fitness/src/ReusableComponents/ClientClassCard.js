@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import testImage from '../Pages/Images/yoga.png';
+import testImage from '../Images/yoga.png';
 
 const ClassContainer = styled.div`
   margin: 0 30px 30px 0;
