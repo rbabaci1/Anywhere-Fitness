@@ -141,9 +141,10 @@ export default withFormik({
       .then(response => console.log(response))
       .catch(error => console.error(error));
 
-    props.history.push('/InstructorHome');
-
-    resetForm();
+    setTimeout(() => {
+      props.history.push('/InstructorHome');
+      resetForm();
+    }, 3000);
   },
   validationSchema: Yup.object().shape({
     specialty: Yup.string()

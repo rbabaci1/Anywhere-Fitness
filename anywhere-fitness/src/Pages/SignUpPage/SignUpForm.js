@@ -148,9 +148,10 @@ export default withFormik({
         .then(res => {
           console.log('This is the username: ', res.data.username);
         });
-
-      props.history.push('/ClientHome');
-      resetForm();
+      setTimeout(() => {
+        props.history.push('/ClientHome');
+        resetForm();
+      }, 3000);
     }
   },
   validationSchema: Yup.object().shape({
