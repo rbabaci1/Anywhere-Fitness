@@ -15,3 +15,17 @@ Rabah Babaci-Front End Developer:
 Gabriel Lopez-Back End Developer:
   -Responsible for under the hood operations, ex. state management and communicating with API.
 
+### Used Concepts:
+* JavaScript:
+  * Creating DOM components with Javascript Functions.
+  * Utilizing 3rd party libraries (axios, Formik)
+  * Promises, .then & .catch
+  * HTTP GET requests
+  * Array Methods
+* DOM
+  * Element selection
+  * Basic DOM manipulation
+  * Events and event listeners
+* React
+  * React Router
+  * Redux
