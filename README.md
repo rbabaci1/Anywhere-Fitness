@@ -6,7 +6,7 @@ Instructors can either be certified or non certified, allowing more flexibility 
 Those who are looking for fitness can either be fitness experts, or those just wanting to lose a couple pounds.
 
 ## Used Technologies:
-JavaScript, React, Redux, Html/Css, Sass, Figma, Material UI, Styled Components.
+JavaScript, React, Redux, axios, Formik, Html/Css, Sass, Figma, Material UI, Styled Components.
 
 
 Roles----
