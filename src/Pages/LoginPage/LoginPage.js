@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
+// import axios from 'axios';
 import styled from 'styled-components';
-
 import Logo from '../../ReusableComponents/Logo';
 import Button from '../../ReusableComponents/Button';
 import AbsoluteWrapper from '../../ReusableComponents/AbsoluteWrapper';
-
 import { FormDefaultStyle } from '../../ReusableStyling/FormDefaultStyle';
 import { ErrorMessageStyled } from '../../ReusableStyling/ErrorMessageStyled';
 import { formIsValid, showPassword } from '../../HelpersLibrary/library';
-
 import '../SignUpPage/checkbox.css';
-
-import axios from 'axios';
 
 const LoginFormContainer = styled(FormDefaultStyle)`
   p {
@@ -51,18 +47,22 @@ const LoginFormContainer = styled(FormDefaultStyle)`
   }
 `;
 
-export default function LoginPage(props) {
-  const [formData, setFormData] = useState({
+const initialState = {
+  email: '',
+  password: '',
+  loading: false,
+  formErrors: {
     email: '',
     password: '',
-    formErrors: {
-      email: ''
-    }
-  });
+  },
+};
+
+export default function LoginPage({ history }) {
+  const [formData, setFormData] = useState(initialState);
   const [inputTouched, setInputTouched] = useState(false);
   const [passwordIsShown, setPasswordIsShown] = useState(false);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { value, name } = event.target;
     const formErrors = formData.formErrors;
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,42 +75,56 @@ export default function LoginPage(props) {
       setPasswordIsShown(true);
     }
 
-    setFormData({ ...formData, [name]: value });
+    setFormData({
+      ...formData,
+      formErrors: { email: '', password: '' },
+      [name]: value,
+    });
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    const { email, password, formErrors } = formData;
 
-    if (formIsValid(formData.formErrors, formData.email, formData.password)) {
-      console.log(formData);
+    if (formIsValid(formErrors, email, password)) {
       // Submit the Data to Login
-      axios
-        .post('https://anywhere-fitness1.herokuapp.com/api/auth/login', {
-          username: formData.email,
-          password: formData.password
-        })
-        .then(res => {
-          localStorage.setItem('token', res.data.token);
-          props.history.push('/succeed');
-        });
-      setFormData({
-        email: '',
-        password: '',
-        formErrors: {
-          email: ''
+      // axios
+      //   .post('https://anywhere-fitness1.herokuapp.com/api/auth/login', {
+      //     username: formData.email,
+      //     password: formData.password,
+      //   })
+      //   .then((res) => {
+      //     localStorage.setItem('token', res.data.token);
+      //     props.history.push('/succeed');
+      //   })
+      //   .catch((err) => console.error(err));
+      setFormData({ ...formData, loading: true });
+
+      setTimeout(() => {
+        if (email === '4rabah@gmail.com' && password === '2020') {
+          history.push('/InstructorHome');
+          setFormData(initialState);
+          setInputTouched(false);
+          setPasswordIsShown(false);
+        } else {
+          setFormData({
+            ...formData,
+            loading: false,
+            formErrors: { password: "That wasn't correct. Try again?" },
+          });
+          setInputTouched(true);
         }
-      });
-      setInputTouched(false);
-      setPasswordIsShown(false);
+      }, 1500);
     } else {
       // Render the Error message to the User
 
-      if (formData.email.length === 0) {
+      if (!formData.email) {
         setFormData({
           ...formData,
-          formErrors: { email: 'Please, enter your email address.' }
+          formErrors: { email: 'Please, enter your email address.' },
         });
       }
+
       setInputTouched(true);
     }
   };
@@ -133,7 +147,7 @@ export default function LoginPage(props) {
               placeholder='Enter email'
             />
             {/* Error message for email validation */}
-            {formData.formErrors.email.length > 0 && inputTouched && (
+            {formData.formErrors.email && inputTouched && (
               <ErrorMessageStyled>
                 {formData.formErrors.email}
               </ErrorMessageStyled>
@@ -151,11 +165,6 @@ export default function LoginPage(props) {
               className='password'
             />
             {/* Error message for password validation */}
-            {formData.password.length === 0 && inputTouched && (
-              <ErrorMessageStyled>
-                Please, enter your password.
-              </ErrorMessageStyled>
-            )}
             {passwordIsShown ? (
               <label className='show-password'>
                 <input type='checkbox' onClick={showPassword} />
@@ -165,8 +174,17 @@ export default function LoginPage(props) {
             ) : null}
           </label>
 
+          {formData.formErrors.password && inputTouched && (
+            <ErrorMessageStyled>
+              {formData.formErrors.password}
+            </ErrorMessageStyled>
+          )}
+
           <div className='button'>
-            <Button textContent='Log in' type='submit' />
+            <Button
+              textContent={formData.loading ? 'Loading' : 'Log in'}
+              type='submit'
+            />
           </div>
         </form>
       </LoginFormContainer>

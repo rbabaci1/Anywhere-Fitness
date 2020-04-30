@@ -3,27 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-
 import { HashRouter as Router } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const store = createStore(reducer);
-
-function reducer() {
-  return {
-    title: 'Hi from the Redux Store!',
-  };
-}
-
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
+  <Router>
+    <App />
+  </Router>,
 
   document.getElementById('root')
 );

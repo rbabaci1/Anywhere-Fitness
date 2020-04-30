@@ -14,6 +14,7 @@ const ButtonComponent = styled.button`
   cursor: pointer;
   width: 155px;
   letter-spacing: 0.5px;
+  outline: none;
 
   &:hover {
     background: #820e22;

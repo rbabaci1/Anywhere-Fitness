@@ -14,16 +14,24 @@ import InstructorHomePage from './Pages/InstructorHomePage/InstructorHomePage';
 
 function App() {
   const { location } = useContext(__RouterContext);
-  const transitions1 = useTransition(location, location => location.pathname, {
-    from: { opacity: 0, transform: 'translate(100%, 0)' },
-    enter: { opacity: 1, transform: 'translate(0%, 0)' },
-    leave: { opacity: 0, transform: 'translate(20px, 0)' }
-  });
-  const transitions2 = useTransition(location, location => location.pathname, {
-    from: { opacity: 0, transform: 'translate(0, 100%)' },
-    enter: { opacity: 1, transform: 'translate(0%, 0)' },
-    leave: { opacity: 0, transform: 'translate(0%, 100px)' }
-  });
+  const transitions1 = useTransition(
+    location,
+    (location) => location.pathname,
+    {
+      from: { opacity: 0, transform: 'translate(100%, 0)' },
+      enter: { opacity: 1, transform: 'translate(0%, 0)' },
+      leave: { opacity: 0, transform: 'translate(20px, 0)' },
+    }
+  );
+  const transitions2 = useTransition(
+    location,
+    (location) => location.pathname,
+    {
+      from: { opacity: 0, transform: 'translate(0, 100%)' },
+      enter: { opacity: 1, transform: 'translate(0%, 0)' },
+      leave: { opacity: 0, transform: 'translate(0%, 100px)' },
+    }
+  );
 
   return (
     <div className='App'>
@@ -43,8 +51,9 @@ function App() {
 
       {transitions2.map(({ item, props, key }) => (
         <animated.div key={key} style={props}>
-          <Switch>
+          <Switch location={item}>
             <Route exact path='/accountType/:userType' component={UserType} />
+
             <Route
               exact
               path='/accountType/:userType/signUp'
