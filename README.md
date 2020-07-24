@@ -8,8 +8,9 @@ Those who are looking for fitness can either be fitness experts, or those just w
 ## Used Technologies:
 JavaScript, React, Redux, axios, Formik, Html/Css, Sass, Figma, Material UI, Styled Components.
 
+---------------------------------------
 
-Roles----
+## Roles:
 
 Rabah Babaci-Front End Developer:
   -Responsible for design of site, as well as basic functionality.
